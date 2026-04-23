@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eman Pepars — Flutter Engineer</title>
+<title>Eman Pepars — Flutter Engineer · Dubai</title>
 <meta name="description" content="Flutter Software Engineer based in Dubai. 4+ years shipping production apps across GCC & MENA — e-commerce, real estate, healthcare.">
+<meta name="author" content="Eman Pepars">
+<meta name="theme-color" content="#070A13">
+<meta name="color-scheme" content="dark">
+<meta name="keywords" content="Flutter Developer, Mobile Engineer, Dart, BLoC, Clean Architecture, Dubai, GCC, Socket.IO, UAE PASS, Apple Pay, Tabby, Tamara">
+<link rel="canonical" href="https://emanpepars.github.io/portfolio/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%23070A13'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='15' fill='url(%23g)'%3EEP%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emanpepars.github.io/portfolio/">
+<meta property="og:title" content="Eman Pepars — Flutter Engineer">
+<meta property="og:description" content="4+ years shipping production Flutter apps across GCC & MENA. Clean Architecture + BLoC as a consistent standard — not a preference.">
+<meta property="og:site_name" content="Eman Pepars">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eman Pepars — Flutter Engineer">
+<meta name="twitter:description" content="Flutter Engineer · Dubai · 4+ years shipping production apps across GCC & MENA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -76,7 +91,12 @@ html{scroll-behavior:smooth}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:rgba(59,130,246,0.3);border-radius:10px;border:2px solid var(--bg-primary)}
 ::-webkit-scrollbar-thumb:hover{background:var(--accent-blue)}
-body{background:radial-gradient(ellipse 1000px 600px at 85% -5%,rgba(59,130,246,0.12) 0%,transparent 55%),radial-gradient(ellipse 800px 400px at 10% 100%,rgba(34,211,238,0.08) 0%,transparent 55%),var(--bg-primary);background-attachment:fixed;color:var(--text-primary);font-family:var(--body);font-size:16px;line-height:1.65;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;cursor:none;text-rendering:optimizeLegibility;position:relative}
+body{background:radial-gradient(ellipse 1000px 600px at 85% -5%,rgba(59,130,246,0.12) 0%,transparent 55%),radial-gradient(ellipse 800px 400px at 10% 100%,rgba(34,211,238,0.08) 0%,transparent 55%),var(--bg-primary);background-attachment:fixed;color:var(--text-primary);font-family:var(--body);font-size:16px;line-height:1.65;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;text-rendering:optimizeLegibility;position:relative}
+#cursor,#cursor-ring{display:none}
+@media (hover:hover) and (pointer:fine){
+  body{cursor:none}
+  #cursor,#cursor-ring{display:block}
+}
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0;opacity:0.6;-webkit-mask-image:radial-gradient(ellipse at center,black 0%,transparent 78%);mask-image:radial-gradient(ellipse at center,black 0%,transparent 78%)}
 section,nav,footer{position:relative;z-index:1}
 ::selection{background:rgba(59,130,246,0.35);color:#fff}
@@ -89,6 +109,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 48px;height:72px;d
 .nav-link:hover{color:var(--t1);background:var(--glass2)}.nav-link.active{color:var(--acc2);background:var(--accg2);font-weight:600}
 .nav-hire{font-family:var(--syne);font-size:12px;font-weight:700;color:#fff;background:var(--grad-primary);padding:10px 22px;border-radius:var(--r-md);text-decoration:none;letter-spacing:0.02em;transition:transform 0.2s,box-shadow 0.2s;box-shadow:var(--shadow-soft-glow),inset 0 1px 0 rgba(255,255,255,0.2)}
 .nav-hire:hover{transform:translateY(-1px);box-shadow:var(--shadow-medium-glow),inset 0 1px 0 rgba(255,255,255,0.25)}
+.nav-toggle{display:none;background:var(--bg-card);border:1px solid var(--border-default);border-radius:var(--r-md);width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:border-color 0.2s,background 0.2s}
+.nav-toggle:hover{border-color:var(--accent-blue);background:var(--bg-secondary)}
+.nav-toggle span{position:relative;width:16px;height:1.5px;background:var(--t1);display:block;transition:transform 0.25s,opacity 0.25s}
+.nav-toggle span::before,.nav-toggle span::after{content:'';position:absolute;left:0;width:16px;height:1.5px;background:var(--t1);transition:transform 0.25s,top 0.25s}
+.nav-toggle span::before{top:-5px}.nav-toggle span::after{top:5px}
+nav[data-open="true"] .nav-toggle span{background:transparent}
+nav[data-open="true"] .nav-toggle span::before{top:0;transform:rotate(45deg)}
+nav[data-open="true"] .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;padding:120px 48px 80px;position:relative;overflow:hidden}
@@ -253,6 +281,7 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
 .hlc:hover::before{opacity:1}
 .hlc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--grad-primary);opacity:0;transition:opacity 0.3s}
 .hlc-icon{width:46px;height:46px;border-radius:var(--r-md);background:var(--grad-primary);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:18px;box-shadow:var(--shadow-soft-glow),inset 0 1px 0 rgba(255,255,255,0.22)}
+.hlc-icon svg{width:20px;height:20px;stroke:#fff;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .hlc-n{font-family:var(--syne);font-size:42px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:var(--t1);margin-bottom:10px}
 .hlc-n em{background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
 .hlc-l{font-family:var(--mono);font-size:10px;color:var(--t3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px}
@@ -306,9 +335,19 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  nav{padding:0 24px}.nav-center{display:none}
+  nav{padding:0 24px}
+  .nav-toggle{display:inline-flex}
+  .nav-center{position:fixed;top:72px;left:0;right:0;flex-direction:column;gap:4px;padding:20px 24px 28px;background:rgba(7,10,19,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-default);box-shadow:0 12px 32px rgba(0,0,0,0.5);transform:translateY(-110%);transition:transform 0.28s ease;z-index:400}
+  nav[data-open="true"] .nav-center{transform:translateY(0)}
+  .nav-center .nav-link{font-size:13px;padding:12px 16px;border-radius:8px;text-align:left}
   .hero{grid-template-columns:1fr;gap:48px;padding:100px 24px 60px;min-height:auto}
-  .hero-right{display:none}
+  .hero-right{margin-top:8px}
+  .featured-card{padding:24px}
+  .fc-title{font-size:19px}
+  .fc-metrics{grid-template-columns:repeat(3,1fr)}
+  .fcm{padding:12px 10px}
+  .fcm-n{font-size:20px}
+  .card-shadow-stack,.card-shadow-stack2{display:none}
   section{padding:72px 24px}
   .pcard-body{grid-template-columns:1fr}.pcol:first-child{border-right:none;border-bottom:1px solid var(--b1)}
   .appr-grid{grid-template-columns:1fr}.skills-layout{grid-template-columns:1fr}
@@ -322,6 +361,14 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
 @media(min-width:961px) and (max-width:1200px){
   .hl-grid{grid-template-columns:repeat(2,1fr)}
   .apps-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important}
+  .marquee-track{animation:none}
+  .edot{animation:none}
+  .reveal{opacity:1;transform:none}
+  #cursor,#cursor-ring{display:none}
+  body{cursor:auto}
 }
 </style>
 </head>
@@ -339,7 +386,10 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
     <a href="#experience" class="nav-link">exp</a>
     <a href="#about" class="nav-link">about</a>
   </div>
-  <a href="mailto:emanpepars2@gmail.com" class="nav-hire">Hire Me ↗</a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="mailto:emanpepars2@gmail.com" class="nav-hire">Hire Me ↗</a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span></button>
+  </div>
 </nav>
 
 <section class="hero" id="top">
@@ -348,19 +398,20 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
   <div>
     <div class="eyebrow"><div class="edot"></div><span class="etext">Available for new roles · Dubai, UAE</span></div>
     <h1 class="hero-name">Eman Pepars<em>Flutter Engineer</em></h1>
-    <div class="hero-role">Software Engineer · Cross-Platform · GCC Market</div>
-    <p class="hero-bio">Flutter Developer with <strong>4+ years of production experience</strong> shipping cross-platform applications across the <strong>GCC and MENA markets</strong> — e-commerce, live auctions, real estate, and healthcare. End-to-end ownership from architecture through App Store and Google Play deployment. <strong>Clean Architecture (Presentation / Domain / Data) with BLoC/Cubit as a consistent standard</strong> — not a preference.</p>
+    <div class="hero-role">Scalable Mobile Apps · Clean Architecture · Performance · Production-Ready</div>
+    <p class="hero-bio"><strong>13+ production apps shipped</strong> across GCC, MENA, and the US — e-commerce, live auctions, real estate, and healthcare. I build <strong>scalable Flutter applications on Clean Architecture + BLoC/Cubit</strong>, own the full lifecycle from architecture through App Store and Google Play release, and specialize in <strong>performance-critical real-time features</strong>: Socket.IO live auctions, UAE PASS government auth, Apple Pay, and BNPL (Tabby, Tamara). Every app live. Every release shipped by me.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-glow">View My Work →</a>
-      <a href="https://github.com/Emanpepars" target="_blank" class="btn-ghost">GitHub</a>
-      <a href="https://www.linkedin.com/in/emanpepars" target="_blank" class="btn-ghost">LinkedIn</a>
+      <a href="./Eman_Pepars_CV.pdf" download class="btn-ghost">↓ Download CV</a>
+      <a href="https://github.com/Emanpepars" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/emanpepars" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
     </div>
   </div>
   <div class="hero-right">
     <div class="featured-card">
       <div class="fc-label">Featured Project</div>
       <div class="fc-title">Soldout KSA — Live Auction Marketplace</div>
-      <div class="fc-sub">Dual-app platform (customer + vendor) with live bidding, concurrent state management, and GCC-native payment stack.</div>
+      <div class="fc-sub">Dual-app KSA marketplace — live-auction bidding, concurrent-state isolation, Apple Pay + Tabby + Tamara checkout. Shipped both apps solo.</div>
       <div class="fc-tags">
         <span class="fctag h">BLoC/Cubit</span><span class="fctag h">Socket.IO</span><span class="fctag">Apple Pay</span><span class="fctag">Tabby</span><span class="fctag">Tamara</span><span class="fctag">Clean Arch</span>
       </div>
@@ -394,49 +445,49 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
     <p class="ssub">Shipped, deployed, and serving users across GCC, MENA, and the US — real products, live on App Store and Google Play.</p>
     <div class="hl-grid">
       <div class="hlc reveal">
-        <div class="hlc-icon">🚀</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="10" y1="18" x2="14" y2="18"/></svg></div>
         <div class="hlc-l">Production Apps</div>
         <div class="hlc-n">13<em>+</em></div>
         <div class="hlc-d">Live on App Store & Google Play — across e-commerce, auction, real estate, healthcare, and fashion domains.</div>
       </div>
       <div class="hlc reveal d1">
-        <div class="hlc-icon">🏢</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M17 9h2a2 2 0 0 1 2 2v10"/><line x1="4" y1="21" x2="22" y2="21"/><line x1="8" y1="7" x2="12" y2="7"/><line x1="8" y1="11" x2="12" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/></svg></div>
         <div class="hlc-l">Companies</div>
         <div class="hlc-n">4</div>
         <div class="hlc-d">Soldout KSA, NTG Clarity, GS for Applications, and Revealsite — across Saudi Arabia, UAE, Egypt, and the US.</div>
       </div>
       <div class="hlc reveal d2">
-        <div class="hlc-icon">⚡</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="hlc-l">Experience</div>
         <div class="hlc-n">4<em>+</em></div>
         <div class="hlc-d">Years of hands-on production Flutter engineering — full cycle from architecture to App Store review.</div>
       </div>
       <div class="hlc reveal d3">
-        <div class="hlc-icon">🌍</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.8 4 6.3 4 9s-1.5 6.2-4 9c-2.5-2.8-4-6.3-4-9s1.5-6.2 4-9z"/></svg></div>
         <div class="hlc-l">Markets Served</div>
         <div class="hlc-n">4</div>
         <div class="hlc-d">Saudi Arabia, United Arab Emirates, Egypt, and United States — full RTL/LTR multi-market support.</div>
       </div>
       <div class="hlc reveal">
-        <div class="hlc-icon">💳</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg></div>
         <div class="hlc-l">Payment & Gov Integrations</div>
         <div class="hlc-n">7<em>+</em></div>
         <div class="hlc-d">UAE PASS, Apple Pay, Google Pay, Tabby, Tamara, Stripe, and more — production-ready and compliant.</div>
       </div>
       <div class="hlc reveal d1">
-        <div class="hlc-icon">🏭</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="12 2 22 7 12 12 2 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg></div>
         <div class="hlc-l">Domains Mastered</div>
         <div class="hlc-n">5</div>
         <div class="hlc-d">E-commerce, live auctions, real estate & finance, healthcare & pharmacy, and fashion — broad domain fluency.</div>
       </div>
       <div class="hlc reveal d2">
-        <div class="hlc-icon">🌐</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h12"/><path d="M4 12h16"/><path d="M4 17h10"/><polyline points="18 14 21 17 18 20"/></svg></div>
         <div class="hlc-l">RTL / Localization</div>
         <div class="hlc-n">100<em>%</em></div>
         <div class="hlc-d">Every app shipped with full Arabic + English support, RTL layouts built in from day one — not translated later.</div>
       </div>
       <div class="hlc reveal d3">
-        <div class="hlc-icon">🏆</div>
+        <div class="hlc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4v2a3 3 0 0 0 3 3"/><path d="M17 6h3v2a3 3 0 0 1-3 3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="14" x2="12" y2="20"/></svg></div>
         <div class="hlc-l">Award-Winning</div>
         <div class="hlc-n">1</div>
         <div class="hlc-d">Graduation project on immersive VR education (Oculus Quest 2 + OpenAI + Unity) featured in national press.</div>
@@ -448,8 +499,8 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
 <section id="skills" style="background:var(--bg)">
   <div class="section-inner">
     <div class="slabel">Technical Profile</div>
-    <h2 class="stitle">My Super Powers</h2>
-    <p class="ssub">Tools I use in production — not a tutorial list. Every badge below is battle-tested in a shipped app you can download right now.</p>
+    <h2 class="stitle">Production Stack</h2>
+    <p class="ssub">Every tool below is in a shipped app you can download right now — not something I skimmed in a tutorial. Each category reflects decisions I make weekly.</p>
     <div class="sp-grid">
       <div class="sp-card reveal">
         <div class="sp-head">
@@ -682,17 +733,16 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
       </div>
       <div class="pcard-body">
         <div class="pcol">
-          <div class="pclabel">Problem & Architecture</div>
-          <p class="ptext">A live auction isn't a countdown timer. It requires <strong>concurrent state isolation</strong> — a user actively bidding cannot be interrupted by a cart update, notification event, or navigation action. A shared state model produces race conditions and stale bid UIs.</p>
-          <p class="ptext">I architected three <strong>independent Cubit domains</strong>: <code class="ic">CartCubit</code>, <code class="ic">AuctionCubit</code>, and <code class="ic">MainCubit</code> — each with its own lifecycle. Socket.IO processes real-time bid events without touching the UI state tree directly.</p>
-          <div class="pcallout"><strong>Key decision:</strong> Post-auction checkout requires a state hand-off from AuctionCubit to CartCubit. Rather than direct Cubit communication, I implemented a unidirectional event bridge — both modules stay independently testable.</div>
-          <p class="ptext">Payment integration required a unified checkout abstraction. Apple Pay, Tabby, and Tamara each have different token flows — the UI layer is payment-provider agnostic.</p>
+          <div class="pclabel">Problem · Solution</div>
+          <p class="ptext"><strong>Problem.</strong> A live auction marketplace can't share state across features. A user actively bidding cannot be interrupted by a cart update, a push event, or a navigation action — that path leads to race conditions, stale bid UIs, and lost conversions. Saudi buyers also expect native Apple Pay and BNPL at checkout; anything less is friction.</p>
+          <p class="ptext"><strong>Solution.</strong> Three isolated Cubit domains — <code class="ic">CartCubit</code>, <code class="ic">AuctionCubit</code>, <code class="ic">MainCubit</code> — each with its own lifecycle. Socket.IO processes real-time bid events without touching the UI state tree. A unified checkout abstraction keeps the UI provider-agnostic: Apple Pay, Tabby, and Tamara plug into the same interface.</p>
+          <div class="pcallout"><strong>Key decision:</strong> post-auction hand-off from AuctionCubit to CartCubit runs through a <strong>unidirectional event bridge</strong> instead of direct Cubit communication — both modules stay independently testable.</div>
         </div>
         <div class="pcol">
-          <div class="pclabel a">Engineering Decisions</div>
-          <p class="ptext">The vendor app applies strict Clean Architecture: Presentation emits events only, Domain enforces business rules, Data handles API calls via Retrofit with code generation. <strong>No business logic inside widgets. No exceptions.</strong></p>
-          <p class="ptext">The promotional coins and referral wallet models state as <strong>immutable value objects</strong> — each transaction creates a new state snapshot, making the transaction history trivially reconstructable.</p>
-          <p class="ptext">Firebase Analytics, Remote Config, Crashlytics, and AppsFlyer are registered in GetIt at startup and injected where needed — never referenced directly from UI code.</p>
+          <div class="pclabel a">My Role · Impact</div>
+          <p class="ptext"><strong>Role.</strong> Sole Flutter engineer on both the buyer marketplace and the merchant management app. Owned architecture, implementation, App Store + Play Store release, and ongoing maintenance.</p>
+          <p class="ptext"><strong>Impact.</strong> 2 apps live in KSA across iOS + Android. Zero bid-state race conditions observed after launch. Checkout supports 3 payment rails natively (Apple Pay, Tabby, Tamara). Promotional coins and referral wallet modeled as <strong>immutable value objects</strong> — transaction history is reconstructable from state snapshots.</p>
+          <p class="ptext"><strong>Stack discipline.</strong> Firebase Analytics, Remote Config, Crashlytics, and AppsFlyer registered in GetIt at startup and injected where needed — never referenced directly from UI code.</p>
           <div class="pstack">
             <span class="ptag h">BLoC / Cubit</span><span class="ptag h">Socket.IO</span><span class="ptag h">Apple Pay</span><span class="ptag h">Tabby · Tamara</span><span class="ptag">Dio + Retrofit</span><span class="ptag">Firebase Suite</span><span class="ptag">AppsFlyer</span><span class="ptag">Clean Architecture</span><span class="ptag">easy_localization</span>
           </div>
@@ -713,15 +763,15 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
       </div>
       <div class="pcard-body">
         <div class="pcol">
-          <div class="pclabel">UAE PASS Integration</div>
-          <p class="ptext">UAE PASS is a government-backed digital identity system with strict OAuth 2.0 flows and government certificate chains. Token refresh must operate inside secure storage without the UI ever touching a credential.</p>
-          <p class="ptext">I built auth as a <strong>completely sealed domain module</strong>. The app shell knows only "authenticated" or "unauthenticated." Every UAE PASS operation is encapsulated in the Domain layer — no credential ever reaches Presentation.</p>
-          <div class="pcallout"><strong>Real-time challenge:</strong> A cheque marked cleared by the backend must update the investor dashboard immediately. Socket.IO listeners are scoped to the active property context, with automatic reconnection and optimistic UI rollback on failure.</div>
+          <div class="pclabel">Problem · Solution</div>
+          <p class="ptext"><strong>Problem.</strong> UAE investors manage owned units, payment workflows, cheque lifecycles, and document uploads — all behind <strong>UAE PASS</strong>, a government-backed identity system with strict OAuth 2.0 flows and certificate chains. Any credential touching Presentation is a compliance failure. A stale render on a cleared cheque has real financial consequences.</p>
+          <p class="ptext"><strong>Solution.</strong> Authentication sealed as a Domain module — the app shell only sees <em>authenticated</em> or <em>unauthenticated</em>. Tokens refresh inside Secure Storage; no credential ever reaches UI code. Financial workflows use <strong>pessimistic state updates</strong> — UI reflects a completed transaction only after explicit server confirmation.</p>
+          <div class="pcallout"><strong>Real-time design:</strong> cheques cleared by the backend surface immediately in the investor dashboard. Socket.IO listeners are <strong>scoped to the active property context</strong>, with auto-reconnect and optimistic UI rollback on failure.</div>
         </div>
         <div class="pcol">
-          <div class="pclabel a">Financial State Design</div>
-          <p class="ptext">Financial workflows are high-stakes. A stale render has real financial consequences. I implemented <strong>pessimistic state updates</strong> throughout — the UI only reflects a completed transaction after explicit server confirmation.</p>
-          <p class="ptext">Document upload runs through a typed file handler with MIME validation, size limits, and upload-progress state — all client-side before any API call. A failed document upload does not affect payment state: <strong>failures are scoped.</strong></p>
+          <div class="pclabel a">My Role · Impact</div>
+          <p class="ptext"><strong>Role.</strong> Flutter engineer responsible for the end-to-end mobile product — UAE PASS integration, real-time cheque/payment flows, document handling, and App Store release.</p>
+          <p class="ptext"><strong>Impact.</strong> Live on the App Store. Government-grade auth flow with <strong>zero credential leakage</strong> to Presentation. Real-time financial state delivered via scoped socket contexts. Typed document pipeline with client-side MIME + size validation — <strong>failed uploads never corrupt payment state</strong> (failures are scoped).</p>
           <div class="pstack">
             <span class="ptag h">UAE PASS</span><span class="ptag h">Socket.IO</span><span class="ptag h">Clean Architecture</span><span class="ptag">BLoC / Cubit</span><span class="ptag">Secure Storage</span><span class="ptag">GetIt</span><span class="ptag">Lottie</span><span class="ptag">ScreenUtil</span>
           </div>
@@ -743,15 +793,15 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
       </div>
       <div class="pcard-body">
         <div class="pcol">
-          <div class="pclabel">The Multi-Flavor Architecture</div>
-          <p class="ptext">The typical solution to "multiple brands, shared logic" is duplicating codebases — a maintenance trap. The challenge: achieve <strong>per-brand differentiation</strong> (icons, splash screens, bundle IDs, Firebase projects, env vars) with zero duplicated business logic.</p>
-          <p class="ptext">Using Flavorizr, each flavor declares its own complete configuration. The <strong>flavor boundary sits at config-injection</strong> — GetIt registers the correct configuration object at startup. Zero conditional logic exists inside business logic or UI code.</p>
-          <div class="pcallout"><strong>Result:</strong> Adding a new brand is a configuration task, not a code task. The core application is brand-agnostic by design.</div>
+          <div class="pclabel">Problem · Solution</div>
+          <p class="ptext"><strong>Problem.</strong> One storefront platform needed to power multiple distinctly-branded customer apps plus a merchant console — different icons, splash screens, bundle IDs, Firebase projects, and env vars per brand. The typical fix — duplicating codebases — is a maintenance trap that scales linearly with brand count.</p>
+          <p class="ptext"><strong>Solution.</strong> <strong>Flavorizr-driven multi-flavor architecture.</strong> Each flavor declares its own complete configuration. GetIt injects the correct config object at startup. The flavor boundary sits at <strong>config-injection</strong> — <strong>zero conditional logic inside business or UI code</strong>.</p>
+          <div class="pcallout"><strong>Result:</strong> adding a new brand is a <strong>configuration task, not a code task</strong>. The core app is brand-agnostic by design — the same binary logic ships as every storefront.</div>
         </div>
         <div class="pcol">
-          <div class="pclabel a">Hybrid State Strategy</div>
-          <p class="ptext">Used <strong>BLoC for complex feature domains</strong> where state machine complexity justifies it: cart, checkout, order management. Used Provider for lightweight, local concerns: form validation, notification preferences.</p>
-          <p class="ptext">This is an intentional architectural decision — BLoC everywhere adds overhead without benefit on simple flows; Provider on a checkout flow sacrifices testability and auditability.</p>
+          <div class="pclabel a">My Role · Impact</div>
+          <p class="ptext"><strong>Role.</strong> Sole architect of the multi-flavor system. Built Markatty Vendor end-to-end (order management, analytics, auth, geolocator features, secure merchant storage) and shipped the shared customer-app core.</p>
+          <p class="ptext"><strong>Impact.</strong> Multiple branded storefronts live from one codebase — duplicate codebases eliminated entirely. Hybrid state strategy applied deliberately: <strong>BLoC for complex domains</strong> (cart, checkout, orders), Provider for lightweight local state. BLoC everywhere adds overhead on simple flows; Provider on checkout sacrifices testability — one tool for every job is a bad default.</p>
           <div class="pstack">
             <span class="ptag h">Flavorizr</span><span class="ptag h">Multi-flavor Arch</span><span class="ptag">BLoC + Provider</span><span class="ptag">Firebase Multi-project</span><span class="ptag">Dio + Retrofit</span><span class="ptag">GetIt</span><span class="ptag">Geolocator</span><span class="ptag">Sqflite</span>
           </div>
@@ -772,14 +822,15 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
       </div>
       <div class="pcard-body">
         <div class="pcol">
-          <div class="pclabel">3D Viewer & Memory Management</div>
-          <p class="ptext">The 3D product viewer (<code class="ic">model_viewer_plus</code>) renders GLTF/GLB models via a WebView bridge. The challenge: <strong>3D assets are heavy</strong>, and browsing multiple products without a disposal strategy exhausts memory progressively.</p>
-          <p class="ptext">I implemented lazy-load with explicit disposal: the model initializes only when product detail is active and is disposed immediately on pop. Combined with Shimmer loading states, the experience remains smooth without holding assets in memory between screens.</p>
+          <div class="pclabel">Problem · Solution</div>
+          <p class="ptext"><strong>Problem.</strong> A fashion app with <strong>interactive 3D product previews</strong> (GLTF/GLB via <code class="ic">model_viewer_plus</code>) has a memory problem: 3D assets are heavy, and browsing multiple products without an explicit disposal strategy exhausts memory progressively until the app chokes.</p>
+          <p class="ptext"><strong>Solution.</strong> Lazy-load with <strong>explicit disposal</strong>. The 3D model initializes only when the product detail screen is active and is disposed immediately on pop. Combined with Shimmer placeholders, the experience feels instant without holding assets between screens. RTL handled once at the app root via MainCubit — no screen-level locale logic.</p>
+          <div class="pcallout"><strong>Persistence:</strong> Hive provides an <strong>offline-capable product cache</strong> — browsed items survive app restart. Clean Architecture with BLoC for core flows (auth, cart, orders, promo codes); Provider for lightweight local state.</div>
         </div>
         <div class="pcol">
-          <div class="pclabel a">Architecture & Localisation</div>
-          <p class="ptext">Clean Architecture with BLoC for core flows (auth, cart, orders, promo codes) and Provider for lightweight local state. Hive provides offline-capable product cache — browsed items survive app restart.</p>
-          <p class="ptext">RTL via easy_localization is <strong>handled at the app root in MainCubit</strong> — locale changes propagate through MaterialApp's locale param. No screen-level locale logic anywhere in the widget tree.</p>
+          <div class="pclabel a">My Role · Impact</div>
+          <p class="ptext"><strong>Role.</strong> Personal open-source project. Full ownership — architecture, 3D integration, state management, RTL localization, offline cache, and GitHub release.</p>
+          <p class="ptext"><strong>Impact.</strong> Production-grade 3D product viewer with memory-safe lifecycle. Full Arabic + English RTL from day one. Offline browsing via Hive. Codebase serves as a <strong>reference implementation of Clean Architecture</strong> in a consumer-facing Flutter app.</p>
           <div class="pstack">
             <span class="ptag h">model_viewer_plus</span><span class="ptag h">3D Asset Rendering</span><span class="ptag">BLoC + Provider</span><span class="ptag">Hive</span><span class="ptag">Dio</span><span class="ptag">Firebase Messaging</span><span class="ptag">ScreenUtil</span><span class="ptag">Lottie</span>
           </div>
@@ -801,15 +852,15 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
       </div>
       <div class="pcard-body">
         <div class="pcol">
-          <div class="pclabel">Refactor &amp; Performance</div>
-          <p class="ptext">Came in on an existing, large-scale codebase. The brief wasn't "add features" — it was <strong>restore engineering health</strong>: slow screens, inconsistent layouts, and feature modules that resisted testing.</p>
-          <p class="ptext">I refactored legacy screens for <strong>UI responsiveness and loading performance</strong>, tightened widget trees, and removed unnecessary rebuilds. Every change shipped through a real release — no long-lived branches, no staging-only wins.</p>
-          <div class="pcallout"><strong>Working mode:</strong> Freelance contributor, integrated into the product and design teams via Figma, Jira, and Trello. Agile delivery — small, reviewed PRs against a shared mobile codebase used by real users.</div>
+          <div class="pclabel">Problem · Solution</div>
+          <p class="ptext"><strong>Problem.</strong> An existing large-scale fintech codebase with slow screens, inconsistent layouts, and feature modules that resisted testing. The brief wasn't "add features" — it was <strong>restore engineering health</strong> without long-lived branches or staging-only wins.</p>
+          <p class="ptext"><strong>Solution.</strong> Refactored legacy screens for <strong>UI responsiveness and loading performance</strong>, tightened widget trees, and removed unnecessary rebuilds. Migrated feature modules into <strong>Clean Architecture with Cubit</strong> — replacing ad-hoc state with explicit, testable state machines. Built new features on REST + Firebase consistent with existing conventions; <strong>no new abstractions where none were needed</strong>.</p>
+          <div class="pcallout"><strong>Working mode:</strong> freelance contributor integrated with product and design teams via Figma, Jira, and Trello. <strong>Small, reviewed PRs against a shared codebase used by real users.</strong> Every change shipped through a real release.</div>
         </div>
         <div class="pcol">
-          <div class="pclabel a">Architecture Migration</div>
-          <p class="ptext">Migrated feature modules into <strong>Clean Architecture with Cubit (BLoC)</strong> — replacing ad-hoc state with explicit, testable state machines. Presentation layers became dumb; business rules moved into Domain.</p>
-          <p class="ptext">Built new features on top of <strong>REST APIs and Firebase</strong>, staying consistent with the broader app conventions and avoiding new abstractions where none were needed.</p>
+          <div class="pclabel a">My Role · Impact</div>
+          <p class="ptext"><strong>Role.</strong> Freelance Flutter contributor on Slash Hub and Zaitoon — refactor, performance engineering, and architecture migration alongside the in-house team.</p>
+          <p class="ptext"><strong>Impact.</strong> Legacy screens migrated to Clean Architecture + Cubit with visible improvements to runtime responsiveness and rebuild count. Presentation layers stripped of business logic; Domain became the source of truth. Shipped through normal release trains — no parallel universes, no rollback risk.</p>
           <div class="pstack">
             <span class="ptag h">Clean Architecture</span><span class="ptag h">Cubit (BLoC)</span><span class="ptag h">Performance Refactor</span><span class="ptag">REST APIs</span><span class="ptag">Firebase</span><span class="ptag">Figma</span><span class="ptag">Jira</span><span class="ptag">Agile</span>
           </div>
@@ -1080,11 +1131,11 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
     <h2 class="stitle">About Me</h2>
     <div class="about-layout">
       <div class="about-body reveal">
-        <p>I'm a Flutter Developer based in Dubai with <strong>4+ years of production experience</strong> building and shipping cross-platform mobile applications for the <strong>GCC and MENA markets</strong> across e-commerce, live auctions, real estate, and healthcare.</p>
-        <p>I hold <strong>end-to-end ownership</strong> across architecture, development, and App Store / Google Play deployment on every project I work on. I apply <strong>Clean Architecture (Presentation / Domain / Data) with BLoC/Cubit</strong> as a consistent standard — not a preference that shifts per client.</p>
-        <p>I've shipped both <strong>vendor and customer apps</strong> for two separate live marketplace platforms, integrated <strong>UAE PASS government-grade authentication</strong>, implemented GCC-native BNPL (<strong>Tabby, Tamara</strong>) and <strong>Apple Pay</strong>, and architected a <strong>multi-flavor setup</strong> supporting multiple branded storefronts from a single codebase.</p>
-        <p>I deliver production-grade <strong>Arabic/English RTL localization</strong> and real-time features via <strong>Socket.IO</strong> as baseline expectations — not optional add-ons.</p>
-        <p>My academic background is <strong>Computer Science with AI specialisation</strong> (Cairo University, 2019 – 2023, GPA 3/4). My graduation project — <strong>MetaPharaoh</strong> — is an award-recognised immersive VR ancient Egypt educational experience on Oculus Quest 2, built with Unity + Blender and integrating OpenAI for a chatbot guide and Google Maps for location context.</p>
+        <p><strong>Flutter Developer specializing in scalable production mobile apps, Clean Architecture, and performance optimization.</strong> Based in Dubai. <strong>13+ apps shipped</strong> across GCC, MENA, and the US — e-commerce, live auctions, real estate, healthcare, fashion — live on the App Store and Google Play right now.</p>
+        <p>I own the <strong>full lifecycle</strong> on every project: architecture, implementation, CI/CD, App Store Connect, Play Console rollouts, code signing, release versioning. I don't hand off to DevOps to ship. Architectural decisions interact with deployment constraints — knowing both means I don't design systems that can't be released.</p>
+        <p>I apply <strong>Clean Architecture (Presentation / Domain / Data) with BLoC/Cubit</strong> as a consistent standard — not a preference that shifts per client. BLoC where state-machine complexity justifies it; Provider where it doesn't. One tool for every job is a bad default.</p>
+        <p>I've shipped both <strong>vendor and customer apps</strong> for two live marketplace platforms, integrated <strong>UAE PASS government-grade authentication</strong>, implemented GCC-native BNPL (<strong>Tabby, Tamara</strong>) and <strong>Apple Pay</strong>, architected a <strong>Flavorizr multi-flavor system</strong> powering multiple branded storefronts from one codebase, and built real-time auction mechanics on Socket.IO with isolated Cubit domains. Full <strong>Arabic / English RTL</strong> is baseline on every app — designed for from day one, not translated later.</p>
+        <p>Academic background: <strong>Computer Science with AI specialisation</strong> (Cairo University, 2019 – 2023, GPA 3/4). Graduation project <strong>MetaPharaoh</strong> — an award-recognised immersive VR ancient-Egypt educational experience on Oculus Quest 2 (Unity + Blender + OpenAI chatbot guide + Google Maps) — featured in national press.</p>
       </div>
       <div class="about-card reveal d2">
         <div class="acard-head">
@@ -1113,8 +1164,9 @@ footer{border-top:1px solid var(--b1);padding:28px 48px;display:flex;align-items
     <p class="contact-sub">Open to senior Flutter roles, GCC-focused product teams, and interesting technical problems. I respond within 24 hours.</p>
     <div class="contact-row">
       <a href="mailto:emanpepars2@gmail.com" class="btn-glow">Send Email →</a>
-      <a href="https://www.linkedin.com/in/emanpepars" target="_blank" class="btn-ghost">LinkedIn</a>
-      <a href="https://github.com/Emanpepars" target="_blank" class="btn-ghost">GitHub</a>
+      <a href="./Eman_Pepars_CV.pdf" download class="btn-ghost">↓ Download CV</a>
+      <a href="https://www.linkedin.com/in/emanpepars" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+      <a href="https://github.com/Emanpepars" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
     </div>
     <div class="contact-meta">+971 58 556 2001 · Dubai, UAE · Available for remote & on-site</div>
   </div>
@@ -1143,6 +1195,17 @@ document.querySelectorAll('a,button,.pcard,.appr-cell').forEach(el=>{
 });
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const navEl=document.querySelector('nav'),navToggle=document.querySelector('.nav-toggle');
+if(navToggle){
+  navToggle.addEventListener('click',()=>{
+    const open=navEl.getAttribute('data-open')==='true';
+    navEl.setAttribute('data-open',String(!open));
+    navToggle.setAttribute('aria-expanded',String(!open));
+  });
+  document.querySelectorAll('.nav-center .nav-link').forEach(l=>l.addEventListener('click',()=>{
+    navEl.setAttribute('data-open','false');navToggle.setAttribute('aria-expanded','false');
+  }));
+}
 const navLinks=document.querySelectorAll('.nav-link');
 const sections=document.querySelectorAll('section[id]');
 window.addEventListener('scroll',()=>{
