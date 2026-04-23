@@ -150,6 +150,7 @@
       }
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
       ::-webkit-scrollbar {
         width: 10px;
@@ -1835,6 +1836,108 @@
           flex-direction: column;
           gap: 16px;
           text-align: center;
+          padding: 24px;
+        }
+        .contact-section {
+          padding: 72px 24px;
+        }
+        .hl-section {
+          padding: 72px 24px;
+        }
+        .pcol {
+          padding: 28px 24px;
+        }
+        .pcard-top {
+          padding: 28px 24px 0;
+        }
+        .appr-cell {
+          padding: 28px 24px;
+        }
+        .hero-bio {
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 480px) {
+        nav {
+          padding: 0 16px;
+        }
+        .nav-hire {
+          padding: 9px 14px;
+          font-size: 11px;
+        }
+        section {
+          padding: 56px 16px;
+        }
+        .hero {
+          padding: 96px 16px 48px;
+          gap: 36px;
+        }
+        .hl-section,
+        .contact-section {
+          padding: 56px 16px;
+        }
+        .featured-card {
+          padding: 20px;
+        }
+        .fcm {
+          padding: 10px 6px;
+        }
+        .fcm-n {
+          font-size: 18px;
+        }
+        .fcm-l {
+          font-size: 8px;
+          letter-spacing: 0.04em;
+        }
+        .hl-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-name {
+          font-size: 40px;
+        }
+        .contact-headline {
+          font-size: 36px;
+        }
+        .stitle {
+          font-size: 28px;
+        }
+        .hero-btns .btn-glow,
+        .hero-btns .btn-ghost {
+          padding: 12px 20px;
+          font-size: 12.5px;
+        }
+        .pcol {
+          padding: 24px 18px;
+        }
+        .pcard-top {
+          padding: 24px 18px 0;
+        }
+        .appr-cell {
+          padding: 24px 18px;
+        }
+        .sp-card {
+          padding: 22px 20px;
+        }
+        .fact-row {
+          padding: 12px 18px;
+          gap: 12px;
+        }
+        .fk {
+          min-width: 68px;
+        }
+        .acard-head {
+          padding: 20px;
+        }
+        .appr-grid {
+          border-radius: 10px;
+        }
+        .flinks {
+          gap: 16px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        footer {
+          padding: 20px 16px;
         }
       }
       @media (min-width: 961px) and (max-width: 1200px) {
