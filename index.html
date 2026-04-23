@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Eman Pepars - Flutter Engineer · Dubai</title>
     <meta
       name="description"
@@ -272,8 +275,10 @@
         left: 0;
         right: 0;
         z-index: 500;
-        padding: 0 48px;
-        height: 72px;
+        padding: env(safe-area-inset-top) 48px 0;
+        padding-left: max(48px, env(safe-area-inset-left));
+        padding-right: max(48px, env(safe-area-inset-right));
+        height: calc(72px + env(safe-area-inset-top));
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1747,14 +1752,16 @@
       /* RESPONSIVE */
       @media (max-width: 960px) {
         nav {
-          padding: 0 24px;
+          padding: env(safe-area-inset-top) 24px 0;
+          padding-left: max(24px, env(safe-area-inset-left));
+          padding-right: max(24px, env(safe-area-inset-right));
         }
         .nav-toggle {
           display: inline-flex;
         }
         .nav-center {
           position: fixed;
-          top: 72px;
+          top: calc(72px + env(safe-area-inset-top));
           left: 0;
           right: 0;
           flex-direction: column;
@@ -1781,7 +1788,7 @@
         .hero {
           grid-template-columns: 1fr;
           gap: 48px;
-          padding: 100px 24px 60px;
+          padding: calc(100px + env(safe-area-inset-top)) 24px 60px;
           min-height: auto;
         }
         .hero-right {
@@ -1867,11 +1874,13 @@
       }
       @media (max-width: 480px) {
         nav {
-          padding: 0 16px;
-          height: 64px;
+          padding: env(safe-area-inset-top) 16px 0;
+          padding-left: max(16px, env(safe-area-inset-left));
+          padding-right: max(16px, env(safe-area-inset-right));
+          height: calc(64px + env(safe-area-inset-top));
         }
         .nav-center {
-          top: 64px;
+          top: calc(64px + env(safe-area-inset-top));
         }
         .logo {
           font-size: 16px;
@@ -1892,7 +1901,7 @@
           padding: 56px 16px;
         }
         .hero {
-          padding: 96px 16px 48px;
+          padding: calc(96px + env(safe-area-inset-top)) 16px 48px;
           gap: 36px;
         }
         .hl-section,
