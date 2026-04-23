@@ -273,7 +273,7 @@
         top: env(safe-area-inset-top);
         left: 0;
         right: 0;
-        z-index: 500;
+        z-index: 1000;
         padding: 0 48px;
         padding-left: max(48px, env(safe-area-inset-left));
         padding-right: max(48px, env(safe-area-inset-right));
@@ -290,6 +290,7 @@
           0 4px 24px rgba(0, 0, 0, 0.5);
         line-height: 1;
       }
+
       /* iOS Safari safe-area + status-bar cover so the page's dark
          background reads as a single bar behind the Dynamic Island.
          Uses ::after so the grid pattern (::before) is preserved. */
@@ -1787,17 +1788,31 @@
           flex-direction: column;
           gap: 4px;
           padding: 20px 24px 28px;
-          background: rgba(7, 10, 19, 0.96);
+          background: rgba(7, 10, 19, 0.98);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           border-bottom: 1px solid var(--border-default);
           box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
           transform: translateY(-110%);
-          transition: transform 0.28s ease;
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+          transition:
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.25s ease,
+            visibility 0s linear 0.35s;
           z-index: 400;
+          display: flex;
         }
         nav[data-open="true"] .nav-center {
           transform: translateY(0);
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+          transition:
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.25s ease,
+            visibility 0s linear 0s;
         }
         .nav-center .nav-link {
           font-size: 13px;
@@ -1914,6 +1929,9 @@
           padding: 10px 16px;
           font-size: 11.5px;
           line-height: 1;
+        }
+        div:has(> .nav-toggle) {
+          gap: 16px !important;
         }
         .nav-toggle {
           width: 38px;
@@ -3867,6 +3885,13 @@
             navToggle.setAttribute("aria-expanded", "false");
           }),
         );
+        document.addEventListener("click", (e) => {
+          const open = navEl.getAttribute("data-open") === "true";
+          if (open && !navEl.contains(e.target)) {
+            navEl.setAttribute("data-open", "false");
+            navToggle.setAttribute("aria-expanded", "false");
+          }
+        });
       }
       const navLinks = document.querySelectorAll(".nav-link");
       const sections = document.querySelectorAll("section[id]");
