@@ -270,14 +270,14 @@
       }
       nav {
         position: fixed;
-        top: 0;
+        top: env(safe-area-inset-top);
         left: 0;
         right: 0;
         z-index: 500;
-        padding: env(safe-area-inset-top) 48px 0;
+        padding: 0 48px;
         padding-left: max(48px, env(safe-area-inset-left));
         padding-right: max(48px, env(safe-area-inset-right));
-        height: calc(72px + env(safe-area-inset-top));
+        height: 72px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -289,10 +289,19 @@
           0 1px 0 rgba(255, 255, 255, 0.02),
           0 4px 24px rgba(0, 0, 0, 0.5);
         line-height: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        isolation: isolate;
-        will-change: transform;
+      }
+      /* iOS Safari safe-area + status-bar cover so the page's dark
+         background reads as a single bar behind the Dynamic Island */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-top);
+        background: var(--bg-primary);
+        z-index: 499;
+        pointer-events: none;
       }
       .logo {
         font-family: var(--syne);
@@ -1755,9 +1764,12 @@
       /* RESPONSIVE */
       @media (max-width: 960px) {
         nav {
-          padding: env(safe-area-inset-top) 24px 0;
+          padding: 0 24px;
           padding-left: max(24px, env(safe-area-inset-left));
           padding-right: max(24px, env(safe-area-inset-right));
+          background: rgba(7, 10, 19, 0.96);
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
         }
         .nav-toggle {
           display: inline-flex;
@@ -1877,10 +1889,10 @@
       }
       @media (max-width: 480px) {
         nav {
-          padding: env(safe-area-inset-top) 16px 0;
+          padding: 0 16px;
           padding-left: max(16px, env(safe-area-inset-left));
           padding-right: max(16px, env(safe-area-inset-right));
-          height: calc(64px + env(safe-area-inset-top));
+          height: 64px;
         }
         .nav-center {
           top: calc(64px + env(safe-area-inset-top));
