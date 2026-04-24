@@ -1236,32 +1236,70 @@
       /* ABOUT */
       .about-layout {
         display: grid;
-        grid-template-columns: 1fr 380px;
-        gap: 80px;
+        grid-template-columns: minmax(0, 1fr) 400px;
+        gap: 72px;
         align-items: start;
       }
       .about-body {
-        font-size: 16px;
+        font-size: 15.5px;
         color: var(--t2);
-        line-height: 1.8;
+        line-height: 1.85;
+        max-width: 64ch;
       }
       .about-body p {
         margin-bottom: 22px;
       }
+      .about-body p:first-of-type {
+        font-size: 18px;
+        line-height: 1.65;
+        color: var(--t1);
+        padding-left: 18px;
+        border-left: 2px solid var(--accent-blue);
+        margin-bottom: 28px;
+      }
       .about-body strong {
         color: var(--t1);
-        font-weight: 500;
+        font-weight: 600;
       }
       .about-card {
-        background: var(--bg-card);
+        position: sticky;
+        top: 100px;
+        background:
+          linear-gradient(180deg, var(--accent-tint) 0%, transparent 140px),
+          var(--bg-card);
         border: 1px solid var(--border-default);
         border-radius: var(--r-xl);
         overflow: hidden;
         box-shadow: var(--shadow-depth);
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
+      }
+      .about-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--grad-primary);
+        opacity: 0.85;
+      }
+      .about-card:hover {
+        border-color: var(--border-strong);
+        box-shadow:
+          var(--shadow-lift),
+          0 0 48px rgba(59, 130, 246, 0.08);
+        transform: translateY(-2px);
       }
       .acard-head {
-        padding: 24px;
-        background: var(--accg2);
+        padding: 26px 24px;
+        background: linear-gradient(
+          135deg,
+          var(--accg2) 0%,
+          transparent 100%
+        );
         border-bottom: 1px solid var(--border-default);
         display: flex;
         align-items: center;
@@ -1280,9 +1318,18 @@
         font-size: 17px;
         color: #fff;
         flex-shrink: 0;
+        position: relative;
         box-shadow:
           var(--shadow-soft-glow),
           inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+      .avatar::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: inherit;
+        border: 1px solid rgba(59, 130, 246, 0.22);
+        pointer-events: none;
       }
       .ach-name {
         font-family: var(--syne);
@@ -1300,6 +1347,15 @@
         padding: 14px 24px;
         border-bottom: 1px solid var(--b1);
         align-items: flex-start;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .fact-row:hover {
+        background: var(--glow-subtle);
+      }
+      .fact-row:hover .fk {
+        color: var(--accent-cyan);
       }
       .fact-row:last-child {
         border-bottom: none;
@@ -1308,23 +1364,61 @@
         font-family: var(--mono);
         font-size: 10px;
         color: var(--t3);
-        letter-spacing: 0.06em;
-        min-width: 78px;
-        padding-top: 2px;
+        letter-spacing: 0.08em;
+        min-width: 82px;
+        padding-top: 3px;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
       }
       .fv {
-        font-size: 13px;
+        font-size: 13.5px;
         color: var(--t1);
+        line-height: 1.55;
       }
       .fv a {
         color: var(--acc);
         text-decoration: none;
+        background-image: linear-gradient(
+          var(--accent-cyan),
+          var(--accent-cyan)
+        );
+        background-size: 0 1px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition:
+          background-size 0.25s ease,
+          color 0.2s ease;
       }
       .fv a:hover {
-        text-decoration: underline;
+        color: var(--accent-cyan);
+        background-size: 100% 1px;
       }
       .fv.avail {
         color: var(--lime);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+      }
+      .fv.avail::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--lime);
+        box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.55);
+        animation: availPulse 2.2s infinite;
+      }
+      @keyframes availPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
+        }
+        70% {
+          box-shadow: 0 0 0 8px rgba(34, 211, 238, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+        }
       }
 
       /* CONTACT */
@@ -1866,6 +1960,17 @@
         }
         .about-layout {
           grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .about-card {
+          position: static;
+        }
+        .about-body {
+          max-width: none;
+        }
+        .about-body p:first-of-type {
+          font-size: 16.5px;
+          padding-left: 14px;
         }
         .pcard-top {
           grid-template-columns: 1fr;
@@ -2125,15 +2230,10 @@
         </div>
         <p class="hero-bio">
           <strong>13+ production apps shipped</strong> across GCC, MENA, and the
-          US - e-commerce, live auctions, real estate, and healthcare. I build
-          <strong
-            >scalable Flutter applications on Clean Architecture +
-            BLoC/Cubit</strong
-          >, own the full lifecycle from architecture through App Store and
-          Google Play release, and specialize in
-          <strong>performance-critical real-time features</strong>: Socket.IO
-          live auctions, UAE PASS government auth, Apple Pay, and BNPL (Tabby,
-          Tamara). Every app live. Every release shipped by me.
+          US — e-commerce, live auctions, real estate, and healthcare. Full
+          lifecycle ownership, architecture to store release. Specialist in
+          <strong>real-time, performance-critical features</strong>: Socket.IO
+          live auctions, UAE PASS auth, Apple Pay, and BNPL (Tabby, Tamara).
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-glow">View My Work →</a>
@@ -2155,9 +2255,8 @@
           <div class="fc-label">Featured Project</div>
           <div class="fc-title">Soldout KSA - Live Auction Marketplace</div>
           <div class="fc-sub">
-            Dual-app KSA marketplace - live-auction bidding, concurrent-state
-            isolation, Apple Pay + Tabby + Tamara checkout. Shipped both apps
-            solo.
+            Dual-app KSA marketplace — live bidding, concurrent-state isolation,
+            Apple Pay + Tabby + Tamara checkout. Both apps shipped solo.
           </div>
           <div class="fc-tags">
             <span class="fctag h">BLoC/Cubit</span
@@ -2240,8 +2339,8 @@
         <div class="slabel">My Highlights</div>
         <h2 class="stitle">Impact by the Numbers</h2>
         <p class="ssub">
-          Shipped, deployed, and serving users across GCC, MENA, and the US -
-          real products, live on App Store and Google Play.
+          Live across GCC, MENA, and the US. Real products on App Store and
+          Google Play.
         </p>
         <div class="hl-grid">
           <div class="hlc reveal">
@@ -2254,8 +2353,7 @@
             <div class="hlc-l">Production Apps</div>
             <div class="hlc-n">13<em>+</em></div>
             <div class="hlc-d">
-              Live on App Store & Google Play - across e-commerce, auction, real
-              estate, healthcare, and fashion domains.
+              Live on App Store & Google Play.
             </div>
           </div>
           <div class="hlc reveal d1">
@@ -2272,8 +2370,8 @@
             <div class="hlc-l">Companies</div>
             <div class="hlc-n">4</div>
             <div class="hlc-d">
-              Soldout KSA, NTG Clarity, GS for Applications, and Revealsite -
-              across Saudi Arabia, UAE, Egypt, and the US.
+              Soldout KSA, NTG Clarity, GS for Applications, Revealsite — KSA,
+              UAE, Egypt, US.
             </div>
           </div>
           <div class="hlc reveal d2">
@@ -2285,8 +2383,8 @@
             <div class="hlc-l">Experience</div>
             <div class="hlc-n">4<em>+</em></div>
             <div class="hlc-d">
-              Years of hands-on production Flutter engineering - full cycle from
-              architecture to App Store review.
+              Hands-on production Flutter engineering — architecture to App
+              Store review.
             </div>
           </div>
           <div class="hlc reveal d3">
@@ -2302,8 +2400,7 @@
             <div class="hlc-l">Markets Served</div>
             <div class="hlc-n">4</div>
             <div class="hlc-d">
-              Saudi Arabia, United Arab Emirates, Egypt, and United States -
-              full RTL/LTR multi-market support.
+              KSA, UAE, Egypt, US — full RTL/LTR multi-market support.
             </div>
           </div>
           <div class="hlc reveal">
@@ -2317,7 +2414,7 @@
             <div class="hlc-l">Payment & Gov Integrations</div>
             <div class="hlc-n">7<em>+</em></div>
             <div class="hlc-d">
-              UAE PASS, Apple Pay, Google Pay, Tabby, Tamara, Stripe, and more -
+              UAE PASS, Apple Pay, Google Pay, Tabby, Tamara, Stripe — all
               production-ready and compliant.
             </div>
           </div>
@@ -2333,7 +2430,7 @@
             <div class="hlc-n">5</div>
             <div class="hlc-d">
               E-commerce, live auctions, real estate & finance, healthcare &
-              pharmacy, and fashion - broad domain fluency.
+              pharmacy, fashion.
             </div>
           </div>
           <div class="hlc reveal d2">
@@ -2348,8 +2445,8 @@
             <div class="hlc-l">RTL / Localization</div>
             <div class="hlc-n">100<em>%</em></div>
             <div class="hlc-d">
-              Every app shipped with full Arabic + English support, RTL layouts
-              built in from day one - not translated later.
+              Arabic + English on every app. RTL built in from day one — not
+              translated later.
             </div>
           </div>
           <div class="hlc reveal d3">
@@ -2365,8 +2462,8 @@
             <div class="hlc-l">Award-Winning</div>
             <div class="hlc-n">1</div>
             <div class="hlc-d">
-              Graduation project on immersive VR education (Oculus Quest 2 +
-              OpenAI + Unity) featured in national press.
+              VR education graduation project (Oculus Quest 2, OpenAI, Unity).
+              Featured in national press.
             </div>
           </div>
         </div>
@@ -2378,9 +2475,8 @@
         <div class="slabel">Technical Profile</div>
         <h2 class="stitle">Production Stack</h2>
         <p class="ssub">
-          Every tool below is in a shipped app you can download right now - not
-          something I skimmed in a tutorial. Each category reflects decisions I
-          make weekly.
+          Every tool ships in a production app you can download today. Decisions
+          I make weekly.
         </p>
         <div class="sp-grid">
           <div class="sp-card reveal">
@@ -2422,9 +2518,6 @@
               <span class="sp-tag">Provider</span>
               <span class="sp-tag">Riverpod</span>
               <span class="sp-tag">GetX</span>
-              <span class="sp-tag">ValueNotifier</span>
-              <span class="sp-tag">ChangeNotifier</span>
-              <span class="sp-tag">Hydrated BLoC</span>
               <span class="sp-tag">Stream / Future</span>
             </div>
           </div>
@@ -2445,7 +2538,6 @@
               <span class="sp-tag">WebSockets</span>
               <span class="sp-tag">JSON Serialization</span>
               <span class="sp-tag">Interceptors</span>
-              <span class="sp-tag">GraphQL</span>
               <span class="sp-tag">Pagination</span>
               <span class="sp-tag">Connectivity Handling</span>
             </div>
@@ -2463,12 +2555,8 @@
               <span class="sp-tag k">Hive</span>
               <span class="sp-tag k">Secure Storage</span>
               <span class="sp-tag">SharedPreferences</span>
-              <span class="sp-tag">Sqflite</span>
-              <span class="sp-tag">Drift</span>
               <span class="sp-tag">Firestore</span>
               <span class="sp-tag">Realtime Database</span>
-              <span class="sp-tag">File System</span>
-              <span class="sp-tag">Isar</span>
             </div>
           </div>
 
@@ -2485,12 +2573,12 @@
               <span class="sp-tag k">Firestore</span>
               <span class="sp-tag k">Crashlytics</span>
               <span class="sp-tag">Firebase Analytics</span>
-              <span class="sp-tag">Remote Config</span>
+              <!-- <span class="sp-tag">Remote Config</span> -->
               <span class="sp-tag">Dynamic Links</span>
               <span class="sp-tag">Firebase Auth</span>
               <span class="sp-tag">Cloud Functions</span>
               <span class="sp-tag">Firebase Storage</span>
-              <span class="sp-tag">Supabase</span>
+              <!-- <span class="sp-tag">Supabase</span> -->
             </div>
           </div>
 
@@ -2508,7 +2596,7 @@
               <span class="sp-tag k">Tabby (BNPL)</span>
               <span class="sp-tag k">Tamara (BNPL)</span>
               <span class="sp-tag">Google Pay</span>
-              <span class="sp-tag">Stripe</span>
+              <!-- <span class="sp-tag">Stripe</span> -->
               <span class="sp-tag">PayTabs</span>
               <span class="sp-tag">AppsFlyer</span>
               <span class="sp-tag">Google Maps</span>
@@ -2557,7 +2645,7 @@
               <span class="sp-tag">CI/CD</span>
               <span class="sp-tag">Fastlane</span>
               <span class="sp-tag">GitLab</span>
-              <span class="sp-tag">Bitbucket</span>
+              <!-- <span class="sp-tag">Bitbucket</span> -->
               <span class="sp-tag">Postman</span>
               <span class="sp-tag">Jira</span>
               <span class="sp-tag">Trello</span>
@@ -2598,8 +2686,8 @@
         <div class="slabel">Case Studies</div>
         <h2 class="stitle">Selected Work</h2>
         <p class="ssub">
-          Production engineering, not side projects. Each written as a technical
-          case study - real problems, real decisions, real outcomes.
+          Production engineering as technical case studies — real problems, real
+          decisions, real outcomes.
         </p>
 
         <div class="pcard reveal">
@@ -2610,9 +2698,9 @@
                 Soldout <em>- Customer & Vendor Platform</em>
               </h3>
               <p class="pcard-desc">
-                Dual-app KSA marketplace combining standard e-commerce with live
-                auction mechanics. Sole engineer on both the buyer-facing
-                marketplace and the merchant management application.
+                Dual-app KSA marketplace: a customer app combining auctions,
+                e-commerce, and user-to-user selling, plus a vendor app for
+                store, sales, and product management.
               </p>
             </div>
             <div class="plinks">
@@ -2636,66 +2724,71 @@
               >
             </div>
           </div>
+
           <div class="pcard-body">
             <div class="pcol">
               <div class="pclabel">Problem · Solution</div>
+
               <p class="ptext">
-                <strong>Problem.</strong> A live auction marketplace can't share
-                state across features. A user actively bidding cannot be
-                interrupted by a cart update, a push event, or a navigation
-                action - that path leads to race conditions, stale bid UIs, and
-                lost conversions. Saudi buyers also expect native Apple Pay and
-                BNPL at checkout; anything less is friction.
+                <strong>Problem.</strong> A single customer app combined
+                auctions, e-commerce, store-based selling, and a used market.
+                The original Firebase-based auction layer introduced latency and
+                UI inconsistency during active bidding. Adding chat and
+                used-market flows demanded a more controlled real-time layer.
               </p>
+
               <p class="ptext">
-                <strong>Solution.</strong> Three isolated Cubit domains -
-                <code class="ic">CartCubit</code>,
-                <code class="ic">AuctionCubit</code>,
-                <code class="ic">MainCubit</code> - each with its own lifecycle.
-                Socket.IO processes real-time bid events without touching the UI
-                state tree. A unified checkout abstraction keeps the UI
-                provider-agnostic: Apple Pay, Tabby, and Tamara plug into the
-                same interface.
+                <strong>Solution.</strong> Replaced Firebase with
+                <strong>Socket.IO</strong> for auctions and chat — low-latency,
+                reliable event delivery. Scoped real-time strictly to those
+                domains; cart, checkout, wallet, and stores stayed on REST for
+                predictable, testable state.
               </p>
+
+              <p class="ptext">
+                Shipped a <strong>used market feature</strong> with user
+                listings, real-time buyer-seller chat, and a self-serve
+                dashboard for product management. Integrated store-based selling
+                and loyalty systems (coins, referrals, rewards) without breaking
+                existing flows.
+              </p>
+
               <div class="pcallout">
-                <strong>Key decision:</strong> post-auction hand-off from
-                AuctionCubit to CartCubit runs through a
-                <strong>unidirectional event bridge</strong> instead of direct
-                Cubit communication - both modules stay independently testable.
+                <strong>Key decision:</strong> isolate real-time (auctions,
+                chat) behind socket streams; keep other domains API-driven —
+                avoiding cross-state conflicts in a multi-model marketplace.
               </div>
             </div>
+
             <div class="pcol">
               <div class="pclabel a">My Role · Impact</div>
+
               <p class="ptext">
-                <strong>Role.</strong> Sole Flutter engineer on both the buyer
-                marketplace and the merchant management app. Owned architecture,
-                implementation, App Store + Play Store release, and ongoing
-                maintenance.
+                <strong>Role.</strong> Flutter Developer across both customer
+                and vendor apps — features, real-time systems, API integration,
+                and scalable architecture.
               </p>
+
               <p class="ptext">
-                <strong>Impact.</strong> 2 apps live in KSA across iOS +
-                Android. Zero bid-state race conditions observed after launch.
-                Checkout supports 3 payment rails natively (Apple Pay, Tabby,
-                Tamara). Promotional coins and referral wallet modeled as
-                <strong>immutable value objects</strong> - transaction history
-                is reconstructable from state snapshots.
+                <strong>Impact.</strong> Delivered a hybrid marketplace —
+                auctions, used market, and store-based selling in one customer
+                app. Socket-based auction and chat beat the prior Firebase
+                approach on performance. Users self-manage listings via
+                dedicated dashboards. Vendor app covers full store, product, and
+                sales control.
               </p>
-              <p class="ptext">
-                <strong>Stack discipline.</strong> Firebase Analytics, Remote
-                Config, Crashlytics, and AppsFlyer registered in GetIt at
-                startup and injected where needed - never referenced directly
-                from UI code.
-              </p>
+
               <div class="pstack">
-                <span class="ptag h">BLoC / Cubit</span
-                ><span class="ptag h">Socket.IO</span
-                ><span class="ptag h">Apple Pay</span
-                ><span class="ptag h">Tabby · Tamara</span
-                ><span class="ptag">Dio + Retrofit</span
-                ><span class="ptag">Firebase Suite</span
-                ><span class="ptag">AppsFlyer</span
-                ><span class="ptag">Clean Architecture</span
-                ><span class="ptag">easy_localization</span>
+                <span class="ptag h">BLoC / Cubit</span>
+                <span class="ptag h">Socket.IO</span>
+                <span class="ptag h">Apple Pay</span>
+                <span class="ptag h">Tabby · Tamara</span>
+                <span class="ptag">Dio + Retrofit</span>
+                <span class="ptag">Firebase Suite</span>
+                <span class="ptag">Hive</span>
+                <span class="ptag">Secure Storage</span>
+                <span class="ptag">Clean Architecture</span>
+                <span class="ptag">easy_localization</span>
               </div>
             </div>
           </div>
@@ -2709,9 +2802,9 @@
                 AlMarwan <em>- Property Management Platform</em>
               </h3>
               <p class="pcard-desc">
-                Full-featured property management system for UAE investors -
-                owned units, payment workflows, cheque management, document
-                handling - all behind UAE PASS government authentication.
+                UAE property management platform for investors — units,
+                payments, cheques, and documents in one system, secured by UAE
+                PASS.
               </p>
             </div>
             <div class="plinks">
@@ -2723,58 +2816,62 @@
               >
             </div>
           </div>
+
           <div class="pcard-body">
             <div class="pcol">
               <div class="pclabel">Problem · Solution</div>
+
               <p class="ptext">
-                <strong>Problem.</strong> UAE investors manage owned units,
-                payment workflows, cheque lifecycles, and document uploads - all
-                behind <strong>UAE PASS</strong>, a government-backed identity
-                system with strict OAuth 2.0 flows and certificate chains. Any
-                credential touching Presentation is a compliance failure. A
-                stale render on a cleared cheque has real financial
-                consequences.
+                <strong>Problem.</strong> Investor flows — properties, payments,
+                cheques, documents — all tied to UAE PASS auth. Required
+                consistent state handling to prevent stale financial data across
+                modules.
               </p>
+
               <p class="ptext">
-                <strong>Solution.</strong> Authentication sealed as a Domain
-                module - the app shell only sees <em>authenticated</em> or
-                <em>unauthenticated</em>. Tokens refresh inside Secure Storage;
-                no credential ever reaches UI code. Financial workflows use
-                <strong>pessimistic state updates</strong> - UI reflects a
-                completed transaction only after explicit server confirmation.
+                <strong>Solution.</strong> Integrated UAE PASS with clean
+                separation between auth logic and UI for secure, maintainable
+                sessions. Structured payment and property flows with BLoC/Cubit
+                for predictable, scalable state.
               </p>
+
+              <p class="ptext">
+                <strong>Socket.IO</strong> for real-time updates (payments,
+                status changes); REST elsewhere for stability and consistency.
+              </p>
+
               <div class="pcallout">
-                <strong>Real-time design:</strong> cheques cleared by the
-                backend surface immediately in the investor dashboard. Socket.IO
-                listeners are
-                <strong>scoped to the active property context</strong>, with
-                auto-reconnect and optimistic UI rollback on failure.
+                <strong>Key decision:</strong> hybrid communication — sockets
+                for real-time, REST for transactional — balancing performance
+                and reliability.
               </div>
             </div>
+
             <div class="pcol">
               <div class="pclabel a">My Role · Impact</div>
+
               <p class="ptext">
-                <strong>Role.</strong> Flutter engineer responsible for the
-                end-to-end mobile product - UAE PASS integration, real-time
-                cheque/payment flows, document handling, and App Store release.
+                <strong>Role.</strong> Flutter Developer owning the app — UAE
+                PASS integration, financial workflows, document handling, and
+                architecture.
               </p>
+
               <p class="ptext">
-                <strong>Impact.</strong> Live on the App Store. Government-grade
-                auth flow with <strong>zero credential leakage</strong> to
-                Presentation. Real-time financial state delivered via scoped
-                socket contexts. Typed document pipeline with client-side MIME +
-                size validation -
-                <strong>failed uploads never corrupt payment state</strong>
-                (failures are scoped).
+                <strong>Impact.</strong> Shipped a complete property management
+                solution — units, payments, cheque tracking, and documents —
+                with government auth and real-time updates. Released on the App
+                Store.
               </p>
+
               <div class="pstack">
-                <span class="ptag h">UAE PASS</span
-                ><span class="ptag h">Socket.IO</span
-                ><span class="ptag h">Clean Architecture</span
-                ><span class="ptag">BLoC / Cubit</span
-                ><span class="ptag">Secure Storage</span
-                ><span class="ptag">GetIt</span><span class="ptag">Lottie</span
-                ><span class="ptag">ScreenUtil</span>
+                <span class="ptag h">UAE PASS</span>
+                <span class="ptag h">Socket.IO</span>
+                <span class="ptag h">Clean Architecture</span>
+                <span class="ptag">BLoC / Cubit</span>
+                <span class="ptag">Dio + Retrofit</span>
+                <span class="ptag">Secure Storage</span>
+                <span class="ptag">GetIt</span>
+                <span class="ptag">ScreenUtil</span>
               </div>
             </div>
           </div>
@@ -2790,9 +2887,8 @@
                 Markatty <em>- Multi-Brand Storefront System</em>
               </h3>
               <p class="pcard-desc">
-                One Flutter codebase powering multiple distinctly-branded
-                customer apps and a merchant platform. Eliminated duplicate
-                codebases entirely through a Flavorizr-based multi-flavor
+                Multi-app e-commerce system — customer and vendor — from one
+                Flutter codebase powering multiple brands via multi-flavor
                 architecture.
               </p>
             </div>
@@ -2811,60 +2907,62 @@
               >
             </div>
           </div>
+
           <div class="pcard-body">
             <div class="pcol">
               <div class="pclabel">Problem · Solution</div>
+
               <p class="ptext">
-                <strong>Problem.</strong> One storefront platform needed to
-                power multiple distinctly-branded customer apps plus a merchant
-                console - different icons, splash screens, bundle IDs, Firebase
-                projects, and env vars per brand. The typical fix - duplicating
-                codebases - is a maintenance trap that scales linearly with
-                brand count.
+                <strong>Problem.</strong> Needed to ship multiple branded apps
+                (distinct assets, configs, Firebase setups) sharing one core
+                business logic. Separate codebases would mean duplication,
+                inconsistency, and high maintenance overhead.
               </p>
+
               <p class="ptext">
-                <strong>Solution.</strong>
-                <strong>Flavorizr-driven multi-flavor architecture.</strong>
-                Each flavor declares its own complete configuration. GetIt
-                injects the correct config object at startup. The flavor
-                boundary sits at <strong>config-injection</strong> -
-                <strong
-                  >zero conditional logic inside business or UI code</strong
-                >.
+                <strong>Solution.</strong> Built a
+                <strong>multi-flavor architecture</strong> with Flavorizr — each
+                brand defines its own config (assets, env vars, Firebase) atop
+                one codebase. GetIt DI loads the right config at runtime.
               </p>
+
+              <p class="ptext">
+                Hybrid state: <strong>BLoC/Cubit</strong> for core flows (cart,
+                checkout, orders), <strong>Provider</strong> for lightweight
+                modules — scalability where it matters, simplicity where it
+                doesn't.
+              </p>
+
               <div class="pcallout">
-                <strong>Result:</strong> adding a new brand is a
-                <strong>configuration task, not a code task</strong>. The core
-                app is brand-agnostic by design - the same binary logic ships as
-                every storefront.
+                <strong>Key decision:</strong> separate brand config from
+                business logic — new brands ship without touching core code.
               </div>
             </div>
+
             <div class="pcol">
               <div class="pclabel a">My Role · Impact</div>
+
               <p class="ptext">
-                <strong>Role.</strong> Sole architect of the multi-flavor
-                system. Built Markatty Vendor end-to-end (order management,
-                analytics, auth, geolocator features, secure merchant storage)
-                and shipped the shared customer-app core.
+                <strong>Role.</strong> Flutter Developer on both customer and
+                vendor apps — features, architecture, and multi-flavor setup.
               </p>
+
               <p class="ptext">
-                <strong>Impact.</strong> Multiple branded storefronts live from
-                one codebase - duplicate codebases eliminated entirely. Hybrid
-                state strategy applied deliberately:
-                <strong>BLoC for complex domains</strong> (cart, checkout,
-                orders), Provider for lightweight local state. BLoC everywhere
-                adds overhead on simple flows; Provider on checkout sacrifices
-                testability - one tool for every job is a bad default.
+                <strong>Impact.</strong> Multiple branded apps from one codebase
+                — less duplication, easier maintenance. Delivered core commerce
+                (products, cart, checkout, orders) and vendor tools (order
+                management, dashboards).
               </p>
+
               <div class="pstack">
-                <span class="ptag h">Flavorizr</span
-                ><span class="ptag h">Multi-flavor Arch</span
-                ><span class="ptag">BLoC + Provider</span
-                ><span class="ptag">Firebase Multi-project</span
-                ><span class="ptag">Dio + Retrofit</span
-                ><span class="ptag">GetIt</span
-                ><span class="ptag">Geolocator</span
-                ><span class="ptag">Sqflite</span>
+                <span class="ptag h">Flavorizr</span>
+                <span class="ptag h">Multi-flavor Arch</span>
+                <span class="ptag">BLoC + Provider</span>
+                <span class="ptag">Firebase Suite</span>
+                <span class="ptag">Dio + Retrofit</span>
+                <span class="ptag">GetIt</span>
+                <span class="ptag">Sqflite</span>
+                <span class="ptag">ScreenUtil</span>
               </div>
             </div>
           </div>
@@ -2875,12 +2973,11 @@
             <div>
               <div class="pdomain df">Fashion E-Commerce · 3D Viewer</div>
               <h3 class="pcard-title">
-                La Mode <em>- Fashion Platform with 3D Product Preview</em>
+                La Mode <em>- Fashion E-Commerce App</em>
               </h3>
               <p class="pcard-desc">
-                End-to-end fashion shopping experience built from scratch - OTP
-                auth, interactive 3D product visualisation, complete checkout
-                flows, full Arabic/English RTL localisation.
+                Fashion e-commerce app built from scratch — 3D product
+                visualization, full shopping flows, Arabic/English localization.
               </p>
             </div>
             <div class="plinks">
@@ -2892,56 +2989,59 @@
               >
             </div>
           </div>
+
           <div class="pcard-body">
             <div class="pcol">
               <div class="pclabel">Problem · Solution</div>
+
               <p class="ptext">
-                <strong>Problem.</strong> A fashion app with
-                <strong>interactive 3D product previews</strong> (GLTF/GLB via
-                <code class="ic">model_viewer_plus</code>) has a memory problem:
-                3D assets are heavy, and browsing multiple products without an
-                explicit disposal strategy exhausts memory progressively until
-                the app chokes.
+                <strong>Problem.</strong> Modern fashion commerce required full
+                shopping flows (auth, cart, checkout, orders) alongside heavy
+                <strong>interactive 3D product previews</strong> — costly on
+                performance and memory if mishandled.
               </p>
+
               <p class="ptext">
-                <strong>Solution.</strong> Lazy-load with
-                <strong>explicit disposal</strong>. The 3D model initializes
-                only when the product detail screen is active and is disposed
-                immediately on pop. Combined with Shimmer placeholders, the
-                experience feels instant without holding assets between screens.
-                RTL handled once at the app root via MainCubit - no screen-level
-                locale logic.
+                <strong>Solution.</strong> Full commerce flow on Clean
+                Architecture + BLoC. 3D visualization via
+                <code class="ic">model_viewer_plus</code> with controlled
+                lifecycle handling for smooth performance.
               </p>
+
+              <p class="ptext">
+                Hive local caching for speed; Lottie animations, Shimmer loading
+                states, and responsive UI across devices.
+              </p>
+
               <div class="pcallout">
-                <strong>Persistence:</strong> Hive provides an
-                <strong>offline-capable product cache</strong> - browsed items
-                survive app restart. Clean Architecture with BLoC for core flows
-                (auth, cart, orders, promo codes); Provider for lightweight
-                local state.
+                <strong>Key decision:</strong> rich UI (3D, animations) on
+                structured architecture — performance without UX compromise.
               </div>
             </div>
+
             <div class="pcol">
               <div class="pclabel a">My Role · Impact</div>
+
               <p class="ptext">
-                <strong>Role.</strong> Personal open-source project. Full
-                ownership - architecture, 3D integration, state management, RTL
-                localization, offline cache, and GitHub release.
+                <strong>Role.</strong> Sole Flutter developer — architecture,
+                features, and UI built from scratch.
               </p>
+
               <p class="ptext">
-                <strong>Impact.</strong> Production-grade 3D product viewer with
-                memory-safe lifecycle. Full Arabic + English RTL from day one.
-                Offline browsing via Hive. Codebase serves as a
-                <strong>reference implementation of Clean Architecture</strong>
-                in a consumer-facing Flutter app.
+                <strong>Impact.</strong> Shipped a complete shopping experience
+                — auth, discovery, cart, checkout, orders. 3D previews raised
+                product visualization and engagement.
               </p>
+
               <div class="pstack">
-                <span class="ptag h">model_viewer_plus</span
-                ><span class="ptag h">3D Asset Rendering</span
-                ><span class="ptag">BLoC + Provider</span
-                ><span class="ptag">Hive</span><span class="ptag">Dio</span
-                ><span class="ptag">Firebase Messaging</span
-                ><span class="ptag">ScreenUtil</span
-                ><span class="ptag">Lottie</span>
+                <span class="ptag h">3D Viewer</span>
+                <span class="ptag h">model_viewer_plus</span>
+                <span class="ptag">BLoC + Provider</span>
+                <span class="ptag">Hive</span>
+                <span class="ptag">Dio</span>
+                <span class="ptag">Firebase Messaging</span>
+                <span class="ptag">ScreenUtil</span>
+                <span class="ptag">Lottie</span>
               </div>
             </div>
           </div>
@@ -2950,17 +3050,13 @@
         <div class="pcard reveal">
           <div class="pcard-top">
             <div>
-              <div class="pdomain de">
-                Fintech · Social Payments · Freelance
-              </div>
+              <div class="pdomain de">Fintech · Performance · Freelance</div>
               <h3 class="pcard-title">
-                Slash Hub <em>- Refactor &amp; Performance Engineering</em>
+                Slash <em>- Refactor & Performance Engineering</em>
               </h3>
               <p class="pcard-desc">
-                Contributed to Slash Hub and Zaitoon - large-scale fintech
-                products - by refactoring legacy screens, improving runtime
-                performance, and migrating modules to a cleaner, more testable
-                architecture.
+                Large-scale fintech work — performance, legacy refactors, and UX
+                improvements.
               </p>
             </div>
             <div class="plinks">
@@ -2978,60 +3074,52 @@
               >
             </div>
           </div>
+
           <div class="pcard-body">
             <div class="pcol">
               <div class="pclabel">Problem · Solution</div>
+
               <p class="ptext">
-                <strong>Problem.</strong> An existing large-scale fintech
-                codebase with slow screens, inconsistent layouts, and feature
-                modules that resisted testing. The brief wasn't "add features" -
-                it was <strong>restore engineering health</strong> without
-                long-lived branches or staging-only wins.
+                <strong>Problem.</strong> Modules suffered from slow
+                performance, inefficient UI rendering, and tight coupling — hard
+                to maintain and extend.
               </p>
+
               <p class="ptext">
-                <strong>Solution.</strong> Refactored legacy screens for
-                <strong>UI responsiveness and loading performance</strong>,
-                tightened widget trees, and removed unnecessary rebuilds.
-                Migrated feature modules into
-                <strong>Clean Architecture with Cubit</strong> - replacing
-                ad-hoc state with explicit, testable state machines. Built new
-                features on REST + Firebase consistent with existing
-                conventions;
-                <strong>no new abstractions where none were needed</strong>.
+                <strong>Solution.</strong> Refactored legacy screens to cut
+                unnecessary rebuilds and speed up rendering. Restructured
+                feature modules on Clean Architecture + Cubit for testable
+                state.
               </p>
+
               <div class="pcallout">
-                <strong>Working mode:</strong> freelance contributor integrated
-                with product and design teams via Figma, Jira, and Trello.
-                <strong
-                  >Small, reviewed PRs against a shared codebase used by real
-                  users.</strong
-                >
-                Every change shipped through a real release.
+                <strong>Working approach:</strong> iterative, production-ready
+                changes integrated into existing team workflows.
               </div>
             </div>
+
             <div class="pcol">
               <div class="pclabel a">My Role · Impact</div>
+
               <p class="ptext">
-                <strong>Role.</strong> Freelance Flutter contributor on Slash
-                Hub and Zaitoon - refactor, performance engineering, and
-                architecture migration alongside the in-house team.
+                <strong>Role.</strong> Freelance Flutter Developer —
+                performance, refactoring, features.
               </p>
+
               <p class="ptext">
-                <strong>Impact.</strong> Legacy screens migrated to Clean
-                Architecture + Cubit with visible improvements to runtime
-                responsiveness and rebuild count. Presentation layers stripped
-                of business logic; Domain became the source of truth. Shipped
-                through normal release trains - no parallel universes, no
-                rollback risk.
+                <strong>Impact.</strong> Improved UI responsiveness and app
+                performance; moved parts of the codebase to a cleaner, more
+                maintainable architecture.
               </p>
+
               <div class="pstack">
-                <span class="ptag h">Clean Architecture</span
-                ><span class="ptag h">Cubit (BLoC)</span
-                ><span class="ptag h">Performance Refactor</span
-                ><span class="ptag">REST APIs</span
-                ><span class="ptag">Firebase</span
-                ><span class="ptag">Figma</span><span class="ptag">Jira</span
-                ><span class="ptag">Agile</span>
+                <span class="ptag h">Clean Architecture</span>
+                <span class="ptag h">Cubit (BLoC)</span>
+                <span class="ptag h">Performance</span>
+                <span class="ptag">REST APIs</span>
+                <span class="ptag">Firebase</span>
+                <span class="ptag">Figma</span>
+                <span class="ptag">Jira</span>
               </div>
             </div>
           </div>
@@ -3044,9 +3132,8 @@
         <div class="slabel">Full Portfolio</div>
         <h2 class="stitle">All Shipped Apps</h2>
         <p class="ssub">
-          Every production app I've shipped - live on App Store and Google Play.
-          Each one maintained through real users, real reviews, and real release
-          cycles.
+          Every production app I've shipped. Live on App Store and Google Play —
+          real users, real reviews, real release cycles.
         </p>
         <div class="apps-grid">
           <div class="appc reveal">
@@ -3059,8 +3146,8 @@
             </div>
             <span class="appc-domain da">E-Commerce · Auction</span>
             <p class="appc-desc">
-              KSA marketplace with live bidding, Apple Pay, Tabby, Tamara,
-              real-time chat, and a promotional coins wallet system.
+              KSA marketplace — live bidding, Apple Pay, Tabby, Tamara,
+              real-time chat, and a promotional coins wallet.
             </p>
             <div class="appc-links">
               <a
@@ -3088,8 +3175,8 @@
             </div>
             <span class="appc-domain da">E-Commerce · B2B</span>
             <p class="appc-desc">
-              Vendor-side Flutter app for Soldout merchants - dashboard, orders,
-              products, wallet, and transaction history.
+              Merchant app for Soldout — dashboard, orders, products, wallet,
+              transaction history.
             </p>
             <div class="appc-links">
               <a
@@ -3111,7 +3198,7 @@
             </div>
             <span class="appc-domain de">Real Estate · UAE PASS</span>
             <p class="appc-desc">
-              Property management platform with UAE PASS government auth, cheque
+              Property management with UAE PASS government auth, cheque
               workflows, invoices, and real-time socket updates.
             </p>
             <div class="appc-links">
@@ -3134,8 +3221,8 @@
             </div>
             <span class="appc-domain dec">E-Commerce · Multi-flavor</span>
             <p class="appc-desc">
-              Bagisto-backed multi-brand storefront using Flavorizr - one
-              codebase powering multiple distinctly-branded apps.
+              Bagisto-backed multi-brand storefront on Flavorizr — one codebase,
+              many branded apps.
             </p>
             <div class="appc-links">
               <a
@@ -3157,8 +3244,8 @@
             </div>
             <span class="appc-domain dec">E-Commerce · B2B</span>
             <p class="appc-desc">
-              Merchant-facing app with order management, analytics dashboard,
-              media uploads, and location-aware features.
+              Merchant app — order management, analytics dashboard, media
+              uploads, location-aware features.
             </p>
             <div class="appc-links">
               <a
@@ -3180,8 +3267,8 @@
             </div>
             <span class="appc-domain df">Healthcare · Pharmacy</span>
             <p class="appc-desc">
-              Branded pharmacy storefront built on the Markatty multi-flavor
-              system - full prescription and order flows.
+              Branded pharmacy on the Markatty multi-flavor system — full
+              prescription and order flows.
             </p>
             <div class="appc-links">
               <a
@@ -3209,8 +3296,8 @@
             </div>
             <span class="appc-domain da">E-Commerce · Retail</span>
             <p class="appc-desc">
-              Full-featured shopping app with catalog browsing, cart, checkout,
-              and delivery tracking across Egypt.
+              Shopping app across Egypt — catalog, cart, checkout, delivery
+              tracking.
             </p>
             <div class="appc-links">
               <a
@@ -3238,8 +3325,8 @@
             </div>
             <span class="appc-domain de">Fintech · Social Payments</span>
             <p class="appc-desc">
-              Contributed to performance, UI, and architecture refactors on a
-              large-scale fintech/social product.
+              Performance, UI, and architecture refactors on a large-scale
+              fintech/social product.
             </p>
             <div class="appc-links">
               <a
@@ -3267,8 +3354,8 @@
             </div>
             <span class="appc-domain df">Healthcare · Telemedicine</span>
             <p class="appc-desc">
-              US-based pharmacy app with medicine ordering, prescription
-              management, and secure auth + push notifications.
+              US pharmacy app — medicine ordering, prescriptions, secure auth,
+              push notifications.
             </p>
             <div class="appc-links">
               <a
@@ -3296,8 +3383,8 @@
             </div>
             <span class="appc-domain df">Healthcare · Pharmacy</span>
             <p class="appc-desc">
-              Compounding pharmacy app with specialized prescription workflows
-              and secure medical data handling.
+              Compounding pharmacy — specialized prescription workflows and
+              secure medical data handling.
             </p>
             <div class="appc-links">
               <a
@@ -3325,8 +3412,8 @@
             </div>
             <span class="appc-domain df">Healthcare · Pharmacy</span>
             <p class="appc-desc">
-              Fast prescription ordering with secure authentication, refill
-              automation, and real-time order tracking.
+              Prescription ordering — secure auth, refill automation, real-time
+              order tracking.
             </p>
             <div class="appc-links">
               <a
@@ -3354,8 +3441,8 @@
             </div>
             <span class="appc-domain df">Healthcare · Pharmacy</span>
             <p class="appc-desc">
-              US retail pharmacy app with prescription management, store
-              locator, and secure patient workflows.
+              US retail pharmacy — prescriptions, store locator, secure patient
+              workflows.
             </p>
             <div class="appc-links">
               <a
@@ -3383,8 +3470,8 @@
             </div>
             <span class="appc-domain df">Fashion · 3D Viewer</span>
             <p class="appc-desc">
-              Fashion e-commerce app with interactive 3D product visualization,
-              full Clean Architecture, and RTL support.
+              Fashion e-commerce — interactive 3D product visualization, Clean
+              Architecture, RTL support.
             </p>
             <div class="appc-links">
               <a
@@ -3406,12 +3493,12 @@
             </div>
             <span class="appc-domain dec">Oculus Quest 2 · Unity · AI</span>
             <p class="appc-desc">
-              Immersive VR ancient Egypt experience on Oculus Quest 2 - Unity +
-              Blender + OpenAI chatbot guide. Featured in national press.
+              Immersive VR ancient Egypt on Oculus Quest 2 — Unity, Blender,
+              OpenAI chatbot guide. Featured in national press.
             </p>
             <div class="appc-links">
               <a
-                href="https://www.cairo24.com/1806628"
+                href="https://www.linkedin.com/posts/emanpepars_graduationproject-flutter-metaphrase-activity-7083841219218280448-SwXM?utm_source=share&utm_medium=member_desktop&rcm=ACoAADeq4-oB_PaxAi4_JEfcNbo4kv_frWyXen0"
                 target="_blank"
                 class="appc-link"
                 >▸ Press</a
@@ -3427,77 +3514,67 @@
         <div class="slabel">Engineering Philosophy</div>
         <h2 class="stitle">How I Think</h2>
         <p class="ssub">
-          Principles applied consistently across every project - not preferences
-          that shift per client.
+          Consistent engineering principles across every project — not shifting
+          preferences.
         </p>
+
         <div class="appr-grid">
           <div class="appr-cell reveal">
             <span class="appr-num">01</span>
             <h3 class="appr-title">Architecture First</h3>
             <p class="appr-body">
-              Every project uses
-              <strong>Clean Architecture with three explicit layers</strong>.
-              Business logic belongs in Domain - always. The Presentation layer
-              contains nothing a stakeholder would care about. This determines
-              whether the app is maintainable in year two or needs a rewrite.
+              Clean Architecture with strict separation of Domain, Data, and
+              Presentation. Business logic never leaks into UI. Maintainability
+              is decided here, not later.
             </p>
           </div>
+
           <div class="appr-cell reveal d1">
             <span class="appr-num">02</span>
-            <h3 class="appr-title">State Management with Intent</h3>
+            <h3 class="appr-title">State with Intent</h3>
             <p class="appr-body">
-              <strong>BLoC/Cubit for complex domains</strong> - explicit state
-              machines make bugs visible and tests straightforward. Provider for
-              simple local state. The mistake is one tool everywhere: BLoC on a
-              form toggle buys nothing; Provider on a checkout loses
-              auditability.
+              BLoC/Cubit for complex flows. Provider for simple UI state.
+              Riverpod when scalable dependency control and async handling
+              matter. One tool for everything is a mistake.
             </p>
           </div>
+
           <div class="appr-cell reveal d2">
             <span class="appr-num">03</span>
-            <h3 class="appr-title">Real-Time as a State Machine</h3>
+            <h3 class="appr-title">Dependency Injection</h3>
             <p class="appr-body">
-              Socket.IO events are <strong>state transitions</strong>, not data
-              updates. A bid event may invalidate the cart, reset a countdown,
-              and emit a notification simultaneously. Each effect is handled in
-              Domain as a side-effect chain - not in the widget. This prevents
-              UI thrashing.
+              Dependencies are injected, never created inside logic layers —
+              delivering testability, loose coupling, and safe replacement
+              without breaking domain rules.
             </p>
           </div>
+
           <div class="appr-cell reveal">
             <span class="appr-num">04</span>
-            <h3 class="appr-title">Type-Safe API Layers</h3>
+            <h3 class="appr-title">Real-Time Systems</h3>
             <p class="appr-body">
-              <strong>Dio + Retrofit + JSON code generation</strong> makes the
-              API contract compile-time safe. Manual JSON parsing is a class of
-              bugs that only surface in production when the backend changes a
-              field name. Code generation turns runtime bugs into compile-time
-              errors.
+              Socket events are treated as state transitions. Every event
+              triggers controlled side-effects in Domain, not UI, ensuring
+              consistency under concurrent updates.
             </p>
           </div>
+
           <div class="appr-cell reveal d1">
             <span class="appr-num">05</span>
-            <h3 class="appr-title">GCC Market Expertise</h3>
+            <h3 class="appr-title">Type-Safe APIs</h3>
             <p class="appr-body">
-              Shipping for GCC is not an Arabic translation file. It requires
-              <strong
-                >UAE PASS flows, BNPL providers (Tabby, Tamara), and platform
-                compliance</strong
-              >
-              for Saudi/UAE stores. Arabic strings can be 1.3–1.6× longer than
-              English - RTL layouts must be designed for it from day one.
+              Dio + Retrofit + code generation eliminate runtime API bugs by
+              moving failures to compile time. Backend contract changes never
+              silently break production.
             </p>
           </div>
+
           <div class="appr-cell reveal d2">
             <span class="appr-num">06</span>
-            <h3 class="appr-title">End-to-End Ownership</h3>
+            <h3 class="appr-title">GCC-Ready Delivery</h3>
             <p class="appr-body">
-              I don't hand off to DevOps for deployment. Every project:
-              <strong
-                >CI/CD, App Store Connect, Play Store staged rollouts, code
-                signing, release versioning</strong
-              >. Architectural decisions interact with deployment constraints -
-              knowing both means I don't design systems that can't be shipped.
+              UAE/Saudi production standards: government auth, BNPL, RTL-first
+              UI, and CI/CD ownership from build to store release.
             </p>
           </div>
         </div>
@@ -3509,8 +3586,8 @@
         <div class="slabel">Work History</div>
         <h2 class="stitle">Experience</h2>
         <p class="ssub">
-          Four companies. All production. Full ownership at every stage - from
-          architecture through App Store / Google Play deployment.
+          Four companies. All production. Full ownership from architecture
+          through App Store / Google Play deployment.
         </p>
         <div class="exp-timeline">
           <div class="exp-item reveal">
@@ -3522,25 +3599,22 @@
             <ul class="exp-pts">
               <li>
                 Built both
-                <strong
-                  >customer marketplace app and vendor management app</strong
-                >
-                from feature development through App Store and Play Store
-                deployment.
+                <strong>customer marketplace and vendor management apps</strong>
+                — features through App Store and Play Store release.
               </li>
               <li>
                 Engineered a <strong>live auction system</strong> with
-                concurrent state isolation using independent Cubit domains,
+                concurrent state isolation via independent Cubit domains,
                 Socket.IO real-time events, and time-based winning logic.
               </li>
               <li>
-                Integrated Apple Pay, Tabby, and Tamara within a unified
-                checkout abstraction - UI layer is payment-provider agnostic.
+                Integrated Apple Pay, Tabby, and Tamara behind a unified
+                checkout abstraction — UI stays payment-provider agnostic.
               </li>
               <li>
                 Built a
-                <strong>promotional coins and referral wallet</strong> modeled
-                as immutable value objects for auditable transaction history.
+                <strong>promotional coins and referral wallet</strong> as
+                immutable value objects for auditable transaction history.
               </li>
             </ul>
           </div>
@@ -3560,18 +3634,17 @@
               <li>
                 Sole architect of a
                 <strong>multi-flavor system</strong> powering multiple branded
-                storefronts from a single codebase via Flavorizr - per-brand
-                Firebase configs, icons, bundle IDs, and env variables.
+                storefronts from one codebase via Flavorizr — per-brand Firebase
+                configs, icons, bundle IDs, and env variables.
               </li>
               <li>
                 Built Markatty Vendor end-to-end: order management, analytics,
-                authentication, geolocator features, and secure merchant
-                storage.
+                auth, geolocator features, and secure merchant storage.
               </li>
               <li>
                 Applied <strong>hybrid state management</strong> (BLoC for core
-                flows, Provider for lightweight modules) as a deliberate
-                architectural choice per domain complexity.
+                flows, Provider for lightweight modules) — a deliberate choice
+                per domain complexity.
               </li>
             </ul>
           </div>
@@ -3589,21 +3662,21 @@
             </div>
             <ul class="exp-pts">
               <li>
-                Owned <strong>full lifecycle development</strong> for multiple
-                Flutter apps - <strong>Beneshty, Zebra, and La Jolie</strong> -
-                leading architecture (Clean Architecture + Cubit), API
-                integration, and cross-platform releases.
+                Owned <strong>full lifecycle development</strong> for
+                <strong>Beneshty, Zebra, and La Jolie</strong> — architecture
+                (Clean Architecture + Cubit), API integration, and
+                cross-platform releases.
               </li>
               <li>
                 Built a
                 <strong>modular UI component library and theming system</strong>
-                for La Jolie (cosmetics e-commerce) - making brand customisation
-                a configuration problem, not a code problem.
+                for La Jolie (cosmetics e-commerce) — brand customisation as a
+                config problem, not a code problem.
               </li>
               <li>
-                Integrated Firebase notifications, Google Maps, and REST APIs
-                with a GetIt-based DI structure, collaborating directly with
-                business owners.
+                Integrated Firebase notifications, Google Maps, and REST APIs on
+                a GetIt-based DI structure, collaborating directly with business
+                owners.
               </li>
             </ul>
           </div>
@@ -3621,20 +3694,18 @@
             </div>
             <ul class="exp-pts">
               <li>
-                Developed and maintained
+                Shipped and maintained
                 <strong>four production healthcare apps</strong> (J&D Pharmacy,
-                Medical Compounding, Quick RX, Holland Pharmacy) for US and
+                Medical Compounding, Quick RX, Holland Pharmacy) across US and
                 Middle East markets.
               </li>
               <li>
-                Managed the full app lifecycle: testing, debugging, and
-                deployment to both App Store and Google Play in a sensitive
-                healthcare context.
+                Owned the full lifecycle — testing, debugging, and App Store /
+                Google Play deployment in a sensitive healthcare context.
               </li>
               <li>
-                Built secure and scalable API integrations with REST, handled
-                push notifications, and ensured reliability across Android and
-                iOS.
+                Built secure, scalable REST integrations, handled push
+                notifications, and ensured reliability across Android and iOS.
               </li>
             </ul>
           </div>
@@ -3649,53 +3720,19 @@
         <div class="about-layout">
           <div class="about-body reveal">
             <p>
-              <strong
-                >Flutter Developer specializing in scalable production mobile
-                apps, Clean Architecture, and performance optimization.</strong
-              >
-              Based in Dubai. <strong>13+ apps shipped</strong> across GCC,
-              MENA, and the US - e-commerce, live auctions, real estate,
-              healthcare, fashion - live on the App Store and Google Play right
-              now.
+              <strong>Flutter Developer based in Dubai.</strong> I've shipped
+              paired <strong>vendor and customer apps</strong> for two live
+              marketplaces, plus products across healthcare, real estate, and
+              fashion.
             </p>
             <p>
-              I own the <strong>full lifecycle</strong> on every project:
-              architecture, implementation, CI/CD, App Store Connect, Play
-              Console rollouts, code signing, release versioning. I don't hand
-              off to DevOps to ship. Architectural decisions interact with
-              deployment constraints - knowing both means I don't design systems
-              that can't be released.
+              I own every release end-to-end. Architecture and deployment are
+              the same problem — I don't design systems that can't ship.
             </p>
             <p>
-              I apply
-              <strong
-                >Clean Architecture (Presentation / Domain / Data) with
-                BLoC/Cubit</strong
-              >
-              as a consistent standard - not a preference that shifts per
-              client. BLoC where state-machine complexity justifies it; Provider
-              where it doesn't. One tool for every job is a bad default.
-            </p>
-            <p>
-              I've shipped both <strong>vendor and customer apps</strong> for
-              two live marketplace platforms, integrated
-              <strong>UAE PASS government-grade authentication</strong>,
-              implemented GCC-native BNPL (<strong>Tabby, Tamara</strong>) and
-              <strong>Apple Pay</strong>, architected a
-              <strong>Flavorizr multi-flavor system</strong> powering multiple
-              branded storefronts from one codebase, and built real-time auction
-              mechanics on Socket.IO with isolated Cubit domains. Full
-              <strong>Arabic / English RTL</strong> is baseline on every app -
-              designed for from day one, not translated later.
-            </p>
-            <p>
-              Academic background:
-              <strong>Computer Science with AI specialisation</strong> (Cairo
-              University, 2019 – 2023, GPA 3/4). Graduation project
-              <strong>MetaPharaoh</strong> - an award-recognised immersive VR
-              ancient-Egypt educational experience on Oculus Quest 2 (Unity +
-              Blender + OpenAI chatbot guide + Google Maps) - featured in
-              national press.
+              <strong>BSc Computer Science with AI specialisation</strong> —
+              Cairo University, 2019–2023, GPA 3/4. Graduation project
+              <strong>MetaPharaoh</strong> — featured in national press.
             </p>
           </div>
           <div class="about-card reveal d2">
