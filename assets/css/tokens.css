@@ -1,0 +1,78 @@
+/* =============================================================
+   Design Tokens
+   Single source of truth for colors, typography, spacing, shadows.
+   Anything used in more than one place lives here.
+   ============================================================= */
+
+/* Cascade order: later layers win over earlier ones, regardless of source order. */
+@layer tokens, base, layout, components, sections, responsive;
+
+@layer tokens {
+  :root {
+    color-scheme: dark;
+
+    /* ---- Surfaces ---- */
+    --bg-primary: #070a13;       /* page background */
+    --bg-card: #090e1a;          /* card surface */
+    --bg-secondary: #151b28;     /* section / elevated */
+    --border-default: #212631;   /* default border */
+    --border-strong: #2d3443;    /* hover / emphasis */
+    --border-extra: #3b4454;
+
+    /* ---- Typography ---- */
+    --text-primary: #f1f5f9;
+    --text-muted: #7588a3;
+    --text-subtle: #576375;
+
+    /* ---- Accents ---- */
+    --accent: #1f8fff;            /* cursor / focus ring */
+    --accent-blue: #3b82f6;       /* primary brand */
+    --accent-cyan: #22d3ee;       /* secondary brand */
+    --accent-amber: #f59e0b;      /* fashion domain */
+    --accent-lime: #22d3ee;       /* "available" indicator (semantic alias) */
+
+    /* ---- Surfaces (translucent) ---- */
+    --accent-tint: rgba(59, 130, 246, 0.08);
+    --glass-elevated: rgba(255, 255, 255, 0.04);
+    --glow-subtle: rgba(59, 130, 246, 0.05);
+
+    /* ---- Gradients ---- */
+    --grad-primary: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+    --grad-text:    linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #22d3ee 100%);
+
+    /* ---- Shadows ---- */
+    --shadow-depth:
+      0 4px 24px rgba(0, 0, 0, 0.5),
+      0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-lift:
+      0 20px 48px rgba(0, 0, 0, 0.6),
+      0 6px 16px rgba(0, 0, 0, 0.4);
+    --shadow-soft-glow:
+      0 0 20px rgba(59, 130, 246, 0.15),
+      0 0 60px rgba(59, 130, 246, 0.05);
+    --shadow-medium-glow:
+      0 0 30px rgba(59, 130, 246, 0.25),
+      0 0 80px rgba(59, 130, 246, 0.10);
+    --shadow-inset-light:        inset 0 1px 0 rgba(255, 255, 255, 0.20);
+    --shadow-inset-light-strong: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    /* ---- Radius scale ---- */
+    --radius-md: 0.625rem;       /* buttons */
+    --radius-lg: 0.75rem;        /* cards */
+    --radius-xl: 1rem;           /* large cards */
+    --radius-pill: 9999px;
+
+    /* ---- Motion ---- */
+    --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ---- Font families ---- */
+    --font-display:
+      "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    --font-body:
+      "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, sans-serif;
+    --font-mono:
+      "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+}

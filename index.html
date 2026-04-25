@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ============================================================
+         Meta
+         ============================================================ -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Eman Pepars - Flutter Engineer · Dubai</title>
+    <title>Eman Pepars — Flutter Engineer · Dubai</title>
     <meta
       name="description"
-      content="Flutter Software Engineer based in Dubai. 4+ years shipping production apps across GCC & MENA - e-commerce, real estate, healthcare."
+      content="Flutter Software Engineer based in Dubai. 4+ years shipping production apps across GCC & MENA — e-commerce, real estate, healthcare."
     />
     <meta name="author" content="Eman Pepars" />
     <meta name="theme-color" content="#070A13" />
@@ -24,2174 +27,56 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%23070A13'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-weight='800' font-size='15' fill='url(%23g)'%3EEP%3C/text%3E%3C/svg%3E"
     />
+
+    <!-- Social cards -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://emanpepars.github.io/portfolio/" />
-    <meta property="og:title" content="Eman Pepars - Flutter Engineer" />
+    <meta property="og:title" content="Eman Pepars — Flutter Engineer" />
     <meta
       property="og:description"
-      content="4+ years shipping production Flutter apps across GCC & MENA. Clean Architecture + BLoC as a consistent standard - not a preference."
+      content="4+ years shipping production Flutter apps across GCC & MENA. Clean Architecture + BLoC as a consistent standard — not a preference."
     />
     <meta property="og:site_name" content="Eman Pepars" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Eman Pepars - Flutter Engineer" />
+    <meta name="twitter:title" content="Eman Pepars — Flutter Engineer" />
     <meta
       name="twitter:description"
       content="Flutter Engineer · Dubai · 4+ years shipping production apps across GCC & MENA."
     />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      :root {
-        /* ========== DESIGN TOKENS (exact extraction from karimegaber.github.io) ========== */
-        /* Surfaces - hsl(222, 47-30%, 5-16%) */
-        --bg-primary: #070a13; /* hsl(222 47% 5%)  page background */
-        --bg-card: #090e1a; /* hsl(222 47% 7%)  card surface */
-        --bg-secondary: #151b28; /* hsl(222 30% 12%) section / elevated */
-        --bg-muted: #191f2e; /* hsl(222 30% 14%) muted surface */
-        --border-default: #212631; /* hsl(222 20% 16%) default border */
-        --border-strong: #2d3443; /* hsl(222 20% 22%) hover / emphasis */
 
-        /* Typography */
-        --text-primary: #f1f5f9; /* hsl(210 40% 96%) foreground */
-        --text-muted: #7588a3; /* hsl(215 20% 55%) muted-foreground */
-        --text-subtle: #576375; /* hsl(215 15% 40%) tertiary labels */
-        --silver: #b6bfc9; /* hsl(210 15% 75%) silver highlight */
-
-        /* Accent - electric blue */
-        --accent: #1f8fff; /* hsl(210 100% 56%) primary / ring */
-        --accent-blue: #3b82f6; /* signature gradient stop A */
-        --accent-cyan: #22d3ee; /* signature gradient stop B */
-        --accent-cyan-deep: #06b6d4;
-
-        /* Glow values (exact alphas from Karim's shadows) */
-        --glow: rgba(59, 130, 246, 0.25); /* #3b82f640 */
-        --glow-soft: rgba(59, 130, 246, 0.15); /* #3b82f626 */
-        --glow-subtle: rgba(59, 130, 246, 0.05); /* #3b82f60d */
-        --glow-faint: rgba(59, 130, 246, 0.1); /* #3b82f61a */
-        --accent-tint: rgba(59, 130, 246, 0.08); /* subtle accent wash */
-
-        /* Signature gradient (exact stops from Karim CSS) */
-        --grad-primary: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
-        --grad-primary-reverse: linear-gradient(
-          135deg,
-          #22d3ee 0%,
-          #3b82f6 100%
-        );
-        --grad-text: linear-gradient(
-          135deg,
-          #3b82f6 0%,
-          #60a5fa 50%,
-          #22d3ee 100%
-        );
-        --grad-bg-ambient: radial-gradient(
-          ellipse at top right,
-          rgba(59, 130, 246, 0.12) 0%,
-          transparent 50%
-        );
-
-        /* Shadow system (Karim's exact glow formulas) */
-        --shadow-soft-glow:
-          0 0 20px rgba(59, 130, 246, 0.15), 0 0 60px rgba(59, 130, 246, 0.05);
-        --shadow-medium-glow:
-          0 0 30px rgba(59, 130, 246, 0.25), 0 0 80px rgba(59, 130, 246, 0.1);
-        --shadow-depth:
-          0 4px 24px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
-        --shadow-lift:
-          0 20px 48px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(0, 0, 0, 0.4);
-
-        /* Radius scale (--radius: 0.75rem base) */
-        --r-xs: 0.25rem; /* 4px  small chips */
-        --r-sm: 0.5rem; /* 8px  --radius - 4px */
-        --r-md: 0.625rem; /* 10px --radius - 2px  (buttons) */
-        --r-lg: 0.75rem; /* 12px --radius        (cards) */
-        --r-xl: 1rem; /* 16px larger cards */
-        --r-pill: 9999px;
-
-        /* ---- LEGACY ALIASES (keep existing selectors working) ---- */
-        --bg: var(--bg-primary);
-        --bg2: var(--bg-card);
-        --bg3: var(--bg-secondary);
-        --bg4: var(--bg-muted);
-        --glass: rgba(255, 255, 255, 0.02);
-        --glass2: rgba(255, 255, 255, 0.04);
-        --b1: var(--border-default);
-        --b2: var(--border-strong);
-        --b3: #3b4454;
-        --t1: var(--text-primary);
-        --t2: var(--text-muted);
-        --t3: var(--text-subtle);
-        --acc: var(--accent-blue);
-        --acc2: var(--accent-cyan);
-        --acc3: #2563eb;
-        --accg: var(--glow);
-        --accg2: var(--accent-tint);
-        --lime: #22d3ee;
-        --coral: #f472b6;
-        --teal: #06b6d4;
-        --amber: #f59e0b;
-        --shadow-soft: var(--shadow-depth);
-        --shadow-glow: var(--shadow-medium-glow);
-        --syne:
-          "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        --body:
-          "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
-        --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      ::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--bg);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(59, 130, 246, 0.3);
-        border-radius: 10px;
-        border: 2px solid var(--bg-primary);
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--accent-blue);
-      }
-      body {
-        background:
-          radial-gradient(
-            ellipse 1000px 600px at 85% -5%,
-            rgba(59, 130, 246, 0.12) 0%,
-            transparent 55%
-          ),
-          radial-gradient(
-            ellipse 800px 400px at 10% 100%,
-            rgba(34, 211, 238, 0.08) 0%,
-            transparent 55%
-          ),
-          var(--bg-primary);
-        background-attachment: fixed;
-        color: var(--text-primary);
-        font-family: var(--body);
-        font-size: 16px;
-        line-height: 1.65;
-        letter-spacing: -0.005em;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
-        text-rendering: optimizeLegibility;
-        position: relative;
-      }
-      #cursor,
-      #cursor-ring {
-        display: none;
-      }
-      @media (hover: hover) and (pointer: fine) {
-        body {
-          cursor: none;
-        }
-        #cursor,
-        #cursor-ring {
-          display: block;
-        }
-      }
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
-        background-size: 80px 80px;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.6;
-        -webkit-mask-image: radial-gradient(
-          ellipse at center,
-          black 0%,
-          transparent 78%
-        );
-        mask-image: radial-gradient(
-          ellipse at center,
-          black 0%,
-          transparent 78%
-        );
-      }
-      section,
-      nav,
-      footer {
-        position: relative;
-        z-index: 1;
-      }
-      ::selection {
-        background: rgba(59, 130, 246, 0.35);
-        color: #fff;
-      }
-      #cursor {
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        background: var(--accent);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.2s,
-          height 0.2s;
-        mix-blend-mode: screen;
-        box-shadow: 0 0 20px rgba(31, 143, 255, 0.7);
-      }
-      #cursor-ring {
-        position: fixed;
-        width: 36px;
-        height: 36px;
-        border: 1px solid rgba(148, 163, 184, 0.5);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9998;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.2s,
-          height 0.2s,
-          border-color 0.2s;
-      }
-      nav {
-        position: fixed;
-        top: env(safe-area-inset-top);
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        padding: 0 48px;
-        padding-left: max(48px, env(safe-area-inset-left));
-        padding-right: max(48px, env(safe-area-inset-right));
-        height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: rgba(7, 10, 19, 0.75);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--border-default);
-        box-shadow:
-          0 1px 0 rgba(255, 255, 255, 0.02),
-          0 4px 24px rgba(0, 0, 0, 0.5);
-        line-height: 1;
-      }
-
-      /* iOS Safari safe-area + status-bar cover so the page's dark
-         background reads as a single bar behind the Dynamic Island.
-         Uses ::after so the grid pattern (::before) is preserved. */
-      body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: env(safe-area-inset-top);
-        background: var(--bg-primary);
-        z-index: 499;
-        pointer-events: none;
-      }
-      .logo {
-        font-family: var(--syne);
-        font-size: 15px;
-        font-weight: 800;
-        color: var(--t1);
-        text-decoration: none;
-        letter-spacing: -0.02em;
-        display: inline-flex;
-        align-items: center;
-        line-height: 1;
-      }
-      .logo span {
-        background: var(--grad-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-size: 20px;
-        margin-left: 1px;
-      }
-      .nav-center {
-        display: flex;
-        gap: 8px;
-      }
-      .nav-link {
-        font-family: var(--mono);
-        font-size: 11px;
-        color: var(--t2);
-        text-decoration: none;
-        padding: 7px 16px;
-        border-radius: 20px;
-        transition:
-          color 0.2s,
-          background 0.2s;
-        letter-spacing: 0.04em;
-        font-weight: 500;
-      }
-      .nav-link:hover {
-        color: var(--t1);
-        background: var(--glass2);
-      }
-      .nav-link.active {
-        color: var(--acc2);
-        background: var(--accg2);
-        font-weight: 600;
-      }
-      .nav-hire {
-        font-family: var(--syne);
-        font-size: 12px;
-        font-weight: 700;
-        color: #fff;
-        background: var(--grad-primary);
-        padding: 10px 22px;
-        border-radius: var(--r-md);
-        text-decoration: none;
-        letter-spacing: 0.02em;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        box-shadow:
-          var(--shadow-soft-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        display: inline-flex;
-        align-items: center;
-        line-height: 1;
-        white-space: nowrap;
-      }
-      .nav-hire:hover {
-        transform: translateY(-1px);
-        box-shadow:
-          var(--shadow-medium-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      }
-      .nav-toggle {
-        display: none;
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-md);
-        width: 40px;
-        height: 40px;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 0;
-        transition:
-          border-color 0.2s,
-          background 0.2s;
-      }
-      .nav-toggle:hover {
-        border-color: var(--accent-blue);
-        background: var(--bg-secondary);
-      }
-      .nav-toggle span {
-        position: relative;
-        width: 16px;
-        height: 1.5px;
-        background: var(--t1);
-        display: block;
-        transition:
-          transform 0.25s,
-          opacity 0.25s;
-      }
-      .nav-toggle span::before,
-      .nav-toggle span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 16px;
-        height: 1.5px;
-        background: var(--t1);
-        transition:
-          transform 0.25s,
-          top 0.25s;
-      }
-      .nav-toggle span::before {
-        top: -5px;
-      }
-      .nav-toggle span::after {
-        top: 5px;
-      }
-      nav[data-open="true"] .nav-toggle span {
-        background: transparent;
-      }
-      nav[data-open="true"] .nav-toggle span::before {
-        top: 0;
-        transform: rotate(45deg);
-      }
-      nav[data-open="true"] .nav-toggle span::after {
-        top: 0;
-        transform: rotate(-45deg);
-      }
-
-      /* HERO */
-      .hero {
-        min-height: 100vh; /* fallback for older browsers */
-        min-height: -webkit-fill-available; /* iOS 12-14 fallback */
-        min-height: 100dvh; /* dynamic viewport - excludes collapsing toolbars */
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 80px;
-        padding: 120px 48px 80px;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-orb {
-        position: absolute;
-        width: 900px;
-        height: 900px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.25) 0%,
-          rgba(59, 130, 246, 0.08) 35%,
-          transparent 70%
-        );
-        top: -260px;
-        right: -200px;
-        pointer-events: none;
-        filter: blur(100px);
-      }
-      .hero-orb2 {
-        position: absolute;
-        width: 560px;
-        height: 560px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(34, 211, 238, 0.18) 0%,
-          rgba(34, 211, 238, 0.04) 40%,
-          transparent 70%
-        );
-        bottom: 20px;
-        left: 40px;
-        pointer-events: none;
-        filter: blur(120px);
-      }
-      .eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 28px;
-      }
-      .edot {
-        width: 8px;
-        height: 8px;
-        background: #22d3ee;
-        border-radius: 50%;
-        animation: blink 2s infinite;
-        box-shadow: 0 0 12px rgba(34, 211, 238, 0.7);
-      }
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-          box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45);
-        }
-        50% {
-          opacity: 0.5;
-          box-shadow: 0 0 0 6px rgba(34, 211, 238, 0);
-        }
-      }
-      .etext {
-        font-family: var(--mono);
-        font-size: 11px;
-        color: var(--t2);
-        letter-spacing: 0.1em;
-      }
-      .hero-name {
-        font-family: var(--syne);
-        font-size: clamp(46px, 5.5vw, 80px);
-        font-weight: 800;
-        line-height: 1;
-        letter-spacing: -0.035em;
-        margin-bottom: 6px;
-        color: var(--t1);
-      }
-      .hero-name em {
-        display: block;
-        font-style: normal;
-        background: var(--grad-text);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 800;
-      }
-      .hero-role {
-        font-family: var(--mono);
-        font-size: 13px;
-        color: var(--t2);
-        letter-spacing: 0.06em;
-        margin-bottom: 28px;
-        border-left: 2px solid transparent;
-        border-image: var(--grad-primary) 1;
-        padding-left: 14px;
-      }
-      .hero-bio {
-        font-size: 16px;
-        color: var(--t2);
-        line-height: 1.7;
-        max-width: 480px;
-        margin-bottom: 40px;
-      }
-      .hero-bio strong {
-        color: var(--t1);
-        font-weight: 500;
-      }
-      .hero-btns {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      .btn-glow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-family: var(--syne);
-        font-size: 13.5px;
-        font-weight: 700;
-        color: #fff;
-        background: var(--grad-primary);
-        padding: 14px 30px;
-        border-radius: var(--r-md);
-        text-decoration: none;
-        transition:
-          transform 0.2s,
-          box-shadow 0.25s;
-        box-shadow:
-          var(--shadow-soft-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        letter-spacing: 0.01em;
-        position: relative;
-        overflow: hidden;
-      }
-      .btn-glow:hover {
-        transform: translateY(-2px);
-        box-shadow:
-          var(--shadow-medium-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      }
-      .btn-ghost {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-family: var(--syne);
-        font-size: 13.5px;
-        font-weight: 600;
-        color: var(--text-primary);
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        padding: 13px 28px;
-        border-radius: var(--r-md);
-        text-decoration: none;
-        transition: all 0.2s;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-      }
-      .btn-ghost:hover {
-        background: var(--bg-secondary);
-        border-color: var(--accent-blue);
-        color: var(--text-primary);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-soft-glow);
-      }
-
-      /* HERO RIGHT - Featured card */
-      .hero-right {
-        position: relative;
-      }
-      .featured-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-xl);
-        padding: 32px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-depth), var(--shadow-soft-glow);
-      }
-      .featured-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--grad-primary);
-        opacity: 0.9;
-      }
-      .fc-label {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--acc);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-      }
-      .fc-title {
-        font-family: var(--syne);
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin-bottom: 10px;
-        line-height: 1.2;
-      }
-      .fc-sub {
-        font-size: 13px;
-        color: var(--t2);
-        line-height: 1.6;
-        margin-bottom: 24px;
-      }
-      .fc-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 24px;
-      }
-      .fctag {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        background: var(--bg3);
-        border: 1px solid var(--b1);
-        padding: 4px 10px;
-        border-radius: 3px;
-      }
-      .fctag.h {
-        color: var(--acc);
-        border-color: rgba(59, 130, 246, 0.3);
-        background: var(--accent-tint);
-      }
-      .fc-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--b1);
-        border-radius: 8px;
-        overflow: hidden;
-        margin-bottom: 20px;
-      }
-      .fcm {
-        background: var(--bg3);
-        padding: 14px 16px;
-      }
-      .fcm-n {
-        font-family: var(--syne);
-        font-size: 24px;
-        font-weight: 800;
-        line-height: 1;
-        color: var(--t1);
-      }
-      .fcm-n em {
-        color: var(--acc);
-        font-style: normal;
-      }
-      .fcm-l {
-        font-family: var(--mono);
-        font-size: 9px;
-        color: var(--t3);
-        letter-spacing: 0.06em;
-        margin-top: 4px;
-      }
-      .fc-stores {
-        display: flex;
-        gap: 8px;
-        padding-top: 20px;
-        border-top: 1px solid var(--b1);
-      }
-      .fcstore {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t2);
-        background: var(--bg3);
-        padding: 6px 14px;
-        border-radius: 3px;
-        text-decoration: none;
-        transition: color 0.2s;
-        border: 1px solid var(--b1);
-      }
-      .fcstore:hover {
-        color: var(--acc);
-      }
-      .card-shadow-stack {
-        position: absolute;
-        bottom: -12px;
-        left: 20px;
-        right: 20px;
-        height: 24px;
-        background: var(--bg2);
-        border: 1px solid var(--b1);
-        border-radius: 0 0 10px 10px;
-        opacity: 0.5;
-        z-index: -1;
-      }
-      .card-shadow-stack2 {
-        position: absolute;
-        bottom: -22px;
-        left: 40px;
-        right: 40px;
-        height: 24px;
-        background: var(--bg2);
-        border: 1px solid var(--b1);
-        border-radius: 0 0 10px 10px;
-        opacity: 0.25;
-        z-index: -2;
-      }
-
-      /* MARQUEE */
-      .marquee-wrap {
-        border-top: 1px solid var(--b1);
-        border-bottom: 1px solid var(--b1);
-        background: linear-gradient(
-          90deg,
-          var(--bg) 0%,
-          var(--bg2) 20%,
-          var(--bg2) 80%,
-          var(--bg) 100%
-        );
-        overflow: hidden;
-        padding: 18px 0;
-        position: relative;
-      }
-      .marquee-track {
-        display: flex;
-        animation: marquee 35s linear infinite;
-        white-space: nowrap;
-      }
-      .marquee-track:hover {
-        animation-play-state: paused;
-      }
-      .mi {
-        display: inline-flex;
-        align-items: center;
-        gap: 16px;
-        padding: 0 28px;
-        font-family: var(--mono);
-        font-size: 12px;
-        color: var(--t3);
-        letter-spacing: 0.06em;
-      }
-      .mi::after {
-        content: "·";
-        color: var(--acc);
-        font-size: 16px;
-        margin-left: 16px;
-      }
-      .mi.h {
-        color: var(--acc);
-        font-weight: 600;
-      }
-      @keyframes marquee {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-
-      /* SECTIONS */
-      section {
-        padding: 100px 48px;
-        position: relative;
-      }
-      .section-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .slabel {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--acc);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-      }
-      .slabel::before {
-        content: "";
-        width: 20px;
-        height: 1px;
-        background: var(--acc);
-      }
-      .stitle {
-        font-family: var(--syne);
-        font-size: clamp(30px, 4vw, 50px);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-        margin-bottom: 16px;
-        color: var(--t1);
-      }
-      .ssub {
-        font-size: 16px;
-        color: var(--t2);
-        max-width: 520px;
-        line-height: 1.7;
-        margin-bottom: 60px;
-      }
-
-      /* PROJECTS */
-      .pcard {
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-xl);
-        overflow: hidden;
-        transition:
-          border-color 0.3s,
-          transform 0.3s,
-          box-shadow 0.3s;
-        margin-bottom: 18px;
-        box-shadow: var(--shadow-depth);
-        position: relative;
-      }
-      .pcard:hover {
-        border-color: var(--accent-blue);
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lift), var(--shadow-soft-glow);
-      }
-      .pcard-top {
-        padding: 36px 40px 0;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 24px;
-        align-items: start;
-      }
-      .pdomain {
-        display: inline-flex;
-        align-items: center;
-        font-family: var(--mono);
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 5px 12px;
-        border-radius: 3px;
-        margin-bottom: 18px;
-      }
-      .da {
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--accent-blue);
-        border: 1px solid rgba(59, 130, 246, 0.28);
-      }
-      .de {
-        background: rgba(59, 130, 246, 0.1);
-        color: var(--accent-cyan);
-        border: 1px solid rgba(59, 130, 246, 0.3);
-      }
-      .dec {
-        background: rgba(34, 211, 238, 0.1);
-        color: var(--accent-cyan);
-        border: 1px solid rgba(34, 211, 238, 0.28);
-      }
-      .df {
-        background: rgba(245, 158, 11, 0.14);
-        color: var(--amber);
-        border: 1px solid rgba(245, 158, 11, 0.35);
-      }
-      .pcard-title {
-        font-family: var(--syne);
-        font-size: 25px;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        line-height: 1.15;
-        margin-bottom: 10px;
-      }
-      .pcard-title em {
-        font-style: italic;
-        color: var(--acc);
-      }
-      .pcard-desc {
-        font-size: 14px;
-        color: var(--t2);
-        line-height: 1.65;
-        max-width: 600px;
-      }
-      .plinks {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-      .plink {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t2);
-        background: var(--bg3);
-        border: 1px solid var(--b1);
-        padding: 6px 14px;
-        border-radius: 3px;
-        text-decoration: none;
-        transition: all 0.2s;
-        white-space: nowrap;
-      }
-      .plink::before {
-        content: "↗";
-        color: var(--acc);
-      }
-      .plink:hover {
-        color: var(--t1);
-        border-color: var(--b3);
-      }
-      .pcard-body {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 32px;
-        border-top: 1px solid var(--b1);
-      }
-      .pcol {
-        padding: 32px 40px;
-      }
-      .pcol:first-child {
-        border-right: 1px solid var(--b1);
-      }
-      .pclabel {
-        font-family: var(--mono);
-        font-size: 9px;
-        color: var(--t3);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--b1);
-      }
-      .pclabel.a {
-        color: var(--acc);
-      }
-      .ptext {
-        font-size: 13.5px;
-        color: var(--t2);
-        line-height: 1.75;
-        margin-bottom: 14px;
-      }
-      .ptext strong {
-        color: var(--t1);
-        font-weight: 500;
-      }
-      .pcallout {
-        border-left: 2px solid var(--acc);
-        padding: 12px 16px;
-        background: var(--accg2);
-        border-radius: 0 6px 6px 0;
-        margin: 16px 0;
-        font-size: 13px;
-        color: var(--t2);
-        line-height: 1.65;
-      }
-      .pcallout strong {
-        color: var(--acc2);
-      }
-      code.ic {
-        font-family: var(--mono);
-        font-size: 12px;
-        background: var(--bg3);
-        padding: 2px 7px;
-        border-radius: 3px;
-        color: var(--t2);
-        border: 1px solid var(--b1);
-      }
-      .pstack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 20px;
-      }
-      .ptag {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        background: var(--bg3);
-        border: 1px solid var(--b1);
-        padding: 4px 10px;
-        border-radius: 3px;
-      }
-      .ptag.h {
-        color: var(--acc);
-        border-color: rgba(59, 130, 246, 0.3);
-        background: var(--accent-tint);
-      }
-
-      /* APPROACH */
-      .appr-section {
-        background: var(--bg3);
-        position: relative;
-      }
-      .appr-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--b1);
-        border: 1px solid var(--b1);
-        border-radius: 12px;
-        overflow: hidden;
-      }
-      .appr-cell {
-        background:
-          linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.03) 0%,
-            transparent 100%
-          ),
-          var(--bg2);
-        padding: 36px 32px;
-        transition:
-          background 0.25s,
-          transform 0.25s,
-          box-shadow 0.25s;
-        position: relative;
-      }
-      .appr-cell:hover {
-        background: var(--bg-card);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lift), var(--shadow-soft-glow);
-        z-index: 2;
-      }
-      .appr-num {
-        font-family: var(--mono);
-        font-size: 11px;
-        color: var(--acc);
-        letter-spacing: 0.08em;
-        margin-bottom: 18px;
-        display: block;
-      }
-      .appr-title {
-        font-family: var(--syne);
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        letter-spacing: -0.01em;
-      }
-      .appr-body {
-        font-size: 13.5px;
-        color: var(--t2);
-        line-height: 1.72;
-      }
-      .appr-body strong {
-        color: var(--t1);
-        font-weight: 500;
-      }
-
-      /* SKILLS */
-      .skills-layout {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-      .sg {
-        background:
-          linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.03) 0%,
-            transparent 100%
-          ),
-          var(--bg2);
-        border: 1px solid var(--b1);
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: var(--shadow-soft);
-      }
-      .sg-head {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--acc);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 14px 24px;
-        border-bottom: 1px solid var(--b1);
-        background: var(--accg2);
-      }
-      .srow {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 11px 24px;
-        border-bottom: 1px solid var(--b1);
-      }
-      .srow:last-child {
-        border-bottom: none;
-      }
-      .sname {
-        font-size: 13px;
-        color: var(--t1);
-      }
-      .sdots {
-        display: flex;
-        gap: 4px;
-      }
-      .sdot {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--bg4);
-        border: 1px solid var(--b2);
-      }
-      .sdot.on {
-        background: var(--acc);
-        border-color: var(--acc);
-        box-shadow: 0 0 6px rgba(59, 130, 246, 0.55);
-      }
-
-      /* EXPERIENCE */
-      .exp-section {
-        background: var(--bg3);
-        position: relative;
-      }
-      .exp-timeline {
-        position: relative;
-        padding-left: 40px;
-      }
-      .exp-timeline::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 8px;
-        bottom: 0;
-        width: 1px;
-        background: linear-gradient(
-          to bottom,
-          var(--acc),
-          rgba(37, 99, 235, 0.1)
-        );
-      }
-      .exp-item {
-        position: relative;
-        margin-bottom: 52px;
-      }
-      .exp-item::before {
-        content: "";
-        position: absolute;
-        left: -44px;
-        top: 5px;
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: var(--bg2);
-        border: 2px solid var(--acc);
-      }
-      .exp-item:first-child::before {
-        background: var(--acc);
-        box-shadow: 0 0 12px rgba(59, 130, 246, 0.55);
-      }
-      .exp-date {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        letter-spacing: 0.08em;
-        margin-bottom: 8px;
-      }
-      .exp-role {
-        font-family: var(--syne);
-        font-size: 19px;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin-bottom: 4px;
-      }
-      .exp-co {
-        font-size: 13px;
-        color: var(--acc);
-        font-weight: 500;
-        margin-bottom: 18px;
-      }
-      .exp-pts {
-        list-style: none;
-        padding: 0;
-      }
-      .exp-pts li {
-        font-size: 13.5px;
-        color: var(--t2);
-        line-height: 1.65;
-        padding-left: 18px;
-        position: relative;
-        margin-bottom: 8px;
-      }
-      .exp-pts li::before {
-        content: "›";
-        position: absolute;
-        left: 0;
-        color: var(--acc);
-        font-size: 16px;
-        line-height: 1.4;
-      }
-      .exp-pts li strong {
-        color: var(--t1);
-        font-weight: 500;
-      }
-
-      /* ABOUT */
-      .about-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 400px;
-        gap: 72px;
-        align-items: start;
-      }
-      .about-body {
-        font-size: 15.5px;
-        color: var(--t2);
-        line-height: 1.85;
-        max-width: 64ch;
-      }
-      .about-body p {
-        margin-bottom: 22px;
-      }
-      .about-body p:first-of-type {
-        font-size: 18px;
-        line-height: 1.65;
-        color: var(--t1);
-        padding-left: 18px;
-        border-left: 2px solid var(--accent-blue);
-        margin-bottom: 28px;
-      }
-      .about-body strong {
-        color: var(--t1);
-        font-weight: 600;
-      }
-      .about-card {
-        position: sticky;
-        top: 100px;
-        background:
-          linear-gradient(180deg, var(--accent-tint) 0%, transparent 140px),
-          var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-xl);
-        overflow: hidden;
-        box-shadow: var(--shadow-depth);
-        transition:
-          border-color 0.3s ease,
-          box-shadow 0.3s ease,
-          transform 0.3s ease;
-      }
-      .about-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--grad-primary);
-        opacity: 0.85;
-      }
-      .about-card:hover {
-        border-color: var(--border-strong);
-        box-shadow:
-          var(--shadow-lift),
-          0 0 48px rgba(59, 130, 246, 0.08);
-        transform: translateY(-2px);
-      }
-      .acard-head {
-        padding: 26px 24px;
-        background: linear-gradient(135deg, var(--accg2) 0%, transparent 100%);
-        border-bottom: 1px solid var(--border-default);
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .avatar {
-        width: 52px;
-        height: 52px;
-        border-radius: var(--r-pill);
-        background: var(--grad-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--syne);
-        font-weight: 800;
-        font-size: 17px;
-        color: #fff;
-        flex-shrink: 0;
-        position: relative;
-        box-shadow:
-          var(--shadow-soft-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      }
-      .avatar::after {
-        content: "";
-        position: absolute;
-        inset: -4px;
-        border-radius: inherit;
-        border: 1px solid rgba(59, 130, 246, 0.22);
-        pointer-events: none;
-      }
-      .ach-name {
-        font-family: var(--syne);
-        font-size: 16px;
-        font-weight: 800;
-        letter-spacing: -0.01em;
-      }
-      .ach-sub {
-        font-size: 12px;
-        color: var(--t2);
-      }
-      .fact-row {
-        display: flex;
-        gap: 16px;
-        padding: 14px 24px;
-        border-bottom: 1px solid var(--b1);
-        align-items: flex-start;
-        transition:
-          background 0.2s ease,
-          border-color 0.2s ease;
-      }
-      .fact-row:hover {
-        background: var(--glow-subtle);
-      }
-      .fact-row:hover .fk {
-        color: var(--accent-cyan);
-      }
-      .fact-row:last-child {
-        border-bottom: none;
-      }
-      .fk {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        letter-spacing: 0.08em;
-        min-width: 82px;
-        padding-top: 3px;
-        text-transform: uppercase;
-        transition: color 0.2s ease;
-      }
-      .fv {
-        font-size: 13.5px;
-        color: var(--t1);
-        line-height: 1.55;
-      }
-      .fv a {
-        color: var(--acc);
-        text-decoration: none;
-        background-image: linear-gradient(
-          var(--accent-cyan),
-          var(--accent-cyan)
-        );
-        background-size: 0 1px;
-        background-position: 0 100%;
-        background-repeat: no-repeat;
-        transition:
-          background-size 0.25s ease,
-          color 0.2s ease;
-      }
-      .fv a:hover {
-        color: var(--accent-cyan);
-        background-size: 100% 1px;
-      }
-      .fv.avail {
-        color: var(--lime);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 500;
-      }
-      .fv.avail::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--lime);
-        box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.55);
-        animation: availPulse 2.2s infinite;
-      }
-      @keyframes availPulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
-        }
-        70% {
-          box-shadow: 0 0 0 8px rgba(34, 211, 238, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
-        }
-      }
-
-      /* CONTACT */
-      .contact-section {
-        background: var(--bg2);
-        border-top: 1px solid var(--b1);
-        text-align: center;
-        padding: 120px 48px;
-        padding-bottom: max(120px, env(safe-area-inset-bottom) + 48px);
-        position: relative;
-        overflow: hidden;
-      }
-      .contact-inner {
-        max-width: 640px;
-        margin: 0 auto;
-      }
-      .contact-headline {
-        font-family: var(--syne);
-        font-size: clamp(40px, 6vw, 70px);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1;
-        margin-bottom: 20px;
-      }
-      .contact-headline em {
-        font-style: normal;
-        background: var(--grad-text);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 800;
-      }
-      .contact-sub {
-        font-size: 16px;
-        color: var(--t2);
-        margin-bottom: 44px;
-        line-height: 1.65;
-      }
-      .contact-row {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 36px;
-      }
-      .contact-meta {
-        font-family: var(--mono);
-        font-size: 11px;
-        color: var(--t3);
-        letter-spacing: 0.06em;
-      }
-
-      /* FOOTER */
-      footer {
-        border-top: 1px solid var(--b1);
-        padding: 28px 48px;
-        padding-bottom: max(28px, env(safe-area-inset-bottom));
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: var(--bg);
-      }
-      .ft {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        letter-spacing: 0.06em;
-      }
-      .flinks {
-        display: flex;
-        gap: 24px;
-      }
-      .flinks a {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        text-decoration: none;
-        transition: color 0.2s;
-        letter-spacing: 0.04em;
-      }
-      .flinks a:hover {
-        color: var(--t2);
-      }
-
-      /* HIGHLIGHTS / STATS */
-      .hl-section {
-        background: var(--bg);
-        padding: 100px 48px;
-        border-top: 1px solid var(--b1);
-      }
-      .hl-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-        margin-top: 40px;
-      }
-      .hlc {
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-lg);
-        padding: 32px 28px;
-        position: relative;
-        overflow: hidden;
-        transition:
-          border-color 0.3s,
-          transform 0.3s,
-          box-shadow 0.3s;
-        box-shadow: var(--shadow-depth);
-      }
-      .hlc:hover {
-        border-color: var(--accent-blue);
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lift), var(--shadow-medium-glow);
-      }
-      .hlc:hover::before {
-        opacity: 1;
-      }
-      .hlc::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--grad-primary);
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-      .hlc-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: var(--r-md);
-        background: var(--grad-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        font-size: 18px;
-        box-shadow:
-          var(--shadow-soft-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.22);
-      }
-      .hlc-icon svg {
-        width: 20px;
-        height: 20px;
-        stroke: #fff;
-        stroke-width: 1.8;
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-      .hlc-n {
-        font-family: var(--syne);
-        font-size: 42px;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        line-height: 1;
-        color: var(--t1);
-        margin-bottom: 10px;
-      }
-      .hlc-n em {
-        background: var(--grad-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-style: normal;
-      }
-      .hlc-l {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-      }
-      .hlc-d {
-        font-size: 13px;
-        color: var(--t2);
-        line-height: 1.6;
-      }
-
-      /* SUPER POWERS (new skills) */
-      .sp-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-      .sp-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-lg);
-        padding: 28px;
-        transition:
-          border-color 0.3s,
-          transform 0.25s,
-          box-shadow 0.25s;
-        box-shadow: var(--shadow-depth);
-      }
-      .sp-card:hover {
-        border-color: var(--accent-blue);
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-lift), var(--shadow-soft-glow);
-      }
-      .sp-head {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 20px;
-        padding-bottom: 16px;
-        border-bottom: 1px solid var(--b1);
-      }
-      .sp-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: var(--r-md);
-        background: var(--grad-primary);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--syne);
-        font-weight: 800;
-        font-size: 13px;
-        flex-shrink: 0;
-        box-shadow:
-          var(--shadow-soft-glow),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      }
-      .sp-title {
-        font-family: var(--syne);
-        font-size: 16px;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        color: var(--t1);
-      }
-      .sp-sub {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t3);
-        letter-spacing: 0.08em;
-        margin-top: 2px;
-      }
-      .sp-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .sp-tag {
-        font-family: var(--mono);
-        font-size: 11px;
-        color: var(--t2);
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--b1);
-        padding: 5px 11px;
-        border-radius: 6px;
-        transition:
-          color 0.2s,
-          border-color 0.2s,
-          background 0.2s;
-      }
-      .sp-tag:hover {
-        color: var(--text-primary);
-        border-color: var(--accent-blue);
-        background: var(--accent-tint);
-      }
-      .sp-tag.k {
-        color: #fff;
-        border-color: transparent;
-        background: var(--grad-primary);
-        font-weight: 600;
-        box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
-      }
-      .sp-tag.k:hover {
-        color: #fff;
-        background: var(--grad-primary);
-        box-shadow: 0 0 20px rgba(59, 130, 246, 0.45);
-      }
-
-      /* ALL APPS GRID */
-      .apps-section {
-        background: var(--bg3);
-        border-top: 1px solid var(--b1);
-        position: relative;
-      }
-      .apps-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-      }
-      .appc {
-        background: var(--bg-card);
-        border: 1px solid var(--border-default);
-        border-radius: var(--r-lg);
-        padding: 22px;
-        transition:
-          border-color 0.3s,
-          transform 0.25s,
-          box-shadow 0.25s;
-        display: flex;
-        flex-direction: column;
-        box-shadow: var(--shadow-depth);
-      }
-      .appc:hover {
-        border-color: var(--accent-blue);
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lift), var(--shadow-soft-glow);
-      }
-      .appc-top {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 14px;
-      }
-      .appc-logo {
-        width: 42px;
-        height: 42px;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--syne);
-        font-weight: 800;
-        font-size: 15px;
-        color: var(--bg);
-        flex-shrink: 0;
-        letter-spacing: -0.02em;
-      }
-      .appc-name {
-        font-family: var(--syne);
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        line-height: 1.2;
-      }
-      .appc-co {
-        font-family: var(--mono);
-        font-size: 9px;
-        color: var(--t3);
-        letter-spacing: 0.08em;
-        margin-top: 3px;
-        text-transform: uppercase;
-      }
-      .appc-desc {
-        font-size: 12.5px;
-        color: var(--t2);
-        line-height: 1.6;
-        margin-bottom: 16px;
-        flex: 1;
-      }
-      .appc-domain {
-        display: inline-flex;
-        font-family: var(--mono);
-        font-size: 9px;
-        letter-spacing: 0.08em;
-        padding: 3px 8px;
-        border-radius: 3px;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-        align-self: flex-start;
-      }
-      .appc-links {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        padding-top: 14px;
-        border-top: 1px solid var(--b1);
-      }
-      .appc-link {
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--t2);
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--b1);
-        padding: 5px 11px;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: all 0.2s;
-        display: inline-flex;
-        align-items: center;
-        gap: 3px;
-      }
-      .appc-link:hover {
-        color: var(--accent-cyan);
-        border-color: var(--accent-blue);
-        background: var(--accent-tint);
-      }
-      .appc-link.g {
-        color: var(--lime);
-      }
-      .appc-link.a {
-        color: var(--acc2);
-      }
-
-      /* LOGO COLOR VARIANTS */
-      .l-purple {
-        background: linear-gradient(135deg, #3b82f6, #2563eb);
-      }
-      .l-coral {
-        background: linear-gradient(135deg, #475569, #1e293b);
-      }
-      .l-teal {
-        background: linear-gradient(135deg, #22d3ee, #06b6d4);
-      }
-      .l-amber {
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-      }
-      .l-lime {
-        background: linear-gradient(135deg, #10b981, #059669);
-        color: #fff !important;
-      }
-      .l-blue {
-        background: linear-gradient(135deg, #60a5fa, #3b82f6);
-      }
-      .l-pink {
-        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      }
-      .l-indigo {
-        background: linear-gradient(135deg, #3b82f6, #1e40af);
-      }
-
-      /* ANIMATIONS */
-      .reveal {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.65s ease,
-          transform 0.65s ease;
-      }
-      .reveal.in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .d1 {
-        transition-delay: 0.07s;
-      }
-      .d2 {
-        transition-delay: 0.14s;
-      }
-      .d3 {
-        transition-delay: 0.21s;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 960px) {
-        nav {
-          padding: 0 24px;
-          padding-left: max(24px, env(safe-area-inset-left));
-          padding-right: max(24px, env(safe-area-inset-right));
-          background: rgba(7, 10, 19, 0.96);
-          backdrop-filter: none;
-          -webkit-backdrop-filter: none;
-        }
-        .nav-toggle {
-          display: inline-flex;
-        }
-        .nav-center {
-          position: fixed;
-          top: calc(72px + env(safe-area-inset-top));
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          gap: 4px;
-          padding: 20px 24px 28px;
-          background: rgba(7, 10, 19, 0.98);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border-bottom: 1px solid var(--border-default);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
-          transform: translateY(-110%);
-          visibility: hidden;
-          opacity: 0;
-          pointer-events: none;
-          transition:
-            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.25s ease,
-            visibility 0s linear 0.35s;
-          z-index: 400;
-          display: flex;
-        }
-        nav[data-open="true"] .nav-center {
-          transform: translateY(0);
-          visibility: visible;
-          opacity: 1;
-          pointer-events: auto;
-          transition:
-            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.25s ease,
-            visibility 0s linear 0s;
-        }
-        .nav-center .nav-link {
-          font-size: 13px;
-          padding: 12px 16px;
-          border-radius: 8px;
-          text-align: left;
-        }
-        .hero {
-          grid-template-columns: 1fr;
-          gap: 48px;
-          padding: calc(100px + env(safe-area-inset-top)) 24px 60px;
-          min-height: auto;
-        }
-        .hero-right {
-          margin-top: 8px;
-        }
-        .featured-card {
-          padding: 24px;
-        }
-        .fc-title {
-          font-size: 19px;
-        }
-        .fc-metrics {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .fcm {
-          padding: 12px 10px;
-        }
-        .fcm-n {
-          font-size: 20px;
-        }
-        .card-shadow-stack,
-        .card-shadow-stack2 {
-          display: none;
-        }
-        section {
-          padding: 72px 24px;
-        }
-        .pcard-body {
-          grid-template-columns: 1fr;
-        }
-        .pcol:first-child {
-          border-right: none;
-          border-bottom: 1px solid var(--b1);
-        }
-        .appr-grid {
-          grid-template-columns: 1fr;
-        }
-        .skills-layout {
-          grid-template-columns: 1fr;
-        }
-        .about-layout {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .about-card {
-          position: static;
-        }
-        .about-body {
-          max-width: none;
-        }
-        .about-body p:first-of-type {
-          font-size: 16.5px;
-          padding-left: 14px;
-        }
-        .pcard-top {
-          grid-template-columns: 1fr;
-        }
-        .plinks {
-          justify-content: flex-start;
-        }
-        .hl-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .sp-grid {
-          grid-template-columns: 1fr;
-        }
-        .apps-grid {
-          grid-template-columns: 1fr;
-        }
-        footer {
-          flex-direction: column;
-          gap: 16px;
-          text-align: center;
-          padding: 24px;
-          padding-bottom: max(24px, env(safe-area-inset-bottom));
-        }
-        .contact-section {
-          padding: 72px 24px;
-          padding-bottom: max(72px, env(safe-area-inset-bottom) + 24px);
-        }
-        .hl-section {
-          padding: 72px 24px;
-        }
-        .pcol {
-          padding: 28px 24px;
-        }
-        .pcard-top {
-          padding: 28px 24px 0;
-        }
-        .appr-cell {
-          padding: 28px 24px;
-        }
-        .hero-bio {
-          max-width: 100%;
-        }
-      }
-      @media (max-width: 480px) {
-        nav {
-          padding: 0 16px;
-          padding-left: max(16px, env(safe-area-inset-left));
-          padding-right: max(16px, env(safe-area-inset-right));
-          height: 64px;
-        }
-        .nav-center {
-          top: calc(64px + env(safe-area-inset-top));
-        }
-        .logo {
-          font-size: 16px;
-        }
-        .logo span {
-          font-size: 20px;
-        }
-        .nav-hire {
-          padding: 10px 16px;
-          font-size: 11.5px;
-          line-height: 1;
-        }
-        div:has(> .nav-toggle) {
-          gap: 16px !important;
-        }
-        .nav-toggle {
-          width: 38px;
-          height: 38px;
-        }
-        section {
-          padding: 56px 16px;
-        }
-        .hero {
-          padding: calc(96px + env(safe-area-inset-top)) 16px 48px;
-          gap: 36px;
-        }
-        .hl-section,
-        .contact-section {
-          padding: 56px 16px;
-          padding-bottom: max(56px, env(safe-area-inset-bottom) + 16px);
-        }
-        .featured-card {
-          padding: 20px;
-        }
-        .fcm {
-          padding: 10px 6px;
-        }
-        .fcm-n {
-          font-size: 18px;
-        }
-        .fcm-l {
-          font-size: 8px;
-          letter-spacing: 0.04em;
-        }
-        .hl-grid {
-          grid-template-columns: 1fr;
-        }
-        .hero-name {
-          font-size: 40px;
-        }
-        .contact-headline {
-          font-size: 36px;
-        }
-        .stitle {
-          font-size: 28px;
-        }
-        .hero-btns .btn-glow,
-        .hero-btns .btn-ghost {
-          padding: 12px 20px;
-          font-size: 12.5px;
-        }
-        .pcol {
-          padding: 24px 18px;
-        }
-        .pcard-top {
-          padding: 24px 18px 0;
-        }
-        .appr-cell {
-          padding: 24px 18px;
-        }
-        .sp-card {
-          padding: 22px 20px;
-        }
-        .fact-row {
-          padding: 12px 18px;
-          gap: 12px;
-        }
-        .fk {
-          min-width: 68px;
-        }
-        .acard-head {
-          padding: 20px;
-        }
-        .appr-grid {
-          border-radius: 10px;
-        }
-        .flinks {
-          gap: 16px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        footer {
-          padding: 20px 16px;
-          padding-bottom: max(20px, env(safe-area-inset-bottom));
-        }
-      }
-      @media (min-width: 961px) and (max-width: 1200px) {
-        .hl-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .apps-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.001ms !important;
-          scroll-behavior: auto !important;
-        }
-        .marquee-track {
-          animation: none;
-        }
-        .edot {
-          animation: none;
-        }
-        .reveal {
-          opacity: 1;
-          transform: none;
-        }
-        #cursor,
-        #cursor-ring {
-          display: none;
-        }
-        body {
-          cursor: auto;
-        }
-      }
-      /* ============================================================
-         FLUTTER WEB EQUIVALENT - iOS Safe-Area Handling
-         ------------------------------------------------------------
-         If you rebuild this portfolio in Flutter Web, apply the
-         same viewport-fit=cover meta tag (already present above)
-         and then use one of the following patterns:
-
-         1. SafeArea widget (simplest):
-            SafeArea(
-              bottom: true,   // respects home-indicator / toolbar
-              minimum: const EdgeInsets.only(bottom: 16),
-              child: YourContent(),
-            )
-
-         2. MediaQuery padding (fine-grained control):
-            final viewPadding = MediaQuery.of(context).viewPadding;
-            final bottomInset = viewPadding.bottom; // maps to env(safe-area-inset-bottom)
-            final topInset    = viewPadding.top;    // maps to env(safe-area-inset-top)
-            return Padding(
-              padding: EdgeInsets.only(bottom: bottomInset),
-              child: YourContent(),
-            );
-
-         3. For scrollable screens:
-            SingleChildScrollView(
-              padding: MediaQuery.of(context).padding,
-              child: YourContent(),
-            )
-
-         4. In Flutter 3.x, MediaQuery.viewInsets is keyboard-aware
-            while MediaQuery.viewPadding is the static safe-area.
-            Use viewPadding for layout, viewInsets for keyboard shift.
-         ============================================================ */
-    </style>
+    <!-- Styles — loaded in cascade order (tokens → base → layout → components → sections → responsive) -->
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-  <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
 
-    <nav>
-      <a href="#" class="logo">EP<span>.</span></a>
-      <div class="nav-center">
+  <body>
+    <!-- A11y: skip past the nav for keyboard / screen-reader users. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Custom cursor (desktop only — see layout.css) -->
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- ============================================================
+         Navigation
+         ============================================================ -->
+    <nav class="nav" aria-label="Primary">
+      <a href="#" class="nav-logo">EP<span>.</span></a>
+
+      <div class="nav-menu">
         <a href="#highlights" class="nav-link">highlights</a>
         <a href="#skills" class="nav-link">skills</a>
         <a href="#projects" class="nav-link">work</a>
@@ -2199,8 +84,9 @@
         <a href="#experience" class="nav-link">exp</a>
         <a href="#about" class="nav-link">about</a>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px">
-        <a href="mailto:emanpepars2@gmail.com" class="nav-hire">Hire Me ↗</a>
+
+      <div class="nav-actions">
+        <a href="mailto:emanpepars2@gmail.com" class="nav-cta">Hire Me ↗</a>
         <button
           class="nav-toggle"
           aria-label="Toggle navigation menu"
@@ -2211,147 +97,179 @@
       </div>
     </nav>
 
+    <main id="main">
+    <!-- ============================================================
+         Hero
+         ============================================================ -->
     <section class="hero" id="top">
-      <div class="hero-orb"></div>
-      <div class="hero-orb2"></div>
+      <div class="hero__orb" aria-hidden="true"></div>
+      <div class="hero__orb--secondary" aria-hidden="true"></div>
+
       <div>
         <div class="eyebrow">
-          <div class="edot"></div>
-          <span class="etext">Available for new roles · Dubai, UAE</span>
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span class="eyebrow-text">Available for new roles · Dubai, UAE</span>
         </div>
-        <h1 class="hero-name">Eman Pepars<em>Flutter Engineer</em></h1>
-        <div class="hero-role">
+
+        <h1 class="hero__name">Eman Pepars<em>Flutter Engineer</em></h1>
+
+        <div class="hero__role">
           Scalable Mobile Apps · Clean Architecture · Performance ·
           Production-Ready
         </div>
-        <p class="hero-bio">
+
+        <p class="hero__bio">
           <strong>13+ production apps shipped</strong> across GCC, MENA, and the
-          US - e-commerce, live auctions, real estate, and healthcare. Full
+          US — e-commerce, live auctions, real estate, and healthcare. Full
           lifecycle ownership, architecture to store release. Specialist in
           <strong>real-time, performance-critical features</strong>: Socket.IO
           live auctions, UAE PASS auth, Apple Pay, and BNPL (Tabby, Tamara).
         </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn-glow">View My Work →</a>
-          <a href="./Eman_Pepars_CV.pdf" download class="btn-ghost"
-            >↓ Download CV</a
-          >
-          <!-- <a href="https://github.com/Emanpepars" target="_blank" rel="noopener" class="btn-ghost">GitHub</a> -->
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View My Work →</a>
+          <a href="./Eman_Pepars_CV.pdf" download class="btn btn--ghost">
+            ↓ Download CV
+          </a>
           <a
             href="https://www.linkedin.com/in/emanpepars"
             target="_blank"
             rel="noopener"
-            class="btn-ghost"
-            >LinkedIn</a
+            class="btn btn--ghost"
           >
+            LinkedIn
+          </a>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="featured-card">
-          <div class="fc-label">Featured Project</div>
-          <div class="fc-title">Soldout KSA - Live Auction Marketplace</div>
-          <div class="fc-sub">
-            Dual-app KSA marketplace - live bidding, concurrent-state isolation,
+
+      <div class="hero__featured">
+        <article class="featured-card">
+          <div class="featured-card__label">Featured Project</div>
+          <h2 class="featured-card__title">
+            Soldout KSA — Live Auction Marketplace
+          </h2>
+          <p class="featured-card__subtitle">
+            Dual-app KSA marketplace — live bidding, concurrent-state isolation,
             Apple Pay + Tabby + Tamara checkout. Both apps shipped solo.
+          </p>
+
+          <div class="featured-card__tags">
+            <span class="tag tag--highlight">BLoC/Cubit</span>
+            <span class="tag tag--highlight">Socket.IO</span>
+            <span class="tag">Apple Pay</span>
+            <span class="tag">Tabby</span>
+            <span class="tag">Tamara</span>
+            <span class="tag">Clean Arch</span>
           </div>
-          <div class="fc-tags">
-            <span class="fctag h">BLoC/Cubit</span
-            ><span class="fctag h">Socket.IO</span
-            ><span class="fctag">Apple Pay</span><span class="fctag">Tabby</span
-            ><span class="fctag">Tamara</span
-            ><span class="fctag">Clean Arch</span>
-          </div>
-          <div class="fc-metrics">
-            <div class="fcm">
-              <div class="fcm-n">2</div>
-              <div class="fcm-l">Apps shipped</div>
+
+          <div class="featured-card__metrics">
+            <div class="featured-card__metric">
+              <div class="featured-card__metric-value">2</div>
+              <div class="featured-card__metric-label">Apps shipped</div>
             </div>
-            <div class="fcm">
-              <div class="fcm-n">3<em>+</em></div>
-              <div class="fcm-l">Payment GWs</div>
+            <div class="featured-card__metric">
+              <div class="featured-card__metric-value">3<em>+</em></div>
+              <div class="featured-card__metric-label">Payment GWs</div>
             </div>
-            <div class="fcm">
-              <div class="fcm-n">∞</div>
-              <div class="fcm-l">RTL support</div>
+            <div class="featured-card__metric">
+              <div class="featured-card__metric-value">∞</div>
+              <div class="featured-card__metric-label">RTL support</div>
             </div>
           </div>
-          <div class="fc-stores">
+
+          <div class="featured-card__stores">
             <a
               href="https://play.google.com/store/apps/details?id=com.soldout.sa1"
-              target="_blank"
-              class="fcstore"
+              target="_blank" rel="noopener"
+              class="featured-card__store"
               >▸ Android</a
             >
             <a
               href="https://apps.apple.com/eg/app/soldout-ksa/id6449216198"
-              target="_blank"
-              class="fcstore"
+              target="_blank" rel="noopener"
+              class="featured-card__store"
               >▸ iOS</a
             >
             <a
               href="https://apps.apple.com/eg/app/soldout-vendors-%D8%AA%D8%AC%D8%A7%D8%B1/id6517357260"
-              target="_blank"
-              class="fcstore"
+              target="_blank" rel="noopener"
+              class="featured-card__store"
               >▸ Vendor</a
             >
           </div>
-        </div>
+        </article>
+
         <div class="card-shadow-stack"></div>
-        <div class="card-shadow-stack2"></div>
+        <div class="card-shadow-stack--deep"></div>
       </div>
     </section>
 
-    <div class="marquee-wrap">
+    <!-- ============================================================
+         Marquee — decorative tech-stack ticker.
+         aria-hidden because the same stack is communicated by the
+         Skills section below; this is purely visual ornamentation.
+         ============================================================ -->
+    <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span class="mi h">Flutter / Dart</span
-        ><span class="mi">Clean Architecture</span
-        ><span class="mi h">BLoC / Cubit</span><span class="mi">Socket.IO</span
-        ><span class="mi h">UAE PASS Auth</span><span class="mi">Apple Pay</span
-        ><span class="mi h">Tabby · Tamara</span
-        ><span class="mi">Flavorizr</span
-        ><span class="mi h">Firebase Suite</span
-        ><span class="mi">Dio + Retrofit</span
-        ><span class="mi h">Arabic RTL</span
-        ><span class="mi">App Store · Play Store</span
-        ><span class="mi h">GetIt DI</span
-        ><span class="mi">Multi-flavor Arch</span>
-        <span class="mi h">Flutter / Dart</span
-        ><span class="mi">Clean Architecture</span
-        ><span class="mi h">BLoC / Cubit</span><span class="mi">Socket.IO</span
-        ><span class="mi h">UAE PASS Auth</span><span class="mi">Apple Pay</span
-        ><span class="mi h">Tabby · Tamara</span
-        ><span class="mi">Flavorizr</span
-        ><span class="mi h">Firebase Suite</span
-        ><span class="mi">Dio + Retrofit</span
-        ><span class="mi h">Arabic RTL</span
-        ><span class="mi">App Store · Play Store</span
-        ><span class="mi h">GetIt DI</span
-        ><span class="mi">Multi-flavor Arch</span>
+        <span class="marquee-item marquee-item--accent">Flutter / Dart</span>
+        <span class="marquee-item">Clean Architecture</span>
+        <span class="marquee-item marquee-item--accent">BLoC / Cubit</span>
+        <span class="marquee-item">Socket.IO</span>
+        <span class="marquee-item marquee-item--accent">UAE PASS Auth</span>
+        <span class="marquee-item">Apple Pay</span>
+        <span class="marquee-item marquee-item--accent">Tabby · Tamara</span>
+        <span class="marquee-item">Flavorizr</span>
+        <span class="marquee-item marquee-item--accent">Firebase Suite</span>
+        <span class="marquee-item">Dio + Retrofit</span>
+        <span class="marquee-item marquee-item--accent">Arabic RTL</span>
+        <span class="marquee-item">App Store · Play Store</span>
+        <span class="marquee-item marquee-item--accent">GetIt DI</span>
+        <span class="marquee-item">Multi-flavor Arch</span>
+        <!-- Duplicated set for seamless loop -->
+        <span class="marquee-item marquee-item--accent">Flutter / Dart</span>
+        <span class="marquee-item">Clean Architecture</span>
+        <span class="marquee-item marquee-item--accent">BLoC / Cubit</span>
+        <span class="marquee-item">Socket.IO</span>
+        <span class="marquee-item marquee-item--accent">UAE PASS Auth</span>
+        <span class="marquee-item">Apple Pay</span>
+        <span class="marquee-item marquee-item--accent">Tabby · Tamara</span>
+        <span class="marquee-item">Flavorizr</span>
+        <span class="marquee-item marquee-item--accent">Firebase Suite</span>
+        <span class="marquee-item">Dio + Retrofit</span>
+        <span class="marquee-item marquee-item--accent">Arabic RTL</span>
+        <span class="marquee-item">App Store · Play Store</span>
+        <span class="marquee-item marquee-item--accent">GetIt DI</span>
+        <span class="marquee-item">Multi-flavor Arch</span>
       </div>
     </div>
 
-    <section class="hl-section" id="highlights">
+    <!-- ============================================================
+         Highlights — impact stats
+         ============================================================ -->
+    <section class="highlights" id="highlights">
       <div class="section-inner">
-        <div class="slabel">My Highlights</div>
-        <h2 class="stitle">Impact by the Numbers</h2>
-        <p class="ssub">
+        <div class="section-label">My Highlights</div>
+        <h2 class="section-title">Impact by the Numbers</h2>
+        <p class="section-subtitle">
           Live across GCC, MENA, and the US. Real products on App Store and
           Google Play.
         </p>
-        <div class="hl-grid">
-          <div class="hlc reveal">
-            <div class="hlc-icon" aria-hidden="true">
+
+        <div class="highlights__grid">
+          <article class="stat-card reveal">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <rect x="5" y="2" width="14" height="20" rx="3" />
                 <line x1="10" y1="18" x2="14" y2="18" />
               </svg>
             </div>
-            <div class="hlc-l">Production Apps</div>
-            <div class="hlc-n">13<em>+</em></div>
-            <div class="hlc-d">Live on App Store & Google Play.</div>
-          </div>
-          <div class="hlc reveal d1">
-            <div class="hlc-icon" aria-hidden="true">
+            <div class="stat-card__label">Production Apps</div>
+            <div class="stat-card__value">13<em>+</em></div>
+            <div class="stat-card__desc">Live on App Store &amp; Google Play.</div>
+          </article>
+
+          <article class="stat-card reveal reveal--delay-1">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16" />
                 <path d="M17 9h2a2 2 0 0 1 2 2v10" />
@@ -2361,28 +279,30 @@
                 <line x1="8" y1="15" x2="12" y2="15" />
               </svg>
             </div>
-            <div class="hlc-l">Companies</div>
-            <div class="hlc-n">4</div>
-            <div class="hlc-d">
-              Soldout KSA, NTG Clarity, GS for Applications, Revealsite - KSA,
+            <div class="stat-card__label">Companies</div>
+            <div class="stat-card__value">4</div>
+            <div class="stat-card__desc">
+              Soldout KSA, NTG Clarity, GS for Applications, Revealsite — KSA,
               UAE, Egypt, US.
             </div>
-          </div>
-          <div class="hlc reveal d2">
-            <div class="hlc-icon" aria-hidden="true">
+          </article>
+
+          <article class="stat-card reveal reveal--delay-2">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
             </div>
-            <div class="hlc-l">Experience</div>
-            <div class="hlc-n">4<em>+</em></div>
-            <div class="hlc-d">
-              Hands-on production Flutter engineering - architecture to App
+            <div class="stat-card__label">Experience</div>
+            <div class="stat-card__value">4<em>+</em></div>
+            <div class="stat-card__desc">
+              Hands-on production Flutter engineering — architecture to App
               Store review.
             </div>
-          </div>
-          <div class="hlc reveal d3">
-            <div class="hlc-icon" aria-hidden="true">
+          </article>
+
+          <article class="stat-card reveal reveal--delay-3">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="9" />
                 <line x1="3" y1="12" x2="21" y2="12" />
@@ -2391,44 +311,47 @@
                 />
               </svg>
             </div>
-            <div class="hlc-l">Markets Served</div>
-            <div class="hlc-n">4</div>
-            <div class="hlc-d">
-              KSA, UAE, Egypt, US - full RTL/LTR multi-market support.
+            <div class="stat-card__label">Markets Served</div>
+            <div class="stat-card__value">4</div>
+            <div class="stat-card__desc">
+              KSA, UAE, Egypt, US — full RTL/LTR multi-market support.
             </div>
-          </div>
-          <div class="hlc reveal">
-            <div class="hlc-icon" aria-hidden="true">
+          </article>
+
+          <article class="stat-card reveal">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <rect x="2" y="5" width="20" height="14" rx="2" />
                 <line x1="2" y1="10" x2="22" y2="10" />
                 <line x1="6" y1="15" x2="10" y2="15" />
               </svg>
             </div>
-            <div class="hlc-l">Payment & Gov Integrations</div>
-            <div class="hlc-n">7<em>+</em></div>
-            <div class="hlc-d">
-              UAE PASS, Apple Pay, Google Pay, Tabby, Tamara, Stripe - all
+            <div class="stat-card__label">Payment &amp; Gov Integrations</div>
+            <div class="stat-card__value">7<em>+</em></div>
+            <div class="stat-card__desc">
+              UAE PASS, Apple Pay, Google Pay, Tabby, Tamara, Stripe — all
               production-ready and compliant.
             </div>
-          </div>
-          <div class="hlc reveal d1">
-            <div class="hlc-icon" aria-hidden="true">
+          </article>
+
+          <article class="stat-card reveal reveal--delay-1">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <polygon points="12 2 22 7 12 12 2 7 12 2" />
                 <polyline points="2 12 12 17 22 12" />
                 <polyline points="2 17 12 22 22 17" />
               </svg>
             </div>
-            <div class="hlc-l">Domains Mastered</div>
-            <div class="hlc-n">5</div>
-            <div class="hlc-d">
-              E-commerce, live auctions, real estate & finance, healthcare &
-              pharmacy, fashion.
+            <div class="stat-card__label">Domains Mastered</div>
+            <div class="stat-card__value">5</div>
+            <div class="stat-card__desc">
+              E-commerce, live auctions, real estate &amp; finance, healthcare
+              &amp; pharmacy, fashion.
             </div>
-          </div>
-          <div class="hlc reveal d2">
-            <div class="hlc-icon" aria-hidden="true">
+          </article>
+
+          <article class="stat-card reveal reveal--delay-2">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M4 7h12" />
                 <path d="M4 12h16" />
@@ -2436,15 +359,16 @@
                 <polyline points="18 14 21 17 18 20" />
               </svg>
             </div>
-            <div class="hlc-l">RTL / Localization</div>
-            <div class="hlc-n">100<em>%</em></div>
-            <div class="hlc-d">
-              Arabic + English on every app. RTL built in from day one - not
+            <div class="stat-card__label">RTL / Localization</div>
+            <div class="stat-card__value">100<em>%</em></div>
+            <div class="stat-card__desc">
+              Arabic + English on every app. RTL built in from day one — not
               translated later.
             </div>
-          </div>
-          <div class="hlc reveal d3">
-            <div class="hlc-icon" aria-hidden="true">
+          </article>
+
+          <article class="stat-card reveal reveal--delay-3">
+            <div class="stat-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M7 4h10v5a5 5 0 0 1-10 0V4z" />
                 <path d="M7 6H4v2a3 3 0 0 0 3 3" />
@@ -2453,277 +377,282 @@
                 <line x1="12" y1="14" x2="12" y2="20" />
               </svg>
             </div>
-            <div class="hlc-l">Award-Winning</div>
-            <div class="hlc-n">1</div>
-            <div class="hlc-d">
+            <div class="stat-card__label">Award-Winning</div>
+            <div class="stat-card__value">1</div>
+            <div class="stat-card__desc">
               VR education graduation project (Oculus Quest 2, OpenAI, Unity).
               Featured in national press.
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="skills" style="background: var(--bg)">
+    <!-- ============================================================
+         Skills — production stack
+         ============================================================ -->
+    <section id="skills">
       <div class="section-inner">
-        <div class="slabel">Technical Profile</div>
-        <h2 class="stitle">Production Stack</h2>
-        <p class="ssub">
+        <div class="section-label">Technical Profile</div>
+        <h2 class="section-title">Production Stack</h2>
+        <p class="section-subtitle">
           Every tool ships in a production app you can download today. Decisions
           I make weekly.
         </p>
-        <div class="sp-grid">
-          <div class="sp-card reveal">
-            <div class="sp-head">
-              <div class="sp-icon">01</div>
-              <div>
-                <div class="sp-title">Core & Architecture</div>
-                <div class="sp-sub">FOUNDATION · DESIGN PRINCIPLES</div>
-              </div>
-            </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">Flutter</span>
-              <span class="sp-tag k">Dart</span>
-              <span class="sp-tag k">Clean Architecture</span>
-              <span class="sp-tag">SOLID</span>
-              <span class="sp-tag">OOP</span>
-              <span class="sp-tag">MVVM</span>
-              <span class="sp-tag">Design Patterns</span>
-              <span class="sp-tag">Multi-flavor (Flavorizr)</span>
-              <span class="sp-tag">Responsive Design</span>
-              <span class="sp-tag">ScreenUtil</span>
-              <span class="sp-tag">Null Safety</span>
-              <span class="sp-tag">Code Generation</span>
-            </div>
-          </div>
 
-          <div class="sp-card reveal d1">
-            <div class="sp-head">
-              <div class="sp-icon">02</div>
+        <div class="skills__grid">
+          <article class="skill-card reveal">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">01</div>
               <div>
-                <div class="sp-title">State Management</div>
-                <div class="sp-sub">REACTIVITY · PREDICTABLE FLOWS</div>
+                <div class="skill-card__title">Core &amp; Architecture</div>
+                <div class="skill-card__sub">FOUNDATION · DESIGN PRINCIPLES</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">Flutter</span>
+              <span class="skill-tag skill-tag--key">Dart</span>
+              <span class="skill-tag skill-tag--key">Clean Architecture</span>
+              <span class="skill-tag">SOLID</span>
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">MVVM</span>
+              <span class="skill-tag">Design Patterns</span>
+              <span class="skill-tag">Multi-flavor (Flavorizr)</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">ScreenUtil</span>
+              <span class="skill-tag">Null Safety</span>
+              <span class="skill-tag">Code Generation</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">BLoC</span>
-              <span class="sp-tag k">Cubit</span>
-              <span class="sp-tag k">flutter_bloc</span>
-              <span class="sp-tag">Provider</span>
-              <span class="sp-tag">Riverpod</span>
-              <span class="sp-tag">GetX</span>
-              <span class="sp-tag">Stream / Future</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal d2">
-            <div class="sp-head">
-              <div class="sp-icon">03</div>
+          <article class="skill-card reveal reveal--delay-1">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">02</div>
               <div>
-                <div class="sp-title">Networking & Real-Time</div>
-                <div class="sp-sub">APIs · SOCKETS · OFFLINE</div>
+                <div class="skill-card__title">State Management</div>
+                <div class="skill-card__sub">REACTIVITY · PREDICTABLE FLOWS</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">BLoC</span>
+              <span class="skill-tag skill-tag--key">Cubit</span>
+              <span class="skill-tag skill-tag--key">flutter_bloc</span>
+              <span class="skill-tag">Provider</span>
+              <span class="skill-tag">Riverpod</span>
+              <span class="skill-tag">GetX</span>
+              <span class="skill-tag">Stream / Future</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">Dio</span>
-              <span class="sp-tag k">Retrofit</span>
-              <span class="sp-tag k">Socket.IO</span>
-              <span class="sp-tag">REST APIs</span>
-              <span class="sp-tag">WebSockets</span>
-              <span class="sp-tag">JSON Serialization</span>
-              <span class="sp-tag">Interceptors</span>
-              <span class="sp-tag">Pagination</span>
-              <span class="sp-tag">Connectivity Handling</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal d3">
-            <div class="sp-head">
-              <div class="sp-icon">04</div>
+          <article class="skill-card reveal reveal--delay-2">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">03</div>
               <div>
-                <div class="sp-title">Storage & Persistence</div>
-                <div class="sp-sub">LOCAL CACHE · SECURE DATA</div>
+                <div class="skill-card__title">Networking &amp; Real-Time</div>
+                <div class="skill-card__sub">APIs · SOCKETS · OFFLINE</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">Dio</span>
+              <span class="skill-tag skill-tag--key">Retrofit</span>
+              <span class="skill-tag skill-tag--key">Socket.IO</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">WebSockets</span>
+              <span class="skill-tag">JSON Serialization</span>
+              <span class="skill-tag">Interceptors</span>
+              <span class="skill-tag">Pagination</span>
+              <span class="skill-tag">Connectivity Handling</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">Hive</span>
-              <span class="sp-tag k">Secure Storage</span>
-              <span class="sp-tag">SharedPreferences</span>
-              <span class="sp-tag">Firestore</span>
-              <span class="sp-tag">Realtime Database</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal">
-            <div class="sp-head">
-              <div class="sp-icon">05</div>
+          <article class="skill-card reveal reveal--delay-3">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">04</div>
               <div>
-                <div class="sp-title">Firebase & Cloud</div>
-                <div class="sp-sub">BAAS · ANALYTICS · MESSAGING</div>
+                <div class="skill-card__title">Storage &amp; Persistence</div>
+                <div class="skill-card__sub">LOCAL CACHE · SECURE DATA</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">Hive</span>
+              <span class="skill-tag skill-tag--key">Secure Storage</span>
+              <span class="skill-tag">SharedPreferences</span>
+              <span class="skill-tag">Firestore</span>
+              <span class="skill-tag">Realtime Database</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">FCM</span>
-              <span class="sp-tag k">Firestore</span>
-              <span class="sp-tag k">Crashlytics</span>
-              <span class="sp-tag">Firebase Analytics</span>
-              <!-- <span class="sp-tag">Remote Config</span> -->
-              <span class="sp-tag">Dynamic Links</span>
-              <span class="sp-tag">Firebase Auth</span>
-              <span class="sp-tag">Cloud Functions</span>
-              <span class="sp-tag">Firebase Storage</span>
-              <!-- <span class="sp-tag">Supabase</span> -->
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal d1">
-            <div class="sp-head">
-              <div class="sp-icon">06</div>
+          <article class="skill-card reveal">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">05</div>
               <div>
-                <div class="sp-title">Payments & Integrations</div>
-                <div class="sp-sub">GCC / MENA SPECIALIZATIONS</div>
+                <div class="skill-card__title">Firebase &amp; Cloud</div>
+                <div class="skill-card__sub">BAAS · ANALYTICS · MESSAGING</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">FCM</span>
+              <span class="skill-tag skill-tag--key">Firestore</span>
+              <span class="skill-tag skill-tag--key">Crashlytics</span>
+              <span class="skill-tag">Firebase Analytics</span>
+              <span class="skill-tag">Dynamic Links</span>
+              <span class="skill-tag">Firebase Auth</span>
+              <span class="skill-tag">Cloud Functions</span>
+              <span class="skill-tag">Firebase Storage</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">UAE PASS</span>
-              <span class="sp-tag k">Apple Pay</span>
-              <span class="sp-tag k">Tabby (BNPL)</span>
-              <span class="sp-tag k">Tamara (BNPL)</span>
-              <span class="sp-tag">Google Pay</span>
-              <!-- <span class="sp-tag">Stripe</span> -->
-              <span class="sp-tag">PayTabs</span>
-              <span class="sp-tag">AppsFlyer</span>
-              <span class="sp-tag">Google Maps</span>
-              <span class="sp-tag">Geolocator</span>
-              <span class="sp-tag">Social Login</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal d2">
-            <div class="sp-head">
-              <div class="sp-icon">07</div>
+          <article class="skill-card reveal reveal--delay-1">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">06</div>
               <div>
-                <div class="sp-title">UI, UX & Quality</div>
-                <div class="sp-sub">POLISH · PERFORMANCE · TESTING</div>
+                <div class="skill-card__title">Payments &amp; Integrations</div>
+                <div class="skill-card__sub">GCC / MENA SPECIALIZATIONS</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">UAE PASS</span>
+              <span class="skill-tag skill-tag--key">Apple Pay</span>
+              <span class="skill-tag skill-tag--key">Tabby (BNPL)</span>
+              <span class="skill-tag skill-tag--key">Tamara (BNPL)</span>
+              <span class="skill-tag">Google Pay</span>
+              <span class="skill-tag">PayTabs</span>
+              <span class="skill-tag">AppsFlyer</span>
+              <span class="skill-tag">Google Maps</span>
+              <span class="skill-tag">Geolocator</span>
+              <span class="skill-tag">Social Login</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">RTL / Arabic</span>
-              <span class="sp-tag k">easy_localization</span>
-              <span class="sp-tag">Responsive Layouts</span>
-              <span class="sp-tag">Lottie</span>
-              <span class="sp-tag">Shimmer</span>
-              <span class="sp-tag">Hero Animations</span>
-              <span class="sp-tag">Custom Animations</span>
-              <span class="sp-tag">Figma</span>
-              <span class="sp-tag">3D Viewer (GLTF)</span>
-              <span class="sp-tag">Showcase / Onboarding</span>
-              <span class="sp-tag">Unit Testing</span>
-              <span class="sp-tag">Widget Testing</span>
-              <span class="sp-tag">Accessibility</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal d3">
-            <div class="sp-head">
-              <div class="sp-icon">08</div>
+          <article class="skill-card reveal reveal--delay-2">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">07</div>
               <div>
-                <div class="sp-title">DevOps & Workflow</div>
-                <div class="sp-sub">SHIPPING · COLLABORATION</div>
+                <div class="skill-card__title">UI, UX &amp; Quality</div>
+                <div class="skill-card__sub">POLISH · PERFORMANCE · TESTING</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">RTL / Arabic</span>
+              <span class="skill-tag skill-tag--key">easy_localization</span>
+              <span class="skill-tag">Responsive Layouts</span>
+              <span class="skill-tag">Lottie</span>
+              <span class="skill-tag">Shimmer</span>
+              <span class="skill-tag">Hero Animations</span>
+              <span class="skill-tag">Custom Animations</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">3D Viewer (GLTF)</span>
+              <span class="skill-tag">Showcase / Onboarding</span>
+              <span class="skill-tag">Unit Testing</span>
+              <span class="skill-tag">Widget Testing</span>
+              <span class="skill-tag">Accessibility</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">App Store Connect</span>
-              <span class="sp-tag k">Google Play Console</span>
-              <span class="sp-tag k">Git / GitHub</span>
-              <span class="sp-tag">CI/CD</span>
-              <span class="sp-tag">Fastlane</span>
-              <span class="sp-tag">GitLab</span>
-              <!-- <span class="sp-tag">Bitbucket</span> -->
-              <span class="sp-tag">Postman</span>
-              <span class="sp-tag">Jira</span>
-              <span class="sp-tag">Trello</span>
-              <span class="sp-tag">Agile / Scrum</span>
-              <span class="sp-tag">Code Review</span>
-            </div>
-          </div>
+          </article>
 
-          <div class="sp-card reveal" style="grid-column: 1 / -1">
-            <div class="sp-head">
-              <div class="sp-icon">09</div>
+          <article class="skill-card reveal reveal--delay-3">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">08</div>
               <div>
-                <div class="sp-title">Soft Skills</div>
-                <div class="sp-sub">MINDSET · TEAM DYNAMICS</div>
+                <div class="skill-card__title">DevOps &amp; Workflow</div>
+                <div class="skill-card__sub">SHIPPING · COLLABORATION</div>
               </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">App Store Connect</span>
+              <span class="skill-tag skill-tag--key">Google Play Console</span>
+              <span class="skill-tag skill-tag--key">Git / GitHub</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">Fastlane</span>
+              <span class="skill-tag">GitLab</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Jira</span>
+              <span class="skill-tag">Trello</span>
+              <span class="skill-tag">Agile / Scrum</span>
+              <span class="skill-tag">Code Review</span>
             </div>
-            <div class="sp-tags">
-              <span class="sp-tag k">End-to-End Ownership</span>
-              <span class="sp-tag k">Problem Solving</span>
-              <span class="sp-tag k">Clean Code Advocate</span>
-              <span class="sp-tag">Technical Communication</span>
-              <span class="sp-tag">Cross-functional Collaboration</span>
-              <span class="sp-tag">Mentorship</span>
-              <span class="sp-tag">Stakeholder Alignment</span>
-              <span class="sp-tag">Architecture Decision Making</span>
-              <span class="sp-tag">Self-learning</span>
-              <span class="sp-tag">Adaptability</span>
-              <span class="sp-tag">Time Management</span>
-              <span class="sp-tag">Remote-ready</span>
+          </article>
+
+          <article class="skill-card skill-card--full-row reveal">
+            <header class="skill-card__head">
+              <div class="skill-card__icon">09</div>
+              <div>
+                <div class="skill-card__title">Soft Skills</div>
+                <div class="skill-card__sub">MINDSET · TEAM DYNAMICS</div>
+              </div>
+            </header>
+            <div class="skill-card__tags">
+              <span class="skill-tag skill-tag--key">End-to-End Ownership</span>
+              <span class="skill-tag skill-tag--key">Problem Solving</span>
+              <span class="skill-tag skill-tag--key">Clean Code Advocate</span>
+              <span class="skill-tag">Technical Communication</span>
+              <span class="skill-tag">Cross-functional Collaboration</span>
+              <span class="skill-tag">Mentorship</span>
+              <span class="skill-tag">Stakeholder Alignment</span>
+              <span class="skill-tag">Architecture Decision Making</span>
+              <span class="skill-tag">Self-learning</span>
+              <span class="skill-tag">Adaptability</span>
+              <span class="skill-tag">Time Management</span>
+              <span class="skill-tag">Remote-ready</span>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" style="background: var(--bg)">
+    <!-- ============================================================
+         Projects — selected case studies
+         ============================================================ -->
+    <section id="projects">
       <div class="section-inner">
-        <div class="slabel">Case Studies</div>
-        <h2 class="stitle">Selected Work</h2>
-        <p class="ssub">
-          Production engineering as technical case studies - real problems, real
+        <div class="section-label">Case Studies</div>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-subtitle">
+          Production engineering as technical case studies — real problems, real
           decisions, real outcomes.
         </p>
 
-        <div class="pcard reveal">
-          <div class="pcard-top">
+        <article class="project-card reveal">
+          <header class="project-card__head">
             <div>
-              <div class="pdomain da">E-Commerce · Live Auction · KSA</div>
-              <h3 class="pcard-title">
-                Soldout <em>- Customer & Vendor Platform</em>
+              <div class="domain domain--auction">
+                E-Commerce · Live Auction · KSA
+              </div>
+              <h3 class="project-card__title">
+                Soldout <em>— Customer &amp; Vendor Platform</em>
               </h3>
-              <p class="pcard-desc">
+              <p class="project-card__desc">
                 Dual-app KSA marketplace: a customer app combining auctions,
                 e-commerce, and user-to-user selling, plus a vendor app for
                 store, sales, and product management.
               </p>
             </div>
-            <div class="plinks">
+            <div class="project-links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.soldout.sa1"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/soldout-ksa/id6449216198"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >iOS</a
               >
               <a
                 href="https://apps.apple.com/eg/app/soldout-vendors-%D8%AA%D8%AC%D8%A7%D8%B1/id6517357260"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >Vendor iOS</a
               >
             </div>
-          </div>
+          </header>
 
-          <div class="pcard-body">
-            <div class="pcol">
-              <div class="pclabel">Problem · Solution</div>
+          <div class="project-card__body">
+            <div class="project-col">
+              <div class="project-col__label">Problem · Solution</div>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Problem.</strong> A single customer app combined
                 auctions, e-commerce, store-based selling, and a used market.
                 The original Firebase-based auction layer introduced latency and
@@ -2731,15 +660,15 @@
                 used-market flows demanded a more controlled real-time layer.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Solution.</strong> Replaced Firebase with
-                <strong>Socket.IO</strong> for auctions and chat - low-latency,
+                <strong>Socket.IO</strong> for auctions and chat — low-latency,
                 reliable event delivery. Scoped real-time strictly to those
                 domains; cart, checkout, wallet, and stores stayed on REST for
                 predictable, testable state.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 Shipped a <strong>used market feature</strong> with user
                 listings, real-time buyer-seller chat, and a self-serve
                 dashboard for product management. Integrated store-based selling
@@ -2747,24 +676,26 @@
                 existing flows.
               </p>
 
-              <div class="pcallout">
+              <div class="project-callout">
                 <strong>Key decision:</strong> isolate real-time (auctions,
-                chat) behind socket streams; keep other domains API-driven -
+                chat) behind socket streams; keep other domains API-driven —
                 avoiding cross-state conflicts in a multi-model marketplace.
               </div>
             </div>
 
-            <div class="pcol">
-              <div class="pclabel a">My Role · Impact</div>
+            <div class="project-col">
+              <div class="project-col__label project-col__label--accent">
+                My Role · Impact
+              </div>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Role.</strong> Flutter Developer across both customer
-                and vendor apps - features, real-time systems, API integration,
+                and vendor apps — features, real-time systems, API integration,
                 and scalable architecture.
               </p>
 
-              <p class="ptext">
-                <strong>Impact.</strong> Delivered a hybrid marketplace -
+              <p class="project-text">
+                <strong>Impact.</strong> Delivered a hybrid marketplace —
                 auctions, used market, and store-based selling in one customer
                 app. Socket-based auction and chat beat the prior Firebase
                 approach on performance. Users self-manage listings via
@@ -2772,829 +703,882 @@
                 sales control.
               </p>
 
-              <div class="pstack">
-                <span class="ptag h">BLoC / Cubit</span>
-                <span class="ptag h">Socket.IO</span>
-                <span class="ptag h">Apple Pay</span>
-                <span class="ptag h">Tabby · Tamara</span>
-                <span class="ptag">Dio + Retrofit</span>
-                <span class="ptag">Firebase Suite</span>
-                <span class="ptag">Hive</span>
-                <span class="ptag">Secure Storage</span>
-                <span class="ptag">Clean Architecture</span>
-                <span class="ptag">easy_localization</span>
+              <div class="project-stack">
+                <span class="tag tag--highlight">BLoC / Cubit</span>
+                <span class="tag tag--highlight">Socket.IO</span>
+                <span class="tag tag--highlight">Apple Pay</span>
+                <span class="tag tag--highlight">Tabby · Tamara</span>
+                <span class="tag">Dio + Retrofit</span>
+                <span class="tag">Firebase Suite</span>
+                <span class="tag">Hive</span>
+                <span class="tag">Secure Storage</span>
+                <span class="tag">Clean Architecture</span>
+                <span class="tag">easy_localization</span>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="pcard reveal d1">
-          <div class="pcard-top">
+        <article class="project-card reveal reveal--delay-1">
+          <header class="project-card__head">
             <div>
-              <div class="pdomain de">Real Estate · UAE · Government Auth</div>
-              <h3 class="pcard-title">
-                AlMarwan <em>- Property Management Platform</em>
+              <div class="domain domain--realestate">
+                Real Estate · UAE · Government Auth
+              </div>
+              <h3 class="project-card__title">
+                AlMarwan <em>— Property Management Platform</em>
               </h3>
-              <p class="pcard-desc">
-                UAE property management platform for investors - units,
+              <p class="project-card__desc">
+                UAE property management platform for investors — units,
                 payments, cheques, and documents in one system, secured by UAE
                 PASS.
               </p>
             </div>
-            <div class="plinks">
+            <div class="project-links">
               <a
                 href="https://apps.apple.com/eg/app/almarwan-developments/id6746422212"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >App Store</a
               >
             </div>
-          </div>
+          </header>
 
-          <div class="pcard-body">
-            <div class="pcol">
-              <div class="pclabel">Problem · Solution</div>
+          <div class="project-card__body">
+            <div class="project-col">
+              <div class="project-col__label">Problem · Solution</div>
 
-              <p class="ptext">
-                <strong>Problem.</strong> Investor flows - properties, payments,
-                cheques, documents - all tied to UAE PASS auth. Required
+              <p class="project-text">
+                <strong>Problem.</strong> Investor flows — properties, payments,
+                cheques, documents — all tied to UAE PASS auth. Required
                 consistent state handling to prevent stale financial data across
                 modules.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Solution.</strong> Integrated UAE PASS with clean
                 separation between auth logic and UI for secure, maintainable
                 sessions. Structured payment and property flows with BLoC/Cubit
                 for predictable, scalable state.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Socket.IO</strong> for real-time updates (payments,
                 status changes); REST elsewhere for stability and consistency.
               </p>
 
-              <div class="pcallout">
-                <strong>Key decision:</strong> hybrid communication - sockets
-                for real-time, REST for transactional - balancing performance
+              <div class="project-callout">
+                <strong>Key decision:</strong> hybrid communication — sockets
+                for real-time, REST for transactional — balancing performance
                 and reliability.
               </div>
             </div>
 
-            <div class="pcol">
-              <div class="pclabel a">My Role · Impact</div>
+            <div class="project-col">
+              <div class="project-col__label project-col__label--accent">
+                My Role · Impact
+              </div>
 
-              <p class="ptext">
-                <strong>Role.</strong> Flutter Developer owning the app - UAE
+              <p class="project-text">
+                <strong>Role.</strong> Flutter Developer owning the app — UAE
                 PASS integration, financial workflows, document handling, and
                 architecture.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Impact.</strong> Shipped a complete property management
-                solution - units, payments, cheque tracking, and documents -
+                solution — units, payments, cheque tracking, and documents —
                 with government auth and real-time updates. Released on the App
                 Store.
               </p>
 
-              <div class="pstack">
-                <span class="ptag h">UAE PASS</span>
-                <span class="ptag h">Socket.IO</span>
-                <span class="ptag h">Clean Architecture</span>
-                <span class="ptag">BLoC / Cubit</span>
-                <span class="ptag">Dio + Retrofit</span>
-                <span class="ptag">Secure Storage</span>
-                <span class="ptag">GetIt</span>
-                <span class="ptag">ScreenUtil</span>
+              <div class="project-stack">
+                <span class="tag tag--highlight">UAE PASS</span>
+                <span class="tag tag--highlight">Socket.IO</span>
+                <span class="tag tag--highlight">Clean Architecture</span>
+                <span class="tag">BLoC / Cubit</span>
+                <span class="tag">Dio + Retrofit</span>
+                <span class="tag">Secure Storage</span>
+                <span class="tag">GetIt</span>
+                <span class="tag">ScreenUtil</span>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="pcard reveal d2">
-          <div class="pcard-top">
+        <article class="project-card reveal reveal--delay-2">
+          <header class="project-card__head">
             <div>
-              <div class="pdomain dec">
+              <div class="domain domain--ecommerce">
                 Multi-Brand · Single Codebase · Flavorizr
               </div>
-              <h3 class="pcard-title">
-                Markatty <em>- Multi-Brand Storefront System</em>
+              <h3 class="project-card__title">
+                Markatty <em>— Multi-Brand Storefront System</em>
               </h3>
-              <p class="pcard-desc">
-                Multi-app e-commerce system - customer and vendor - from one
+              <p class="project-card__desc">
+                Multi-app e-commerce system — customer and vendor — from one
                 Flutter codebase powering multiple brands via multi-flavor
                 architecture.
               </p>
             </div>
-            <div class="plinks">
+            <div class="project-links">
               <a
                 href="https://apps.apple.com/eg/app/markatty-store-%D9%85%D8%A7%D8%B1%D9%83%D8%A7%D8%AA%D9%8A/id6446638830"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >iOS Store</a
               >
               <a
                 href="https://play.google.com/store/apps/details?id=com.trademarks.markatty.admin"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >Vendor Android</a
               >
             </div>
-          </div>
+          </header>
 
-          <div class="pcard-body">
-            <div class="pcol">
-              <div class="pclabel">Problem · Solution</div>
+          <div class="project-card__body">
+            <div class="project-col">
+              <div class="project-col__label">Problem · Solution</div>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Problem.</strong> Needed to ship multiple branded apps
                 (distinct assets, configs, Firebase setups) sharing one core
                 business logic. Separate codebases would mean duplication,
                 inconsistency, and high maintenance overhead.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Solution.</strong> Built a
-                <strong>multi-flavor architecture</strong> with Flavorizr - each
+                <strong>multi-flavor architecture</strong> with Flavorizr — each
                 brand defines its own config (assets, env vars, Firebase) atop
                 one codebase. GetIt DI loads the right config at runtime.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 Hybrid state: <strong>BLoC/Cubit</strong> for core flows (cart,
                 checkout, orders), <strong>Provider</strong> for lightweight
-                modules - scalability where it matters, simplicity where it
+                modules — scalability where it matters, simplicity where it
                 doesn't.
               </p>
 
-              <div class="pcallout">
+              <div class="project-callout">
                 <strong>Key decision:</strong> separate brand config from
-                business logic - new brands ship without touching core code.
+                business logic — new brands ship without touching core code.
               </div>
             </div>
 
-            <div class="pcol">
-              <div class="pclabel a">My Role · Impact</div>
+            <div class="project-col">
+              <div class="project-col__label project-col__label--accent">
+                My Role · Impact
+              </div>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Role.</strong> Flutter Developer on both customer and
-                vendor apps - features, architecture, and multi-flavor setup.
+                vendor apps — features, architecture, and multi-flavor setup.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Impact.</strong> Multiple branded apps from one codebase
-                - less duplication, easier maintenance. Delivered core commerce
+                — less duplication, easier maintenance. Delivered core commerce
                 (products, cart, checkout, orders) and vendor tools (order
                 management, dashboards).
               </p>
 
-              <div class="pstack">
-                <span class="ptag h">Flavorizr</span>
-                <span class="ptag h">Multi-flavor Arch</span>
-                <span class="ptag">BLoC + Provider</span>
-                <span class="ptag">Firebase Suite</span>
-                <span class="ptag">Dio + Retrofit</span>
-                <span class="ptag">GetIt</span>
-                <span class="ptag">Sqflite</span>
-                <span class="ptag">ScreenUtil</span>
+              <div class="project-stack">
+                <span class="tag tag--highlight">Flavorizr</span>
+                <span class="tag tag--highlight">Multi-flavor Arch</span>
+                <span class="tag">BLoC + Provider</span>
+                <span class="tag">Firebase Suite</span>
+                <span class="tag">Dio + Retrofit</span>
+                <span class="tag">GetIt</span>
+                <span class="tag">Sqflite</span>
+                <span class="tag">ScreenUtil</span>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="pcard reveal d3">
-          <div class="pcard-top">
+        <article class="project-card reveal reveal--delay-3">
+          <header class="project-card__head">
             <div>
-              <div class="pdomain df">Fashion E-Commerce · 3D Viewer</div>
-              <h3 class="pcard-title">
-                La Mode <em>- Fashion E-Commerce App</em>
+              <div class="domain domain--fashion">
+                Fashion E-Commerce · 3D Viewer
+              </div>
+              <h3 class="project-card__title">
+                La Mode <em>— Fashion E-Commerce App</em>
               </h3>
-              <p class="pcard-desc">
-                Fashion e-commerce app built from scratch - 3D product
+              <p class="project-card__desc">
+                Fashion e-commerce app built from scratch — 3D product
                 visualization, full shopping flows, Arabic/English localization.
               </p>
             </div>
-            <div class="plinks">
+            <div class="project-links">
               <a
                 href="https://github.com/Emanpepars/la-mode"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >GitHub</a
               >
             </div>
-          </div>
+          </header>
 
-          <div class="pcard-body">
-            <div class="pcol">
-              <div class="pclabel">Problem · Solution</div>
+          <div class="project-card__body">
+            <div class="project-col">
+              <div class="project-col__label">Problem · Solution</div>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Problem.</strong> Modern fashion commerce required full
                 shopping flows (auth, cart, checkout, orders) alongside heavy
-                <strong>interactive 3D product previews</strong> - costly on
+                <strong>interactive 3D product previews</strong> — costly on
                 performance and memory if mishandled.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Solution.</strong> Full commerce flow on Clean
                 Architecture + BLoC. 3D visualization via
-                <code class="ic">model_viewer_plus</code> with controlled
-                lifecycle handling for smooth performance.
+                <code class="inline-code">model_viewer_plus</code> with
+                controlled lifecycle handling for smooth performance.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 Hive local caching for speed; Lottie animations, Shimmer loading
                 states, and responsive UI across devices.
               </p>
 
-              <div class="pcallout">
+              <div class="project-callout">
                 <strong>Key decision:</strong> rich UI (3D, animations) on
-                structured architecture - performance without UX compromise.
+                structured architecture — performance without UX compromise.
               </div>
             </div>
 
-            <div class="pcol">
-              <div class="pclabel a">My Role · Impact</div>
+            <div class="project-col">
+              <div class="project-col__label project-col__label--accent">
+                My Role · Impact
+              </div>
 
-              <p class="ptext">
-                <strong>Role.</strong> Sole Flutter developer - architecture,
+              <p class="project-text">
+                <strong>Role.</strong> Sole Flutter developer — architecture,
                 features, and UI built from scratch.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Impact.</strong> Shipped a complete shopping experience
-                - auth, discovery, cart, checkout, orders. 3D previews raised
+                — auth, discovery, cart, checkout, orders. 3D previews raised
                 product visualization and engagement.
               </p>
 
-              <div class="pstack">
-                <span class="ptag h">3D Viewer</span>
-                <span class="ptag h">model_viewer_plus</span>
-                <span class="ptag">BLoC + Provider</span>
-                <span class="ptag">Hive</span>
-                <span class="ptag">Dio</span>
-                <span class="ptag">Firebase Messaging</span>
-                <span class="ptag">ScreenUtil</span>
-                <span class="ptag">Lottie</span>
+              <div class="project-stack">
+                <span class="tag tag--highlight">3D Viewer</span>
+                <span class="tag tag--highlight">model_viewer_plus</span>
+                <span class="tag">BLoC + Provider</span>
+                <span class="tag">Hive</span>
+                <span class="tag">Dio</span>
+                <span class="tag">Firebase Messaging</span>
+                <span class="tag">ScreenUtil</span>
+                <span class="tag">Lottie</span>
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="pcard reveal">
-          <div class="pcard-top">
+        <article class="project-card reveal">
+          <header class="project-card__head">
             <div>
-              <div class="pdomain de">Fintech · Performance · Freelance</div>
-              <h3 class="pcard-title">
-                Slash <em>- Refactor & Performance Engineering</em>
+              <div class="domain domain--realestate">
+                Fintech · Performance · Freelance
+              </div>
+              <h3 class="project-card__title">
+                Slash <em>— Refactor &amp; Performance Engineering</em>
               </h3>
-              <p class="pcard-desc">
-                Large-scale fintech work - performance, legacy refactors, and UX
+              <p class="project-card__desc">
+                Large-scale fintech work — performance, legacy refactors, and UX
                 improvements.
               </p>
             </div>
-            <div class="plinks">
+            <div class="project-links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.slashOrg.slash"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/slash-hub/id6463633495"
-                target="_blank"
-                class="plink"
+                target="_blank" rel="noopener"
+                class="project-link"
                 >iOS</a
               >
             </div>
-          </div>
+          </header>
 
-          <div class="pcard-body">
-            <div class="pcol">
-              <div class="pclabel">Problem · Solution</div>
+          <div class="project-card__body">
+            <div class="project-col">
+              <div class="project-col__label">Problem · Solution</div>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Problem.</strong> Modules suffered from slow
-                performance, inefficient UI rendering, and tight coupling - hard
+                performance, inefficient UI rendering, and tight coupling — hard
                 to maintain and extend.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Solution.</strong> Refactored legacy screens to cut
                 unnecessary rebuilds and speed up rendering. Restructured
                 feature modules on Clean Architecture + Cubit for testable
                 state.
               </p>
 
-              <div class="pcallout">
+              <div class="project-callout">
                 <strong>Working approach:</strong> iterative, production-ready
                 changes integrated into existing team workflows.
               </div>
             </div>
 
-            <div class="pcol">
-              <div class="pclabel a">My Role · Impact</div>
+            <div class="project-col">
+              <div class="project-col__label project-col__label--accent">
+                My Role · Impact
+              </div>
 
-              <p class="ptext">
-                <strong>Role.</strong> Freelance Flutter Developer -
+              <p class="project-text">
+                <strong>Role.</strong> Freelance Flutter Developer —
                 performance, refactoring, features.
               </p>
 
-              <p class="ptext">
+              <p class="project-text">
                 <strong>Impact.</strong> Improved UI responsiveness and app
                 performance; moved parts of the codebase to a cleaner, more
                 maintainable architecture.
               </p>
 
-              <div class="pstack">
-                <span class="ptag h">Clean Architecture</span>
-                <span class="ptag h">Cubit (BLoC)</span>
-                <span class="ptag h">Performance</span>
-                <span class="ptag">REST APIs</span>
-                <span class="ptag">Firebase</span>
-                <span class="ptag">Figma</span>
-                <span class="ptag">Jira</span>
+              <div class="project-stack">
+                <span class="tag tag--highlight">Clean Architecture</span>
+                <span class="tag tag--highlight">Cubit (BLoC)</span>
+                <span class="tag tag--highlight">Performance</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Jira</span>
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="apps-section" id="apps">
+    <!-- ============================================================
+         Apps — full portfolio grid
+         ============================================================ -->
+    <section class="apps" id="apps">
       <div class="section-inner">
-        <div class="slabel">Full Portfolio</div>
-        <h2 class="stitle">All Shipped Apps</h2>
-        <p class="ssub">
-          Every production app I've shipped. Live on App Store and Google Play -
+        <div class="section-label">Full Portfolio</div>
+        <h2 class="section-title">All Shipped Apps</h2>
+        <p class="section-subtitle">
+          Every production app I've shipped. Live on App Store and Google Play —
           real users, real reviews, real release cycles.
         </p>
-        <div class="apps-grid">
-          <div class="appc reveal">
-            <div class="appc-top">
-              <div class="appc-logo l-purple">SO</div>
+
+        <div class="apps__grid">
+          <article class="app-card reveal">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-purple">SO</div>
               <div>
-                <div class="appc-name">Soldout KSA</div>
-                <div class="appc-co">Soldout · Customer App</div>
+                <div class="app-card__name">Soldout KSA</div>
+                <div class="app-card__company">Soldout · Customer App</div>
               </div>
-            </div>
-            <span class="appc-domain da">E-Commerce · Auction</span>
-            <p class="appc-desc">
-              KSA marketplace - live bidding, Apple Pay, Tabby, Tamara,
+            </header>
+            <span class="app-card__domain domain--auction">
+              E-Commerce · Auction
+            </span>
+            <p class="app-card__desc">
+              KSA marketplace — live bidding, Apple Pay, Tabby, Tamara,
               real-time chat, and a promotional coins wallet.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.soldout.sa1"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/soldout-ksa/id6449216198"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d1">
-            <div class="appc-top">
-              <div class="appc-logo l-coral">SV</div>
+          <article class="app-card reveal reveal--delay-1">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-coral">SV</div>
               <div>
-                <div class="appc-name">Soldout Vendor</div>
-                <div class="appc-co">Soldout · Merchant App</div>
+                <div class="app-card__name">Soldout Vendor</div>
+                <div class="app-card__company">Soldout · Merchant App</div>
               </div>
-            </div>
-            <span class="appc-domain da">E-Commerce · B2B</span>
-            <p class="appc-desc">
-              Merchant app for Soldout - dashboard, orders, products, wallet,
+            </header>
+            <span class="app-card__domain domain--auction">
+              E-Commerce · B2B
+            </span>
+            <p class="app-card__desc">
+              Merchant app for Soldout — dashboard, orders, products, wallet,
               transaction history.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://apps.apple.com/eg/app/soldout-vendors-%D8%AA%D8%AC%D8%A7%D8%B1/id6517357260"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d2">
-            <div class="appc-top">
-              <div class="appc-logo l-teal">AM</div>
+          <article class="app-card reveal reveal--delay-2">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-teal">AM</div>
               <div>
-                <div class="appc-name">AlMarwan</div>
-                <div class="appc-co">AlMarwan · UAE Real Estate</div>
+                <div class="app-card__name">AlMarwan</div>
+                <div class="app-card__company">AlMarwan · UAE Real Estate</div>
               </div>
-            </div>
-            <span class="appc-domain de">Real Estate · UAE PASS</span>
-            <p class="appc-desc">
+            </header>
+            <span class="app-card__domain domain--realestate">
+              Real Estate · UAE PASS
+            </span>
+            <p class="app-card__desc">
               Property management with UAE PASS government auth, cheque
               workflows, invoices, and real-time socket updates.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://apps.apple.com/eg/app/almarwan-developments/id6746422212"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d3">
-            <div class="appc-top">
-              <div class="appc-logo l-amber">MK</div>
+          <article class="app-card reveal reveal--delay-3">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-amber">MK</div>
               <div>
-                <div class="appc-name">Markatty Store</div>
-                <div class="appc-co">NTG Clarity · Customer</div>
+                <div class="app-card__name">Markatty Store</div>
+                <div class="app-card__company">NTG Clarity · Customer</div>
               </div>
-            </div>
-            <span class="appc-domain dec">E-Commerce · Multi-flavor</span>
-            <p class="appc-desc">
-              Bagisto-backed multi-brand storefront on Flavorizr - one codebase,
+            </header>
+            <span class="app-card__domain domain--ecommerce">
+              E-Commerce · Multi-flavor
+            </span>
+            <p class="app-card__desc">
+              Bagisto-backed multi-brand storefront on Flavorizr — one codebase,
               many branded apps.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://apps.apple.com/eg/app/markatty-store-%D9%85%D8%A7%D8%B1%D9%83%D8%A7%D8%AA%D9%8A/id6446638830"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal">
-            <div class="appc-top">
-              <div class="appc-logo l-lime">MV</div>
+          <article class="app-card reveal">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-lime">MV</div>
               <div>
-                <div class="appc-name">Markatty Vendor</div>
-                <div class="appc-co">NTG Clarity · Merchant</div>
+                <div class="app-card__name">Markatty Vendor</div>
+                <div class="app-card__company">NTG Clarity · Merchant</div>
               </div>
-            </div>
-            <span class="appc-domain dec">E-Commerce · B2B</span>
-            <p class="appc-desc">
-              Merchant app - order management, analytics dashboard, media
+            </header>
+            <span class="app-card__domain domain--ecommerce">
+              E-Commerce · B2B
+            </span>
+            <p class="app-card__desc">
+              Merchant app — order management, analytics dashboard, media
               uploads, location-aware features.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.trademarks.markatty.admin"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d1">
-            <div class="appc-top">
-              <div class="appc-logo l-blue">HA</div>
+          <article class="app-card reveal reveal--delay-1">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-blue">HA</div>
               <div>
-                <div class="appc-name">Hany Abdelzaher</div>
-                <div class="appc-co">Pharmacy · Egypt</div>
+                <div class="app-card__name">Hany Abdelzaher</div>
+                <div class="app-card__company">Pharmacy · Egypt</div>
               </div>
-            </div>
-            <span class="appc-domain df">Healthcare · Pharmacy</span>
-            <p class="appc-desc">
-              Branded pharmacy on the Markatty multi-flavor system - full
+            </header>
+            <span class="app-card__domain domain--fashion">
+              Healthcare · Pharmacy
+            </span>
+            <p class="app-card__desc">
+              Branded pharmacy on the Markatty multi-flavor system — full
               prescription and order flows.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.markatty.hanyabdelzaher"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/hany-abdelzaher/id6742378476"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d2">
-            <div class="appc-top">
-              <div class="appc-logo l-pink">BN</div>
+          <article class="app-card reveal reveal--delay-2">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-pink">BN</div>
               <div>
-                <div class="appc-name">Beneshty</div>
-                <div class="appc-co">GS · Customer App</div>
+                <div class="app-card__name">Beneshty</div>
+                <div class="app-card__company">GS · Customer App</div>
               </div>
-            </div>
-            <span class="appc-domain da">E-Commerce · Retail</span>
-            <p class="appc-desc">
-              Shopping app across Egypt - catalog, cart, checkout, delivery
+            </header>
+            <span class="app-card__domain domain--auction">
+              E-Commerce · Retail
+            </span>
+            <p class="app-card__desc">
+              Shopping app across Egypt — catalog, cart, checkout, delivery
               tracking.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.BeNeshtyStore"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/beneshty/id1596605724"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d3">
-            <div class="appc-top">
-              <div class="appc-logo l-indigo">SH</div>
+          <article class="app-card reveal reveal--delay-3">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-indigo">SH</div>
               <div>
-                <div class="appc-name">Slash Hub</div>
-                <div class="appc-co">Slash · Fintech</div>
+                <div class="app-card__name">Slash Hub</div>
+                <div class="app-card__company">Slash · Fintech</div>
               </div>
-            </div>
-            <span class="appc-domain de">Fintech · Social Payments</span>
-            <p class="appc-desc">
+            </header>
+            <span class="app-card__domain domain--realestate">
+              Fintech · Social Payments
+            </span>
+            <p class="app-card__desc">
               Performance, UI, and architecture refactors on a large-scale
               fintech/social product.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.slashOrg.slash"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/slash-hub/id6463633495"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal">
-            <div class="appc-top">
-              <div class="appc-logo l-coral">JD</div>
+          <article class="app-card reveal">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-coral">JD</div>
               <div>
-                <div class="appc-name">J&D Pharmacy</div>
-                <div class="appc-co">Revealsite · US</div>
+                <div class="app-card__name">J&amp;D Pharmacy</div>
+                <div class="app-card__company">Revealsite · US</div>
               </div>
-            </div>
-            <span class="appc-domain df">Healthcare · Telemedicine</span>
-            <p class="appc-desc">
-              US pharmacy app - medicine ordering, prescriptions, secure auth,
+            </header>
+            <span class="app-card__domain domain--fashion">
+              Healthcare · Telemedicine
+            </span>
+            <p class="app-card__desc">
+              US pharmacy app — medicine ordering, prescriptions, secure auth,
               push notifications.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.revealsite.pharmacyjd"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/j-d-pharmacy/id6476877757"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d1">
-            <div class="appc-top">
-              <div class="appc-logo l-teal">MC</div>
+          <article class="app-card reveal reveal--delay-1">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-teal">MC</div>
               <div>
-                <div class="appc-name">Medical Compounding</div>
-                <div class="appc-co">Revealsite · US</div>
+                <div class="app-card__name">Medical Compounding</div>
+                <div class="app-card__company">Revealsite · US</div>
               </div>
-            </div>
-            <span class="appc-domain df">Healthcare · Pharmacy</span>
-            <p class="appc-desc">
-              Compounding pharmacy - specialized prescription workflows and
+            </header>
+            <span class="app-card__domain domain--fashion">
+              Healthcare · Pharmacy
+            </span>
+            <p class="app-card__desc">
+              Compounding pharmacy — specialized prescription workflows and
               secure medical data handling.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.revealsite.medicalcenter"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/eg/app/medical-compounding-pharmacy/id6477877781"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d2">
-            <div class="appc-top">
-              <div class="appc-logo l-amber">QR</div>
+          <article class="app-card reveal reveal--delay-2">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-amber">QR</div>
               <div>
-                <div class="appc-name">Quick RX</div>
-                <div class="appc-co">Revealsite · Multi-market</div>
+                <div class="app-card__name">Quick RX</div>
+                <div class="app-card__company">Revealsite · Multi-market</div>
               </div>
-            </div>
-            <span class="appc-domain df">Healthcare · Pharmacy</span>
-            <p class="appc-desc">
-              Prescription ordering - secure auth, refill automation, real-time
+            </header>
+            <span class="app-card__domain domain--fashion">
+              Healthcare · Pharmacy
+            </span>
+            <p class="app-card__desc">
+              Prescription ordering — secure auth, refill automation, real-time
               order tracking.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.revealsite.quickrxapp"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/ke/app/quick-rx/id6517353130"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d3">
-            <div class="appc-top">
-              <div class="appc-logo l-purple">HP</div>
+          <article class="app-card reveal reveal--delay-3">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-purple">HP</div>
               <div>
-                <div class="appc-name">Holland Pharmacy</div>
-                <div class="appc-co">Revealsite · US</div>
+                <div class="app-card__name">Holland Pharmacy</div>
+                <div class="app-card__company">Revealsite · US</div>
               </div>
-            </div>
-            <span class="appc-domain df">Healthcare · Pharmacy</span>
-            <p class="appc-desc">
-              US retail pharmacy - prescriptions, store locator, secure patient
+            </header>
+            <span class="app-card__domain domain--fashion">
+              Healthcare · Pharmacy
+            </span>
+            <p class="app-card__desc">
+              US retail pharmacy — prescriptions, store locator, secure patient
               workflows.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://play.google.com/store/apps/details?id=com.reveal.holland"
-                target="_blank"
-                class="appc-link g"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--google"
                 >▸ Android</a
               >
               <a
                 href="https://apps.apple.com/us/app/holland-pharmacy/id6739270980"
-                target="_blank"
-                class="appc-link a"
+                target="_blank" rel="noopener"
+                class="app-card__link app-card__link--apple"
                 >▸ iOS</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal">
-            <div class="appc-top">
-              <div class="appc-logo l-pink">LM</div>
+          <article class="app-card reveal">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-pink">LM</div>
               <div>
-                <div class="appc-name">La Mode</div>
-                <div class="appc-co">Personal · Open Source</div>
+                <div class="app-card__name">La Mode</div>
+                <div class="app-card__company">Personal · Open Source</div>
               </div>
-            </div>
-            <span class="appc-domain df">Fashion · 3D Viewer</span>
-            <p class="appc-desc">
-              Fashion e-commerce - interactive 3D product visualization, Clean
+            </header>
+            <span class="app-card__domain domain--fashion">
+              Fashion · 3D Viewer
+            </span>
+            <p class="app-card__desc">
+              Fashion e-commerce — interactive 3D product visualization, Clean
               Architecture, RTL support.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://github.com/Emanpepars/la-mode"
-                target="_blank"
-                class="appc-link"
+                target="_blank" rel="noopener"
+                class="app-card__link"
                 >▸ GitHub</a
               >
             </div>
-          </div>
+          </article>
 
-          <div class="appc reveal d1">
-            <div class="appc-top">
-              <div class="appc-logo l-lime">VR</div>
+          <article class="app-card reveal reveal--delay-1">
+            <header class="app-card__head">
+              <div class="app-card__logo logo-lime">VR</div>
               <div>
-                <div class="appc-name">MetaPharaoh</div>
-                <div class="appc-co">Graduation · Award · VR</div>
+                <div class="app-card__name">MetaPharaoh</div>
+                <div class="app-card__company">Graduation · Award · VR</div>
               </div>
-            </div>
-            <span class="appc-domain dec">Oculus Quest 2 · Unity · AI</span>
-            <p class="appc-desc">
-              Immersive VR ancient Egypt on Oculus Quest 2 - Unity, Blender,
+            </header>
+            <span class="app-card__domain domain--ecommerce">
+              Oculus Quest 2 · Unity · AI
+            </span>
+            <p class="app-card__desc">
+              Immersive VR ancient Egypt on Oculus Quest 2 — Unity, Blender,
               OpenAI chatbot guide. Featured in national press.
             </p>
-            <div class="appc-links">
+            <div class="app-card__links">
               <a
                 href="https://www.linkedin.com/posts/emanpepars_graduationproject-flutter-metaphrase-activity-7083841219218280448-SwXM?utm_source=share&utm_medium=member_desktop&rcm=ACoAADeq4-oB_PaxAi4_JEfcNbo4kv_frWyXen0"
-                target="_blank"
-                class="appc-link"
+                target="_blank" rel="noopener"
+                class="app-card__link"
                 >▸ Press</a
               >
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="appr-section" id="approach">
+    <!-- ============================================================
+         Approach — engineering philosophy
+         ============================================================ -->
+    <section class="section--alt-bg" id="approach">
       <div class="section-inner">
-        <div class="slabel">Engineering Philosophy</div>
-        <h2 class="stitle">How I Think</h2>
-        <p class="ssub">
-          Consistent engineering principles across every project - not shifting
+        <div class="section-label">Engineering Philosophy</div>
+        <h2 class="section-title">How I Think</h2>
+        <p class="section-subtitle">
+          Consistent engineering principles across every project — not shifting
           preferences.
         </p>
 
-        <div class="appr-grid">
-          <div class="appr-cell reveal">
-            <span class="appr-num">01</span>
-            <h3 class="appr-title">Architecture First</h3>
-            <p class="appr-body">
+        <div class="approach-grid">
+          <article class="approach-cell reveal">
+            <span class="approach-cell__num">01</span>
+            <h3 class="approach-cell__title">Architecture First</h3>
+            <p class="approach-cell__body">
               Clean Architecture with strict separation of Domain, Data, and
               Presentation. Business logic never leaks into UI. Maintainability
               is decided here, not later.
             </p>
-          </div>
+          </article>
 
-          <div class="appr-cell reveal d1">
-            <span class="appr-num">02</span>
-            <h3 class="appr-title">State with Intent</h3>
-            <p class="appr-body">
+          <article class="approach-cell reveal reveal--delay-1">
+            <span class="approach-cell__num">02</span>
+            <h3 class="approach-cell__title">State with Intent</h3>
+            <p class="approach-cell__body">
               BLoC/Cubit for complex flows. Provider for simple UI state.
               Riverpod when scalable dependency control and async handling
               matter. One tool for everything is a mistake.
             </p>
-          </div>
+          </article>
 
-          <div class="appr-cell reveal d2">
-            <span class="appr-num">03</span>
-            <h3 class="appr-title">Dependency Injection</h3>
-            <p class="appr-body">
-              Dependencies are injected, never created inside logic layers -
+          <article class="approach-cell reveal reveal--delay-2">
+            <span class="approach-cell__num">03</span>
+            <h3 class="approach-cell__title">Dependency Injection</h3>
+            <p class="approach-cell__body">
+              Dependencies are injected, never created inside logic layers —
               delivering testability, loose coupling, and safe replacement
               without breaking domain rules.
             </p>
-          </div>
+          </article>
 
-          <div class="appr-cell reveal">
-            <span class="appr-num">04</span>
-            <h3 class="appr-title">Real-Time Systems</h3>
-            <p class="appr-body">
+          <article class="approach-cell reveal">
+            <span class="approach-cell__num">04</span>
+            <h3 class="approach-cell__title">Real-Time Systems</h3>
+            <p class="approach-cell__body">
               Socket events are treated as state transitions. Every event
               triggers controlled side-effects in Domain, not UI, ensuring
               consistency under concurrent updates.
             </p>
-          </div>
+          </article>
 
-          <div class="appr-cell reveal d1">
-            <span class="appr-num">05</span>
-            <h3 class="appr-title">Type-Safe APIs</h3>
-            <p class="appr-body">
+          <article class="approach-cell reveal reveal--delay-1">
+            <span class="approach-cell__num">05</span>
+            <h3 class="approach-cell__title">Type-Safe APIs</h3>
+            <p class="approach-cell__body">
               Dio + Retrofit + code generation eliminate runtime API bugs by
               moving failures to compile time. Backend contract changes never
               silently break production.
             </p>
-          </div>
+          </article>
 
-          <div class="appr-cell reveal d2">
-            <span class="appr-num">06</span>
-            <h3 class="appr-title">GCC-Ready Delivery</h3>
-            <p class="appr-body">
+          <article class="approach-cell reveal reveal--delay-2">
+            <span class="approach-cell__num">06</span>
+            <h3 class="approach-cell__title">GCC-Ready Delivery</h3>
+            <p class="approach-cell__body">
               UAE/Saudi production standards: government auth, BNPL, RTL-first
               UI, and CI/CD ownership from build to store release.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="exp-section" id="experience">
+    <!-- ============================================================
+         Experience — work history timeline
+         ============================================================ -->
+    <section class="section--alt-bg" id="experience">
       <div class="section-inner">
-        <div class="slabel">Work History</div>
-        <h2 class="stitle">Experience</h2>
-        <p class="ssub">
+        <div class="section-label">Work History</div>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">
           Four companies. All production. Full ownership from architecture
           through App Store / Google Play deployment.
         </p>
-        <div class="exp-timeline">
-          <div class="exp-item reveal">
-            <div class="exp-date">Dec 2025 - Present</div>
-            <div class="exp-role">Flutter Developer</div>
-            <div class="exp-co">
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-item__date">Dec 2025 — Present</div>
+            <div class="timeline-item__role">Flutter Developer</div>
+            <div class="timeline-item__company">
               Soldout KSA · Riyadh, Saudi Arabia · Full-time
             </div>
-            <ul class="exp-pts">
+            <ul class="timeline-points">
               <li>
                 Built both
                 <strong>customer marketplace and vendor management apps</strong>
-                - features through App Store and Play Store release.
+                — features through App Store and Play Store release.
               </li>
               <li>
                 Engineered a <strong>live auction system</strong> with
@@ -3603,7 +1587,7 @@
               </li>
               <li>
                 Integrated Apple Pay, Tabby, and Tamara behind a unified
-                checkout abstraction - UI stays payment-provider agnostic.
+                checkout abstraction — UI stays payment-provider agnostic.
               </li>
               <li>
                 Built a
@@ -3611,24 +1595,24 @@
                 immutable value objects for auditable transaction history.
               </li>
             </ul>
-          </div>
-          <div class="exp-item reveal d1">
-            <div class="exp-date">July 2024 - Nov 2025</div>
-            <div class="exp-role">Flutter Developer</div>
-            <div class="exp-co">
+          </article>
+
+          <article class="timeline-item reveal reveal--delay-1">
+            <div class="timeline-item__date">July 2024 — Nov 2025</div>
+            <div class="timeline-item__role">Flutter Developer</div>
+            <div class="timeline-item__company">
               <a
                 href="https://www.linkedin.com/company/ntg-clarity/posts/?feedView=all"
-                target="_blank"
-                style="color: inherit; text-decoration: none"
+                target="_blank" rel="noopener"
                 >NTG Clarity</a
               >
               · Cairo, Egypt · Full-time
             </div>
-            <ul class="exp-pts">
+            <ul class="timeline-points">
               <li>
                 Sole architect of a
                 <strong>multi-flavor system</strong> powering multiple branded
-                storefronts from one codebase via Flavorizr - per-brand Firebase
+                storefronts from one codebase via Flavorizr — per-brand Firebase
                 configs, icons, bundle IDs, and env variables.
               </li>
               <li>
@@ -3637,34 +1621,34 @@
               </li>
               <li>
                 Applied <strong>hybrid state management</strong> (BLoC for core
-                flows, Provider for lightweight modules) - a deliberate choice
+                flows, Provider for lightweight modules) — a deliberate choice
                 per domain complexity.
               </li>
             </ul>
-          </div>
-          <div class="exp-item reveal d2">
-            <div class="exp-date">Dec 2023 - Jun 2024</div>
-            <div class="exp-role">Flutter Developer</div>
-            <div class="exp-co">
+          </article>
+
+          <article class="timeline-item reveal reveal--delay-2">
+            <div class="timeline-item__date">Dec 2023 — Jun 2024</div>
+            <div class="timeline-item__role">Flutter Developer</div>
+            <div class="timeline-item__company">
               <a
                 href="https://www.linkedin.com/company/gs-for-applications/"
-                target="_blank"
-                style="color: inherit; text-decoration: none"
+                target="_blank" rel="noopener"
                 >GS For Applications</a
               >
               · Cairo, Egypt · Full-time
             </div>
-            <ul class="exp-pts">
+            <ul class="timeline-points">
               <li>
                 Owned <strong>full lifecycle development</strong> for
-                <strong>Beneshty, Zebra, and La Jolie</strong> - architecture
+                <strong>Beneshty, Zebra, and La Jolie</strong> — architecture
                 (Clean Architecture + Cubit), API integration, and
                 cross-platform releases.
               </li>
               <li>
                 Built a
                 <strong>modular UI component library and theming system</strong>
-                for La Jolie (cosmetics e-commerce) - brand customisation as a
+                for La Jolie (cosmetics e-commerce) — brand customisation as a
                 config problem, not a code problem.
               </li>
               <li>
@@ -3673,28 +1657,28 @@
                 owners.
               </li>
             </ul>
-          </div>
-          <div class="exp-item reveal d3">
-            <div class="exp-date">Oct 2022 - Nov 2023</div>
-            <div class="exp-role">Flutter Developer</div>
-            <div class="exp-co">
+          </article>
+
+          <article class="timeline-item reveal reveal--delay-3">
+            <div class="timeline-item__date">Oct 2022 — Nov 2023</div>
+            <div class="timeline-item__role">Flutter Developer</div>
+            <div class="timeline-item__company">
               <a
                 href="https://www.linkedin.com/company/revealsitellc/"
-                target="_blank"
-                style="color: inherit; text-decoration: none"
+                target="_blank" rel="noopener"
                 >Revealsite</a
               >
               · United States · Remote
             </div>
-            <ul class="exp-pts">
+            <ul class="timeline-points">
               <li>
                 Shipped and maintained
-                <strong>four production healthcare apps</strong> (J&D Pharmacy,
-                Medical Compounding, Quick RX, Holland Pharmacy) across US and
-                Middle East markets.
+                <strong>four production healthcare apps</strong> (J&amp;D
+                Pharmacy, Medical Compounding, Quick RX, Holland Pharmacy)
+                across US and Middle East markets.
               </li>
               <li>
-                Owned the full lifecycle - testing, debugging, and App Store /
+                Owned the full lifecycle — testing, debugging, and App Store /
                 Google Play deployment in a sensitive healthcare context.
               </li>
               <li>
@@ -3702,17 +1686,21 @@
                 notifications, and ensured reliability across Android and iOS.
               </li>
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="about" style="background: var(--bg)">
+    <!-- ============================================================
+         About
+         ============================================================ -->
+    <section id="about">
       <div class="section-inner">
-        <div class="slabel">Background</div>
-        <h2 class="stitle">About Me</h2>
-        <div class="about-layout">
-          <div class="about-body reveal">
+        <div class="section-label">Background</div>
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about__layout">
+          <div class="about__body reveal">
             <p>
               <strong>Flutter Developer based in Dubai.</strong> I've shipped
               paired <strong>vendor and customer apps</strong> for two live
@@ -3721,220 +1709,140 @@
             </p>
             <p>
               I own every release end-to-end. Architecture and deployment are
-              the same problem - I don't design systems that can't ship.
+              the same problem — I don't design systems that can't ship.
             </p>
             <p>
-              <strong>BSc Computer Science with AI specialisation</strong> -
+              <strong>BSc Computer Science with AI specialisation</strong> —
               Cairo University, 2019–2023, GPA 3/4. Graduation project
-              <strong>MetaPharaoh</strong> - featured in national press.
+              <strong>MetaPharaoh</strong> — featured in national press.
             </p>
           </div>
-          <div class="about-card reveal d2">
-            <div class="acard-head">
-              <div class="avatar">EP</div>
+
+          <aside class="about-card reveal reveal--delay-2">
+            <header class="about-card__head">
+              <div class="avatar" aria-hidden="true">EP</div>
               <div>
-                <div class="ach-name">Eman Pepars</div>
-                <div class="ach-sub">Flutter Engineer · Dubai, UAE</div>
+                <div class="about-card__name">Eman Pepars</div>
+                <div class="about-card__sub">Flutter Engineer · Dubai, UAE</div>
               </div>
-            </div>
+            </header>
+
             <div class="fact-row">
-              <div class="fk">Email</div>
-              <div class="fv">
+              <div class="fact-key">Email</div>
+              <div class="fact-value">
                 <a href="mailto:emanpepars2@gmail.com">emanpepars2@gmail.com</a>
               </div>
             </div>
             <div class="fact-row">
-              <div class="fk">Phone</div>
-              <div class="fv">+971 58 556 2001</div>
+              <div class="fact-key">Phone</div>
+              <div class="fact-value">+971 58 556 2001</div>
             </div>
             <div class="fact-row">
-              <div class="fk">LinkedIn</div>
-              <div class="fv">
-                <a href="https://www.linkedin.com/in/emanpepars" target="_blank"
+              <div class="fact-key">LinkedIn</div>
+              <div class="fact-value">
+                <a href="https://www.linkedin.com/in/emanpepars" target="_blank" rel="noopener"
                   >linkedin.com/in/emanpepars</a
                 >
               </div>
             </div>
-            <!-- <div class="fact-row">
-              <div class="fk">GitHub</div>
-              <div class="fv">
-                <a href="https://github.com/Emanpepars" target="_blank"
-                  >github.com/Emanpepars</a
-                >
-              </div>
-            </div> -->
             <div class="fact-row">
-              <div class="fk">Portfolio</div>
-              <div class="fv">
-                <a href="https://portfolio.emanpepars.com" target="_blank"
+              <div class="fact-key">Portfolio</div>
+              <div class="fact-value">
+                <a href="https://portfolio.emanpepars.com" target="_blank" rel="noopener"
                   >portfolio.emanpepars.com</a
                 >
               </div>
             </div>
             <div class="fact-row">
-              <div class="fk">Education</div>
-              <div class="fv">
+              <div class="fact-key">Education</div>
+              <div class="fact-value">
                 BSc CS + AI · Cairo University · 2019 – 2023 · GPA 3/4
               </div>
             </div>
             <div class="fact-row">
-              <div class="fk">Languages</div>
-              <div class="fv">Arabic (native) · English (professional)</div>
+              <div class="fact-key">Languages</div>
+              <div class="fact-value">
+                Arabic (native) · English (professional)
+              </div>
             </div>
             <div class="fact-row">
-              <div class="fk">Award</div>
-              <div class="fv">
-                <a href="https://www.cairo24.com/1806628" target="_blank"
+              <div class="fact-key">Award</div>
+              <div class="fact-value">
+                <a href="https://www.cairo24.com/1806628" target="_blank" rel="noopener"
                   >Featured in National Press</a
                 >
               </div>
             </div>
             <div class="fact-row">
-              <div class="fk">Status</div>
-              <div class="fv avail">Open to opportunities</div>
+              <div class="fact-key">Status</div>
+              <div class="fact-value fact-value--available">
+                Open to opportunities
+              </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
-      <div
-        style="
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            ellipse 800px 400px at 50% 0%,
-            rgba(59, 130, 246, 0.18) 0%,
-            rgba(34, 211, 238, 0.06) 40%,
-            transparent 70%
-          );
-          pointer-events: none;
-        "
-      ></div>
-      <div class="contact-inner" style="position: relative">
-        <div
-          class="slabel"
-          style="justify-content: center; margin-bottom: 24px"
-        >
-          Get In Touch
-        </div>
-        <h2 class="contact-headline">Let's build something <em>real</em>.</h2>
-        <p class="contact-sub">
+    <!-- ============================================================
+         Contact
+         ============================================================ -->
+    <section class="contact" id="contact">
+      <div class="contact__glow" aria-hidden="true"></div>
+
+      <div class="contact__inner">
+        <div class="section-label contact__label">Get In Touch</div>
+        <h2 class="contact__headline">
+          Let's build something <em>real</em>.
+        </h2>
+        <p class="contact__sub">
           Open to senior Flutter roles, GCC-focused product teams, and
           interesting technical problems. I respond within 24 hours.
         </p>
-        <div class="contact-row">
-          <a href="mailto:emanpepars2@gmail.com" class="btn-glow"
+        <div class="contact__actions">
+          <a href="mailto:emanpepars2@gmail.com" class="btn btn--primary"
             >Send Email →</a
           >
-          <a href="./Eman_Pepars_CV.pdf" download class="btn-ghost"
-            >↓ Download CV</a
-          >
+          <a href="./Eman_Pepars_CV.pdf" download class="btn btn--ghost">
+            ↓ Download CV
+          </a>
           <a
             href="https://www.linkedin.com/in/emanpepars"
             target="_blank"
             rel="noopener"
-            class="btn-ghost"
-            >LinkedIn</a
+            class="btn btn--ghost"
           >
-          <!-- <a href="https://github.com/Emanpepars" target="_blank" rel="noopener" class="btn-ghost">GitHub</a> -->
+            LinkedIn
+          </a>
         </div>
-        <div class="contact-meta">
-          +971 58 556 2001 · Dubai, UAE · Available for remote & on-site
+        <div class="contact__meta">
+          +971 58 556 2001 · Dubai, UAE · Available for remote &amp; on-site
         </div>
       </div>
     </section>
 
-    <footer>
-      <span class="ft">© 2026 Eman Pepars · Software Engineer, Flutter</span>
-      <div class="flinks">
+    </main>
+
+    <!-- ============================================================
+         Footer
+         ============================================================ -->
+    <footer class="footer">
+      <span class="footer-credit">
+        © 2026 Eman Pepars · Software Engineer, Flutter
+      </span>
+      <nav class="footer-links" aria-label="Footer">
         <a href="#highlights">Highlights</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Work</a>
         <a href="#apps">Apps</a>
         <a href="#experience">Exp</a>
         <a href="mailto:emanpepars2@gmail.com">Contact</a>
-      </div>
+      </nav>
     </footer>
 
-    <script>
-      const cur = document.getElementById("cursor"),
-        ring = document.getElementById("cursor-ring");
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-      document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-        cur.style.left = mx + "px";
-        cur.style.top = my + "px";
-      });
-      (function loop() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        ring.style.left = rx + "px";
-        ring.style.top = ry + "px";
-        requestAnimationFrame(loop);
-      })();
-      document.querySelectorAll("a,button,.pcard,.appr-cell").forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-          cur.style.width = "18px";
-          cur.style.height = "18px";
-          ring.style.width = "50px";
-          ring.style.height = "50px";
-          ring.style.borderColor = "rgba(34,211,238,0.7)";
-        });
-        el.addEventListener("mouseleave", () => {
-          cur.style.width = "10px";
-          cur.style.height = "10px";
-          ring.style.width = "36px";
-          ring.style.height = "36px";
-          ring.style.borderColor = "rgba(148,163,184,0.5)";
-        });
-      });
-      const obs = new IntersectionObserver(
-        (entries) =>
-          entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("in");
-          }),
-        { threshold: 0.08 },
-      );
-      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-      const navEl = document.querySelector("nav"),
-        navToggle = document.querySelector(".nav-toggle");
-      if (navToggle) {
-        navToggle.addEventListener("click", () => {
-          const open = navEl.getAttribute("data-open") === "true";
-          navEl.setAttribute("data-open", String(!open));
-          navToggle.setAttribute("aria-expanded", String(!open));
-        });
-        document.querySelectorAll(".nav-center .nav-link").forEach((l) =>
-          l.addEventListener("click", () => {
-            navEl.setAttribute("data-open", "false");
-            navToggle.setAttribute("aria-expanded", "false");
-          }),
-        );
-        document.addEventListener("click", (e) => {
-          const open = navEl.getAttribute("data-open") === "true";
-          if (open && !navEl.contains(e.target)) {
-            navEl.setAttribute("data-open", "false");
-            navToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-      const navLinks = document.querySelectorAll(".nav-link");
-      const sections = document.querySelectorAll("section[id]");
-      window.addEventListener("scroll", () => {
-        let active = "";
-        sections.forEach((s) => {
-          if (window.scrollY >= s.offsetTop - 120) active = s.id;
-        });
-        navLinks.forEach((l) =>
-          l.classList.toggle("active", l.getAttribute("href") === "#" + active),
-        );
-      });
-    </script>
+    <!-- Scripts — independent modules, defer for non-blocking parse -->
+    <script src="assets/js/cursor.js" defer></script>
+    <script src="assets/js/navigation.js" defer></script>
+    <script src="assets/js/reveal.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# IDE / Editor
+.claude/
+.idea/
+.vscode/
+
+# Logs
+*.log

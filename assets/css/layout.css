@@ -1,0 +1,309 @@
+/* =============================================================
+   Layout — top-level page chrome (nav, footer, sections, cursor).
+   ============================================================= */
+
+@layer layout;
+@layer layout {
+
+/* ---- Custom Cursor ----
+   Hidden by default (mobile / coarse pointer / no-hover). On real
+   pointer devices we hide the system cursor on every element — not
+   just <body> — because the UA stylesheet sets `cursor: pointer` on
+   <a> and <button>, which would otherwise override a single
+   `body { cursor: none }` rule and reveal the OS cursor on hover. */
+#cursor,
+#cursor-ring {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  #cursor,
+  #cursor-ring {
+    display: block;
+  }
+}
+
+/* Cursor & ring are positioned via `transform` (set by JS).
+   `top: 0; left: 0` keeps the layer at origin so transforms are absolute,
+   `pointer-events: none` lets clicks pass through to elements beneath,
+   and `will-change` promotes them to a compositor layer for jank-free
+   animation on every mousemove. The z-index is the maximum 32-bit signed
+   int so the cursor always paints above any other stacking context. */
+#cursor,
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+#cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  z-index: 2147483647;
+  transition: width 0.2s, height 0.2s;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 20px rgba(31, 143, 255, 0.7);
+}
+#cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  z-index: 2147483646;
+  transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+/* ---- Navigation ---- */
+.nav {
+  position: fixed;
+  top: env(safe-area-inset-top);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 48px;
+  padding-left: max(48px, env(safe-area-inset-left));
+  padding-right: max(48px, env(safe-area-inset-right));
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(7, 10, 19, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-default);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.02),
+    0 4px 24px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+.nav-logo span {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 20px;
+  margin-left: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 20px;
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--glass-elevated);
+}
+.nav-link.is-active {
+  color: var(--accent-cyan);
+  background: var(--accent-tint);
+  font-weight: 600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-cta {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--grad-primary);
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow:
+    var(--shadow-soft-glow),
+    var(--shadow-inset-light);
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    var(--shadow-medium-glow),
+    var(--shadow-inset-light-strong);
+}
+
+.nav-toggle {
+  display: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+.nav-toggle:hover {
+  border-color: var(--accent-blue);
+  background: var(--bg-secondary);
+}
+.nav-toggle span {
+  position: relative;
+  width: 16px;
+  height: 1.5px;
+  background: var(--text-primary);
+  display: block;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 1.5px;
+  background: var(--text-primary);
+  transition: transform 0.25s, top 0.25s;
+}
+.nav-toggle span::before { top: -5px; }
+.nav-toggle span::after  { top:  5px; }
+
+.nav[data-open="true"] .nav-toggle span {
+  background: transparent;
+}
+.nav[data-open="true"] .nav-toggle span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.nav[data-open="true"] .nav-toggle span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ---- Section frame ---- */
+section {
+  padding: 100px 48px;
+  position: relative;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-blue);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--accent-blue);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 60px;
+}
+
+.section--alt-bg {
+  background: var(--bg-secondary);
+}
+
+/* ---- Footer ---- */
+.footer {
+  border-top: 1px solid var(--border-default);
+  padding: 28px 48px;
+  padding-bottom: max(28px, env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-primary);
+}
+
+.footer-credit {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-subtle);
+  letter-spacing: 0.06em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-subtle);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+.footer-links a:hover {
+  color: var(--text-muted);
+}
+
+}
+
+/* ---- Hide system cursor (unlayered: outranks every @layer rule) ----
+   On hover-capable, fine-pointer devices we replace the OS cursor with
+   the custom dot+ring. Placed outside @layer layout so it beats any
+   `cursor: pointer` in components/sections regardless of !important. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
